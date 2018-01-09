@@ -6,7 +6,7 @@ import java.util.function.BiPredicate;
  *  Binary Predicate Represents Predicate with two arguments
  *
  */
-public class BinaryPredicateExample {
+public class BiPredicateExample {
     public static void main(String[] args) {
 
         //using Anonymous class
