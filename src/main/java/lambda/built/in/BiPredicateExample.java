@@ -3,7 +3,8 @@ package lambda.built.in;
 import java.util.function.BiPredicate;
 
 /**
- *  Binary Predicate Represents Predicate with two arguments
+ *  Definition: Binary Predicate Represents Predicate with two arguments.
+ *  Method Definition: (T,U) -> boolean
  *
  */
 public class BiPredicateExample {

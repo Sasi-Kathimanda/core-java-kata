@@ -2,6 +2,10 @@ package lambda.built.in;
 
 import java.util.function.Predicate;
 
+/**
+ * Definition: A Predicate is a statement that may be true or false depending on the values of its variables.
+ * Method Signature: T -> boolean
+ */
 public class PredicateExample {
 
     public static void main(String[] args) {

@@ -3,7 +3,8 @@ package lambda.built.in;
 import java.util.function.Supplier;
 
 /**
-    A Supplier does the opposite of the <Consumer>,takes no argument and only returns some value.
+    Definition: A Supplier does the opposite of the <Consumer>,takes no argument and only returns some value.
+    Method Definition: () -> T
  **/
 
 public class SupplierExample {

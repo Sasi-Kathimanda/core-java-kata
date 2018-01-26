@@ -2,6 +2,10 @@ package lambda.built.in;
 
 import java.util.function.Function;
 
+/**
+ * Definition: A Function represents an operation that takes an input argument of a certain type and produces a result of another type.
+ * Method Definition: T -> R
+ */
 public class FunctionExample {
 
     // 1.using normal Method

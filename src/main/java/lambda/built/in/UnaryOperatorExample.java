@@ -5,6 +5,7 @@ import java.util.function.UnaryOperator;
 /**
  * Definition: UnaryOperator is just a specialization of the Function interface (in fact, this interface extends from it)
  * for when the argument and the result are of the same type.
+ * Method Signature: T -> T
  */
 public class UnaryOperatorExample {
 

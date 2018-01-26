@@ -3,7 +3,8 @@ package lambda.built.in;
 import java.util.function.BiConsumer;
 
 /**
- *  Biconsumer represents the consumer that take two arguments and don't return a result.
+ *  Definition: BiConsumer represents the consumer that take two arguments and don't return a result.
+ *  Method Signature: (T,U) -> void
  */
 public class BiConsumerExample {
 
