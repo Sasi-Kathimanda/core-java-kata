@@ -14,8 +14,8 @@ public class ConditionalLambda {
                 new Person("person3", 23),
                 new Person("person4", 12));
 
-        List<Person> personsWithAgeGT75 = findPersons(persons, car -> car.getAge() > 75);
-        List<Person> personsWithAgeGT18 = findPersons(persons, car -> car.getAge() > 18);
+        List<Person> personsWithAgeGT75 = findPersons(persons, person -> person.getAge() > 75);
+        List<Person> personsWithAgeGT18 = findPersons(persons, person -> person.getAge() > 18);
         System.out.println(personsWithAgeGT75.stream().peek(s -> System.out.println("**" + s.name)).count());
         System.out.println(personsWithAgeGT18.stream().peek(s -> System.out.println("**" + s.name)).count());
     }
@@ -33,17 +33,5 @@ public class ConditionalLambda {
 
     interface Searchable {
         boolean test(Person p);
-    }
-    private static class Person {
-        String name;
-        int age;
-
-        private Person(String name, int age) {
-            this.name = name;
-            this.age = age;
-        }
-        private int getAge() {
-            return age;
-        }
     }
 }
