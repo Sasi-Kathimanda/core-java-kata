@@ -1,15 +1,13 @@
 package codebat.map2;
 
-import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
-import java.util.stream.Stream;
+import java.util.HashMap;
+import java.util.Map;
 
 public class WordAppend {
     public static void main(String[] args) {
-        String[] list1 = new String[]{"a", "b", "a"};
-        String[] list2 = new String[]{"a", "b", "a", "c", "a", "d", "a"};
-        String[] list3 = new String[]{"a", "", "a"};
+        String[] list1 = new String[]{"this", "or", "that", "and", "this", "and", "that"};
+        String[] list2 = new String[]{"xx", "xx", "yy", "xx", "zz", "yy", "zz", "xx"};
+        String[] list3 = new String[]{"a", "b", "c"};
 
         System.out.println(wordAppend(list1));
         System.out.println(wordAppend(list2));
@@ -18,15 +16,19 @@ public class WordAppend {
     }
 
     public static String wordAppend(String[] strings) {
-        String result = "";
-
-        for (int i = 2; i< strings.length ; i++) {
-            if(i%2 == 0) {
-                System.out.println("i="+i);
-                result += strings[i];
+        StringBuilder result = new StringBuilder();
+        Map<String, Integer> tempMap = new HashMap<>();
+        for (String s: strings) {
+            if(tempMap.containsKey(s)) {
+                tempMap.put(s, tempMap.get(s)+1);
+                if(tempMap.get(s) % 2 == 0) {
+                    result.append(s);
+                }
+            } else {
+                tempMap.put(s, 1);
             }
         }
-        return result;
+        return result.toString();
     }
 
 }
