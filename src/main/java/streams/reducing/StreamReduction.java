@@ -22,8 +22,8 @@ public class StreamReduction {
         System.out.println("finding max using stream's reduce");
         intStream = IntStream.of(1, 2, 3, 41, 5, 6, 7, 8, 9, 10);
         System.out.println(intStream.reduce((i,n) -> i > n ? i:n));
-        System.out.println(intStream.reduce((i,n) -> Math.max(i, n))); // replacing Math.max
-        System.out.println(intStream.reduce(Math::max)); // replacing Lambda Method Reference
+        //System.out.println(intStream.reduce((i,n) -> Math.max(i, n))); // replacing Math.max
+        //System.out.println(intStream.reduce(Math::max)); // replacing Lambda Method Reference
 
 
 
