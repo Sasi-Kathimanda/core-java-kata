@@ -2,7 +2,9 @@ package streams.collect;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -30,5 +32,12 @@ public class StreamsCollect {
 
      //using preBuilt Collectors
      list =  Stream.of(1,2,3,4,5,1).collect(Collectors.toList());
+
+     //using joining
+        System.out.println(Stream.of("this","is","a","string").collect(Collectors.joining("|","PRE","")));
+
+     //using toMap()
+        Map<Integer, Integer> map = Stream.of(1, 2, 3, 4, 5).collect(Collectors.toMap(Function.identity(), i -> i * 2));
+        System.out.println(map);
     }
 }
