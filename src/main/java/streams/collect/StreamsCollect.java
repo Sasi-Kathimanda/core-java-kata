@@ -1,11 +1,11 @@
 package streams.collect;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 import java.util.function.Function;
+import java.util.function.Supplier;
+import java.util.stream.Collector;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 /**
@@ -39,5 +39,13 @@ public class StreamsCollect {
      //using toMap()
         Map<Integer, Integer> map = Stream.of(1, 2, 3, 4, 5).collect(Collectors.toMap(Function.identity(), i -> i * 2));
         System.out.println(map);
+
+     //duplicate key using toMap()
+        System.out.println(Stream.of(1,1,1,2,3,4).collect(Collectors.toMap(k->k , v-> new ArrayList<> (Collections.singletonList(v)),
+                (list1, list2) ->  { list1.addAll(list2); return list1;})));
+
+     //groupBy
+
+     //partitionBy
     }
 }
