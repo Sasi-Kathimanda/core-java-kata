@@ -53,5 +53,10 @@ public class StreamsCollect {
         System.out.println(groupByMapResultOrdered);
 
      //partitionBy
+        Map<Boolean, List<Integer>> partitionMap = Stream.of(1, 9, 18, 18, 25, 32, 45, 56, 65, 72).collect(Collectors.partitioningBy(i -> i < 50));
+        System.out.println(partitionMap);
+
+        Map<Boolean, Set<Integer>> partitionMapComposedCollector = Stream.of(1, 9, 18, 18, 25, 32, 45, 56, 65, 72).collect(Collectors.partitioningBy(i -> i < 50,Collectors.toSet()));
+        System.out.println(partitionMapComposedCollector);
     }
 }
