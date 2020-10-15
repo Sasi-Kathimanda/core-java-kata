@@ -21,7 +21,12 @@ public class FibonacciTest {
 //                .limit(MAX_NUMBER)
 //                .forEach(System.out::println);
 
-        usingStreamIterate(9);
+//        usingStreamIterate(9);
+
+        System.out.println( Stream.iterate(new long[]{1, 1}, f -> new long[]{f[1], f[0] + f[1]})
+                .limit(9)
+                .reduce((a, b) -> b)
+                .get()[0]);
     }
 
     @Override
