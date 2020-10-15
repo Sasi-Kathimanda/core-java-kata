@@ -17,13 +17,24 @@ public class FibonacciTest {
     }
 
     public static void main(String[] args) {
-        Stream.iterate(FibonacciTest.SEED, FibonacciTest::next)
-                .limit(MAX_NUMBER)
-                .forEach(System.out::println);
+//        Stream.iterate(FibonacciTest.SEED, FibonacciTest::next)
+//                .limit(MAX_NUMBER)
+//                .forEach(System.out::println);
+
+        usingStreamIterate(9);
     }
 
     @Override
     public String toString() {
         return String.valueOf(previous);
     }
+
+    public static void usingStreamIterate(int input) {
+        Stream.iterate(new int[]{0,1,}, t -> new int[]{t[1],t[0]+t[1]})
+                .limit(input)
+                .map(t -> t[1])
+                .forEach( t -> System.out.println(t));
+
+    }
+
 }
