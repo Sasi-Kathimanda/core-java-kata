@@ -1,2 +1,4 @@
-package prgramming.challenges.codility;public class CyclicRotationTest {
+package prgramming.challenges.codility;
+
+public class CyclicRotationTest {
 }
