@@ -1,8 +1,8 @@
-package prgramming.challenges;
+package programming.challenges;
 
 public class ReverseNumberTest {
     public static void main(String[] args) {
-        reverseNumber(1002);
+        reverseNumber(1000000045);
     }
 
     private static void reverseNumber(int input) {

@@ -1,4 +1,4 @@
-package prgramming.challenges;
+package programming.challenges;
 
 public class FizzBuzzTest {
     public static void main(String[] args) {

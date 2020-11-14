@@ -1,4 +1,4 @@
-package prgramming.challenges;
+package programming.challenges;
 
 import java.util.stream.Stream;
 

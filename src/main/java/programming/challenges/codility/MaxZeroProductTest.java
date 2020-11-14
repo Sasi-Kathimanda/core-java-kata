@@ -1,4 +1,4 @@
-package prgramming.challenges.codility;
+package programming.challenges.codility;
 
 public class MaxZeroProductTest {
     public static void main(String[] args) {

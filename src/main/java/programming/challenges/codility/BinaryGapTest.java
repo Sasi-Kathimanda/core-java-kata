@@ -1,4 +1,4 @@
-package prgramming.challenges.codility;
+package programming.challenges.codility;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -6,7 +6,7 @@ import java.util.List;
 
 public class BinaryGapTest {
     public static void main(String[] args) {
-        System.out.println(findBinaryGaps(15));
+        System.out.println(findBinaryGaps(20));
     }
 
     private static int findBinaryGaps(int input) {
