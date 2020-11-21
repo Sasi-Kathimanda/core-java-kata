@@ -10,12 +10,11 @@ public class LambdaExceptionHandling {
   public static void main(String[] args) {
     // Handling checked exception
     Stream<Integer> ints = Stream.of(1, 2, 3, 4, 5);
-    System.out.println(
-        " = " + ints.map(LambdaExceptionHandling::sleep).collect(Collectors.toList()));
+    System.out.println(ints.map(LambdaExceptionHandling::sleep).collect(Collectors.toList()));
 
     // handling unchecked exception
     List<Integer> intList = Arrays.asList(1, 2, 3, 4);
-    int key = 0;
+    int key = 2;
     process(intList, key, (k, v) -> System.out.println("k/v = " + k / v));
   }
 
