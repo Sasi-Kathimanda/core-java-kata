@@ -1,4 +1,4 @@
-# java8-kata
+# core-java-kata
 This repository contains the simple java 8 examples for better understanding of the important concepts such as
 ### Lambdas
 showing how it transformed the traditional external/internal iterators to cute lambdas.
