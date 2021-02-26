@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.List;
 import java.util.StringJoiner;
+import java.util.stream.Collectors;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -50,8 +51,9 @@ class StringJoinerTest {
     @DisplayName("joiner_when_there_is_Prefix_Suffix_Applied")
     void joinerWhenThereIsPrefixSuffixApplied() {
         StringJoiner joiner = new StringJoiner("-", "{", "}");
-        joiner.add("Sasi");joiner.add("Kathimanda");
-        assertEquals("{Sasi-Kathimanda}",joiner.toString());
+        joiner.add("Sasi");
+        joiner.add("Kathimanda");
+        assertEquals("{Sasi-Kathimanda}", joiner.toString());
     }
 
 
@@ -59,7 +61,7 @@ class StringJoinerTest {
     @DisplayName("joiner_when_there_is_Prefix_Suffix_And_No_Feeder")
     void joinerWhenThereIsPrefixSuffixAndNoFeeder() {
         StringJoiner joiner = new StringJoiner("-", "{", "}");
-        assertEquals("{}",joiner.toString());
+        assertEquals("{}", joiner.toString());
     }
 
     @Test
@@ -67,6 +69,22 @@ class StringJoinerTest {
     void joinerWhenThereIsPrefixSuffixAndNoFeederAndHaveDefaultSet() {
         StringJoiner joiner = new StringJoiner("-", "{", "}");
         joiner.setEmptyValue("default");
-        assertEquals("default",joiner.toString());
+        assertEquals("default", joiner.toString());
+    }
+
+    @Test
+    @DisplayName("joinerUsingStringJoin")
+    void joinerUsingStringJoin() {
+        List<String> names = List.of("Sasi", "Kiran", "Raja");
+        String result = String.join("-", names);
+        assertEquals("Sasi-Kiran-Raja", result);
+    }
+
+    @Test
+    @DisplayName("joinerUsingStreams")
+    void joinerUsingStreams() {
+        List<String> names = List.of("Sasi", "Kiran", "Raja");
+        String result = names.stream().collect(Collectors.joining(","));
+        assertEquals("Sasi-Kiran-Raja", result);
     }
 }
