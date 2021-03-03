@@ -1,4 +1,4 @@
-package com.juni5.demo;
+package com.junit5.demo;
 
 import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertAll;
