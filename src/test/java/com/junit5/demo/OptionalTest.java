@@ -36,5 +36,20 @@ class OptionalTest {
         Optional<String> opt = Optional.ofNullable(name);
         assertFalse(opt.isPresent());
     }
+
+    @Test
+    @DisplayName("givenNull_WhenOrElseUsed_ThenReturnDefault")
+    void givenNullWhenOrElseUsedThenReturnDefault() {
+        String name = null;
+        String opt = Optional.ofNullable(name).orElse("default");
+        assertEquals("default",opt);
+    }
+    @Test
+    @DisplayName("givenNull_WhenOrElseGetUsed_ThenReturnDefault")
+    void givenNullWhenOrElseGetUsedThenReturnDefault() {
+        String name = null;
+        String result = Optional.ofNullable(name).orElseGet(()-> "default");
+        assertEquals("default",result);
+    }
 }
 
