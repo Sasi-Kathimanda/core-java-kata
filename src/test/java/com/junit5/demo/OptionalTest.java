@@ -59,7 +59,7 @@ class OptionalTest {
     void givenNullWhenOrElseThrowCalledThenExceptionReturned() {
         String name = null;
         Optional<String> opt = Optional.ofNullable(name);
-        assertThrows(IllegalArgumentException.class , () -> opt.orElseThrow(IllegalArgumentException::new));
+        assertThrows(IllegalArgumentException.class, () -> opt.orElseThrow(IllegalArgumentException::new));
     }
 
     @Test
@@ -69,6 +69,7 @@ class OptionalTest {
         Optional<String> opt = Optional.ofNullable(name);
         assertThrows(NoSuchElementException.class, opt::orElseThrow);
     }
+
     @Test
     @DisplayName("givenNull_WhenGetIsCalled_NoSuchExceptionThrown")
     void givenNullWhenGetIsCalledNoSuchExceptionThrown() {
@@ -76,5 +77,59 @@ class OptionalTest {
         Optional<String> opt = Optional.ofNullable(name);
         assertThrows(NoSuchElementException.class, opt::get);
     }
+
+    /**
+     * Optional with Filter
+     */
+    static class Mobile {
+        Double price;
+
+        public Mobile(Double price) {
+            this.price = price;
+        }
+
+        public Double getPrice() {
+            return price;
+        }
+    }
+
+    static boolean priceWithInRange(Mobile mobile) {
+        if (mobile == null || mobile.getPrice() == null) {
+            return false;
+        }
+        return mobile.getPrice() >= 300 && mobile.getPrice() <= 500;
+    }
+
+    static boolean priceWithRangeUsingOptional(Mobile mobile) {
+        return Optional.ofNullable(mobile)
+                .map(Mobile::getPrice)
+                .filter(e -> e >= 300)
+                .filter(e -> e <= 500)
+                .isPresent();
+
+    }
+
+    @Test
+    @DisplayName("givenDifferentPrices_ThenFindPriceRangesAreOk")
+    void givenDifferentPricesThenFindPriceRangesAreOk() {
+        assertAll(() -> assertFalse(priceWithInRange(new Mobile(1000.00))),
+                () -> assertFalse(priceWithInRange(new Mobile(200.00))),
+                () -> assertTrue(priceWithInRange(new Mobile(400.00))),
+                () -> assertFalse(priceWithInRange(new Mobile(null))),
+                () -> assertFalse(priceWithInRange(null))
+        );
+    }
+
+    @Test
+    @DisplayName("givenDifferentPrices_ThenFindPriceRangesAreOkUsingOptional")
+    void givenDifferentPricesThenFindPriceRangesAreOkUsingOptional() {
+        assertAll(() -> assertFalse(priceWithRangeUsingOptional(new Mobile(1000.00))),
+                () -> assertFalse(priceWithRangeUsingOptional(new Mobile(200.00))),
+                () -> assertTrue(priceWithRangeUsingOptional(new Mobile(400.00))),
+                () -> assertFalse(priceWithRangeUsingOptional(new Mobile(null))),
+                () -> assertFalse(priceWithRangeUsingOptional(null))
+        );
+    }
+
 }
 
