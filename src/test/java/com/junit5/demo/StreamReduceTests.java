@@ -2,11 +2,18 @@ package com.junit5.demo;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
+import org.junit.jupiter.params.provider.ValueSource;
 
 import java.util.List;
+import java.util.Map;
 import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class StreamReduceTests {
     @Test
@@ -20,5 +27,21 @@ class StreamReduceTests {
     void givenIntsThenFindMaxUsingReduce() {
         var intList = List.of(45,28,63,56,3,9);
         assertEquals(63,intList.stream().reduce((i,n) -> i > n? i:n).get());
+    }
+
+    @ParameterizedTest
+    @MethodSource("provideDifferentInputAndExpectedOutput")
+    @DisplayName("givenResponses_FindAnyOKOrAnyKOUsingReduce")
+    void givenResponsesFindAnyOKOrAnyKOUsingReduce(String expected , List<String> input) {
+        var result = input.stream().reduce((i,n) -> i.equals("OK") ? i : n).orElseGet(()->"get");
+        assertEquals(expected,result);
+    }
+
+    private static Stream<Arguments> provideDifferentInputAndExpectedOutput() {
+        return Stream.of(
+                Arguments.of(
+                        "OK",List.of("OK","KO","KO"),
+                        "KO", List.of("KO","KO","KO")
+        ));
     }
 }
