@@ -36,9 +36,8 @@ class StreamReduceTests {
 
     private static Stream<Arguments> provideDifferentInputAndExpectedOutput() {
         return Stream.of(
-                Arguments.of(
-                        "OK",List.of("OK","KO","KO"),
-                        "KO", List.of("KO","KO","KO")
-        ));
+                Arguments.of("OK",List.of("OK","KO","KO")),
+                Arguments.of("KO", List.of("KO","KO","KO")),
+                Arguments.of("get",List.of()));
     }
 }
