@@ -34,16 +34,16 @@ class OptionalTest {
     @DisplayName("givenNull_WhenCreatesNullable_ThenNoException")
     void givenNullWhenCreatesNullableThenNoException() {
         String name = null;
-        Optional<String> opt = Optional.ofNullable(name);
-        assertFalse(opt.isPresent());
+        Optional<String> stringOptional = Optional.ofNullable(name);
+        assertFalse(stringOptional.isPresent());
     }
 
     @Test
     @DisplayName("givenNull_WhenOrElseUsed_ThenReturnDefault")
     void givenNullWhenOrElseUsedThenReturnDefault() {
         String name = null;
-        String opt = Optional.ofNullable(name).orElse("default");
-        assertEquals("default", opt);
+        String result = Optional.ofNullable(name).orElse("default");
+        assertEquals("default", result);
     }
 
     @Test
@@ -58,24 +58,25 @@ class OptionalTest {
     @DisplayName("givenNull_WhenOrElseThrowCalled_ThenExceptionReturned")
     void givenNullWhenOrElseThrowCalledThenExceptionReturned() {
         String name = null;
-        Optional<String> opt = Optional.ofNullable(name);
-        assertThrows(IllegalArgumentException.class, () -> opt.orElseThrow(IllegalArgumentException::new));
+        Optional<String> stringOptional = Optional.ofNullable(name);
+        assertThrows(IllegalArgumentException.class,
+                () -> stringOptional.orElseThrow(IllegalArgumentException::new));
     }
 
     @Test
     @DisplayName("givenNull_WhenOrElseThrowWithNoArgCalled_ThenNoSuchExceptionThrown")
     void givenNullWhenOrElseThrowWithNoArgCalledThenNoSuchExceptionThrown() {
         String name = null;
-        Optional<String> opt = Optional.ofNullable(name);
-        assertThrows(NoSuchElementException.class, opt::orElseThrow);
+        Optional<String> stringOptional = Optional.ofNullable(name);
+        assertThrows(NoSuchElementException.class, stringOptional::orElseThrow);
     }
 
     @Test
-    @DisplayName("givenNull_WhenGetIsCalled_NoSuchExceptionThrown")
-    void givenNullWhenGetIsCalledNoSuchExceptionThrown() {
+    @DisplayName("givenNull_WhenGetIsCalled_ThenNoSuchExceptionThrown")
+    void givenNullWhenGetIsCalledThenNoSuchExceptionThrown() {
         String name = null;
-        Optional<String> opt = Optional.ofNullable(name);
-        assertThrows(NoSuchElementException.class, opt::get);
+        Optional<String> stringOptional = Optional.ofNullable(name);
+        assertThrows(NoSuchElementException.class, stringOptional::get);
     }
 
     /**
@@ -106,7 +107,6 @@ class OptionalTest {
                 .filter(e -> e >= 300)
                 .filter(e -> e <= 500)
                 .isPresent();
-
     }
 
     @Test
