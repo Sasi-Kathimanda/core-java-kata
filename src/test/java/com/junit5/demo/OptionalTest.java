@@ -54,6 +54,9 @@ class OptionalTest {
         assertEquals("default", result);
     }
 
+    /**
+     *  Exceptions with orElseThrow
+     */
     @Test
     @DisplayName("givenNull_WhenOrElseThrowCalled_ThenExceptionReturned")
     void givenNullWhenOrElseThrowCalledThenExceptionReturned() {
@@ -129,6 +132,20 @@ class OptionalTest {
                 () -> assertFalse(priceWithRangeUsingOptional(new Mobile(null))),
                 () -> assertFalse(priceWithRangeUsingOptional(null))
         );
+    }
+
+    @Test
+    @DisplayName("givenOptional_WhenGetsCalled_ThenReturnsWrappedValue")
+    void givenOptionalWhenGetsCalledThenReturnsWrappedValue() {
+        Optional<String> optionalString = Optional.of("Sasi");
+        assertEquals("Sasi",optionalString.get());
+    }
+
+    @Test
+    @DisplayName("givenOptionalWithNull_WhenGetCalled_ThenReturnsNoSuchElementException")
+    void givenOptionalWithNullWhenGetCalledThenReturnsNoSuchElementException() {
+        Optional<String> optionalString = Optional.ofNullable(null);
+        assertThrows(NoSuchElementException.class,()->optionalString.get());
     }
 
 }
