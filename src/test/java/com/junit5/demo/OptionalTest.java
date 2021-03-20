@@ -89,6 +89,11 @@ class OptionalTest {
         Double price;
         Optional<Camera> camera;
 
+        public Mobile(Double price, Optional<Camera> camera) {
+            this.price = price;
+            this.camera = camera;
+        }
+
         public Mobile(Double price) {
             this.price = price;
         }
@@ -97,10 +102,28 @@ class OptionalTest {
             return price;
         }
 
+        public Optional<Camera> getCamera() {
+            return camera;
+        }
+
         private static class Camera {
             Optional<FrontCamera> frontCamera;
+
+            public Camera(Optional<FrontCamera> frontCamera) {
+                this.frontCamera = frontCamera;
+            }
+            public Optional<FrontCamera> getFrontCamera() {
+                return frontCamera;
+            }
         }
         private static class FrontCamera {
+            private final int pixelSize;
+            private FrontCamera(int pixelRate) {
+                this.pixelSize = pixelRate;
+            }
+            public int getPixelSize() {
+                return pixelSize;
+            }
         }
     }
 
@@ -139,6 +162,13 @@ class OptionalTest {
                 () -> assertFalse(priceWithRangeUsingOptional(new Mobile(null))),
                 () -> assertFalse(priceWithRangeUsingOptional(null))
         );
+    }
+
+    @Test
+    @DisplayName("givenDifferentMobileSpecs_FilterFrontCamera_AndGetPixel")
+    void givenDifferentMobileSpecsFilterFrontCameraAndGetPixel() {
+        Mobile mobile = new Mobile(500.00, Optional.of(new Mobile.Camera(Optional.of(new Mobile.FrontCamera(8)))));
+        assertEquals(8,mobile.getCamera().get().getFrontCamera().get().getPixelSize());
     }
 
     @Test
