@@ -87,6 +87,7 @@ class OptionalTest {
      */
     static class Mobile {
         Double price;
+        Optional<Camera> camera;
 
         public Mobile(Double price) {
             this.price = price;
@@ -94,6 +95,12 @@ class OptionalTest {
 
         public Double getPrice() {
             return price;
+        }
+
+        private static class Camera {
+            Optional<FrontCamera> frontCamera;
+        }
+        private static class FrontCamera {
         }
     }
 
@@ -145,8 +152,7 @@ class OptionalTest {
     @DisplayName("givenOptionalWithNull_WhenGetCalled_ThenReturnsNoSuchElementException")
     void givenOptionalWithNullWhenGetCalledThenReturnsNoSuchElementException() {
         Optional<String> optionalString = Optional.ofNullable(null);
-        assertThrows(NoSuchElementException.class,()->optionalString.get());
+        assertThrows(NoSuchElementException.class, optionalString::get);
     }
 
 }
-
