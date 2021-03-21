@@ -168,7 +168,11 @@ class OptionalTest {
     @DisplayName("givenDifferentMobileSpecs_FilterFrontCamera_AndGetPixel")
     void givenDifferentMobileSpecsFilterFrontCameraAndGetPixel() {
         Mobile mobile = new Mobile(500.00, Optional.of(new Mobile.Camera(Optional.of(new Mobile.FrontCamera(8)))));
-        assertEquals(8,mobile.getCamera().get().getFrontCamera().get().getPixelSize());
+        assertEquals(8,mobile.getCamera().get().getFrontCamera().get().getPixelSize()); // Don't ever do this, results in No such element
+        assertEquals(8,
+                mobile.getCamera().orElse(new Mobile.Camera(Optional.empty()))
+                        .getFrontCamera().orElse(new Mobile.FrontCamera(0))
+                        .getPixelSize());
     }
 
     @Test
