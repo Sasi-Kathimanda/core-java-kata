@@ -55,7 +55,7 @@ class OptionalTest {
     }
 
     /**
-     *  Exceptions with orElseThrow
+     * Exceptions with orElseThrow
      */
     @Test
     @DisplayName("givenNull_WhenOrElseThrowCalled_ThenExceptionReturned")
@@ -112,15 +112,19 @@ class OptionalTest {
             public Camera(Optional<FrontCamera> frontCamera) {
                 this.frontCamera = frontCamera;
             }
+
             public Optional<FrontCamera> getFrontCamera() {
                 return frontCamera;
             }
         }
+
         private static class FrontCamera {
             private final int pixelSize;
+
             private FrontCamera(int pixelRate) {
                 this.pixelSize = pixelRate;
             }
+
             public int getPixelSize() {
                 return pixelSize;
             }
@@ -168,18 +172,17 @@ class OptionalTest {
     @DisplayName("givenDifferentMobileSpecs_FilterFrontCamera_AndGetPixel")
     void givenDifferentMobileSpecsFilterFrontCameraAndGetPixel() {
         Mobile mobile = new Mobile(500.00, Optional.of(new Mobile.Camera(Optional.of(new Mobile.FrontCamera(8)))));
-        assertEquals(8,mobile.getCamera().get().getFrontCamera().get().getPixelSize()); // Don't ever do this, results in No such element
-        assertEquals(8,
-                mobile.getCamera().orElse(new Mobile.Camera(Optional.empty()))
-                        .getFrontCamera().orElse(new Mobile.FrontCamera(0))
-                        .getPixelSize());
+        assertEquals(8, mobile.getCamera()
+                .flatMap(Mobile.Camera::getFrontCamera)
+                .map(Mobile.FrontCamera::getPixelSize)
+                .orElseThrow());
     }
 
     @Test
     @DisplayName("givenOptional_WhenGetsCalled_ThenReturnsWrappedValue")
     void givenOptionalWhenGetsCalledThenReturnsWrappedValue() {
         Optional<String> optionalString = Optional.of("Sasi");
-        assertEquals("Sasi",optionalString.get());
+        assertEquals("Sasi", optionalString.get());
     }
 
     @Test
