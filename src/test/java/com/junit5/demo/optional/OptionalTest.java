@@ -1,4 +1,4 @@
-package com.junit5.demo;
+package com.junit5.demo.optional;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
