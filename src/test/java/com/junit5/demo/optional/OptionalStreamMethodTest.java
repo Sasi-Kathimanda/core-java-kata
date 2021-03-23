@@ -4,7 +4,6 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import javax.swing.text.html.Option;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -42,4 +41,17 @@ class OptionalStreamMethodTest {
         Assertions.assertEquals(3,result.size());
     }
 
+    /**
+     *  using java 9 optional stream method
+     */
+
+    @Test
+    @DisplayName("givenListOfOptionals_FilterOutNonNull_UsingJava9StreamMethod")
+    void givenListOfOptionalsFilterOutNonNullUsingJava9StreamMethod() {
+        var optionalsList = List.of(Optional.empty(), Optional.of("Sasi"), Optional.of("Kiran"), Optional.of("Kathimanda"));
+        var result = optionalsList.stream()
+                .flatMap(Optional::stream)
+                .collect(Collectors.toList());
+        Assertions.assertEquals(3,result.size());
+    }
 }
