@@ -4,9 +4,11 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import javax.swing.text.html.Option;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 class OptionalStreamMethodTest {
     @Test
@@ -20,4 +22,13 @@ class OptionalStreamMethodTest {
         Assertions.assertEquals(3,result.size());
     }
 
+    @Test
+    @DisplayName("givenListOfOptionals_ThenFilterOutNonNullsUsingFlatMap")
+    void givenListOfOptionalsThenFilterOutNonNullsUsingFlatMap() {
+        var optionalList = List.of(Optional.empty(), Optional.of("Sasi"), Optional.of("Kiran"), Optional.of("Raja"));
+        var result = optionalList.stream()
+                .flatMap(o -> o.isPresent() ? Stream.of(o.get()): Stream.empty())
+                .collect(Collectors.toList());
+        Assertions.assertEquals(3,result.size());
+    }
 }
