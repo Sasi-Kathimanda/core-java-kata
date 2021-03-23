@@ -31,4 +31,15 @@ class OptionalStreamMethodTest {
                 .collect(Collectors.toList());
         Assertions.assertEquals(3,result.size());
     }
+
+    @Test
+    @DisplayName("givenListOfOptionals_ThenFilterOutNonNullsUsingFlatMapWithoutIfPresent")
+    void givenListOfOptionalsThenFilterOutNonNullsUsingFlatMapWithoutIfPresent() {
+        var optionalList = List.of(Optional.empty(), Optional.of("Sasi"), Optional.of("Kiran"), Optional.of("Raja"));
+        var result = optionalList.stream()
+                .flatMap(o -> o.map(Stream::of).orElseGet(Stream::empty))
+                .collect(Collectors.toList());
+        Assertions.assertEquals(3,result.size());
+    }
+
 }
