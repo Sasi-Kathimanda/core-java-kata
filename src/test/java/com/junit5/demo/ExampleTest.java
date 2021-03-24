@@ -1,14 +1,16 @@
 package com.junit5.demo;
 
-import java.util.List;
-import static org.junit.jupiter.api.Assertions.assertAll;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
-public class ExampleTest {
+import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.assertAll;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+class ExampleTest {
     @Test
     @DisplayName("should demo a simple assertion")
     void shouldShowSimpleAssertion() {
@@ -34,12 +36,12 @@ public class ExampleTest {
 
     @ParameterizedTest(name = "input = {0}")
     @DisplayName("check function with different inputs")
-    @ValueSource(ints = {1,2,3,4,5,6,7})
+    @ValueSource(ints = {1, 2, 3, 4, 5, 6, 7})
     void checkFunctionWithDifferentInputs(int inputs) {
-        assertAll(() -> assertEquals(inputs*inputs,square(inputs)));
+        assertAll(() -> assertEquals(inputs * inputs, square(inputs)));
     }
 
     private int square(int inputs) {
-        return inputs*inputs;
+        return inputs * inputs;
     }
 }
