@@ -62,7 +62,7 @@ class OptionalStreamMethodTest {
         Optional<String> name = Optional.of("Sasi");
         assertEquals(Optional.of("SASI"), name.map(String::toUpperCase));
 
-        assertEquals(Optional.of(Optional.of("SASI")), name.map(s -> Optional.of("SASI")));
+        assertEquals(Optional.of(Optional.of("SASI")), name.map(s -> Optional.of(s.toUpperCase())));
         assertEquals(Optional.of("SASI"),name.flatMap(s -> Optional.of(s.toUpperCase())));
 
         var names = List.of(Optional.of("Sasi"), Optional.of("Kiran"));
