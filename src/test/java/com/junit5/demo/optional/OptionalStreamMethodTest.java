@@ -1,6 +1,5 @@
 package com.junit5.demo.optional;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -8,6 +7,8 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class OptionalStreamMethodTest {
     @Test
@@ -18,7 +19,7 @@ class OptionalStreamMethodTest {
                 .filter(Optional::isPresent)
                 .map(Optional::get)
                 .collect(Collectors.toList());
-        Assertions.assertEquals(3,result.size());
+        assertEquals(3, result.size());
     }
 
     @Test
@@ -26,9 +27,9 @@ class OptionalStreamMethodTest {
     void givenListOfOptionalsThenFilterOutNonNullsUsingFlatMap() {
         var optionalList = List.of(Optional.empty(), Optional.of("Sasi"), Optional.of("Kiran"), Optional.of("Raja"));
         var result = optionalList.stream()
-                .flatMap(o -> o.isPresent() ? Stream.of(o.get()): Stream.empty())
+                .flatMap(o -> o.isPresent() ? Stream.of(o.get()) : Stream.empty())
                 .collect(Collectors.toList());
-        Assertions.assertEquals(3,result.size());
+        assertEquals(3, result.size());
     }
 
     @Test
@@ -38,11 +39,11 @@ class OptionalStreamMethodTest {
         var result = optionalList.stream()
                 .flatMap(o -> o.map(Stream::of).orElseGet(Stream::empty))
                 .collect(Collectors.toList());
-        Assertions.assertEquals(3,result.size());
+        assertEquals(3, result.size());
     }
 
     /**
-     *  using java 9 optional stream method
+     * using java 9 optional stream method
      */
 
     @Test
@@ -52,6 +53,19 @@ class OptionalStreamMethodTest {
         var result = optionalsList.stream()
                 .flatMap(Optional::stream)
                 .collect(Collectors.toList());
-        Assertions.assertEquals(3,result.size());
+        assertEquals(3, result.size());
+    }
+
+    @Test
+    @DisplayName("shouldReturnOptional_WhenMapIsCalledOnOptionalOfString")
+    void shouldReturnOptionalWhenMapIsCalledOnOptionalOfString() {
+        var name = Optional.of("Sasi");
+        assertEquals(Optional.of("SASI"), name.map(String::toUpperCase));
+
+        var names = List.of(Optional.of("Sasi"), Optional.of("Kiran"));
+        List<Optional<String>> result = names.stream()
+                .map(it -> it.map(String::toUpperCase))
+                .collect(Collectors.toList());
+        assertEquals(List.of(Optional.of("SASI"), Optional.of("KIRAN")), result);
     }
 }
