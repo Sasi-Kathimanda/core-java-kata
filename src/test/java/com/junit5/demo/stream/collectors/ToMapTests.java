@@ -17,7 +17,7 @@ class ToMapTests {
     void listToMapUsingToMap() {
         List<String> namesList = List.of("Sasi", "Kiran", "Raja");
         var namesMap = namesList.stream()
-                .collect(Collectors.toMap(namesList::indexOf, Function.identity()));
+                                .collect(Collectors.toMap(namesList::indexOf, Function.identity()));
         assertEquals(3, namesMap.size());
         assertEquals("Sasi", namesMap.get(0));
         assertEquals("Kiran", namesMap.get(1));
@@ -30,9 +30,7 @@ class ToMapTests {
         List<Book> books = Arrays.asList(new Book(1, "book1"),
                                          new Book(2, "book2"));
         var booksMap = books.stream()
-                            //.map(b -> "free" + b.getName())
-                            .collect(Collectors.toMap(Book::getId,
-                                                      v -> "free "+v.getName()));
+                            .collect(Collectors.toMap(Book::getId, v -> "free " + v.getName()));
         assertEquals(2, booksMap.size());
         assertEquals("free book1", booksMap.get(1));
         assertEquals("free book2", booksMap.get(2));
