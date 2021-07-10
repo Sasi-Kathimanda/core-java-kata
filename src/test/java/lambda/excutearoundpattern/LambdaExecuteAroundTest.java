@@ -1,6 +1,5 @@
 package lambda.excutearoundpattern;
 
-import org.jetbrains.annotations.Nullable;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -26,7 +25,14 @@ class LambdaExecuteAroundTest {
         assertEquals("This is Line OneThis is Line Two", actual);
     }
 
-    @Nullable
+    @Test
+    @DisplayName("givenBehaviourEnhancedProcessFileUsingBuiltInFuncInterfaceGivesTheExpectedOutput")
+    void givenBehaviourEnhancedProcessFileUsingBuiltInFuncInterfaceGivesTheExpectedOutput() {
+        LambdaExecuteAround lambdaExecuteAround = new LambdaExecuteAround();
+        String actual = lambdaExecuteAround.enhancedProcessFileUsingBuiltInFuncInterface(this::getFirstTwoLines);
+        assertEquals("This is Line OneThis is Line Two", actual);
+    }
+
     private String getFirstTwoLines(BufferedReader br) {
         try {
             return br.readLine() + br.readLine();
