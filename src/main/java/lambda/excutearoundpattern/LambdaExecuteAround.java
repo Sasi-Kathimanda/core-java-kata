@@ -7,8 +7,8 @@ import java.util.function.Function;
 
 public class LambdaExecuteAround {
 
-    String processFile() {
-        try (var br = new BufferedReader(new FileReader("src/main/resources/simpleFile.txt"))) {
+    String processFile(final String filePath) {
+        try (var br = new BufferedReader(new FileReader(filePath))) {
             return br.readLine();
         } catch (IOException ioException) {
             ioException.printStackTrace();
@@ -16,8 +16,8 @@ public class LambdaExecuteAround {
         return null;
     }
 
-    String enhancedProcessFile(BufferedReaderProcessor brp) {
-        try (var br = new BufferedReader(new FileReader("src/main/resources/simpleFile.txt"))) {
+    String enhancedProcessFile(BufferedReaderProcessor brp, final String filePath) {
+        try (var br = new BufferedReader(new FileReader(filePath))) {
             return brp.process(br);
         } catch (IOException ioException) {
             ioException.printStackTrace();
@@ -25,8 +25,8 @@ public class LambdaExecuteAround {
         return null;
     }
 
-    public String enhancedProcessFileUsingBuiltInFuncInterface(Function<BufferedReader,String> fs) {
-        try (var br = new BufferedReader(new FileReader("src/main/resources/simpleFile.txt"))) {
+    String enhancedProcessFileUsingBuiltInFuncInterface(final Function<BufferedReader, String> fs, final String filePath) {
+        try (var br = new BufferedReader(new FileReader(filePath))) {
             return fs.apply(br);
         } catch (IOException ioException) {
             ioException.printStackTrace();
