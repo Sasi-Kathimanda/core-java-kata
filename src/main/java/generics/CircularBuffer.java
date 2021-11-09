@@ -1,21 +1,28 @@
 package generics;
 
 public class CircularBuffer {
-    private Object[] queue;
-    private int readCursor;
-    private int writeCursor;
+    private Object[] buffer;
+    private int readCursor = 0;
+    private int writeCursor = 0;
 
     public CircularBuffer(int size) {
-        queue = new Object[size];
+        buffer = new Object[size];
     }
 
-    public boolean offer(Object element) {
-
+    public boolean offer(Object value) {
+        if (buffer[writeCursor] != null) {
+            return false;
+        }
+        buffer[writeCursor] = value;
+        writeCursor = next(writeCursor);
         return true;
     }
 
     public Object poll() {
-        return  null;
+        return null;
     }
 
+    private int next(int index) {
+        return (index + 1) % buffer.length;
+    }
 }

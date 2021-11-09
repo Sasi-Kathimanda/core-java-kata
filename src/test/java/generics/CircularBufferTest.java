@@ -10,7 +10,7 @@ class CircularBufferTest {
     @Test
     void shouldOfferPollableElement() {
         assertTrue(buffer.offer(1));
-        assertEquals(1,buffer.poll());
+        assertEquals(1, buffer.poll());
         assertNull(buffer.poll());
     }
 
@@ -22,18 +22,19 @@ class CircularBufferTest {
     }
 
     @Test
-    void  shouldNotPollWhenBufferIsEmpty() {
+    void shouldNotPollWhenBufferIsEmpty() {
         assertNull(buffer.poll());
     }
 
     @Test
     void shouldRecycleBuffer() {
-    buffer.offer(1);
-    buffer.offer(2);
-    buffer.poll();
-    buffer.offer(3);
-    buffer.poll();
-    buffer.poll();
+        assertTrue(buffer.offer(1));
+        assertTrue(buffer.offer(2));
+        assertEquals(1, buffer.poll());
+        assertTrue(buffer.offer(3));
+        assertEquals(2, buffer.poll());
+        assertEquals(3, buffer.poll());
+
 
     }
 
