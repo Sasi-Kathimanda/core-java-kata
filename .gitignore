@@ -148,7 +148,7 @@ gradle-app.setting
 .DS_Store
 
 
-src/main/java/QuickTest.java.java
+src/main/java/QuickTest.java
 
 # # Work around https://youtrack.jetbrains.com/issue/IDEA-116898
 # gradle/wrapper/gradle-wrapper.properties
