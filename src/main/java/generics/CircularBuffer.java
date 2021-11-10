@@ -19,7 +19,12 @@ public class CircularBuffer {
     }
 
     public Object poll() {
-        return null;
+        var value = buffer[readCursor];
+        if (buffer[readCursor] != null) {
+            buffer[readCursor] = null;
+            readCursor = next(readCursor);
+        }
+        return value;
     }
 
     private int next(int index) {
