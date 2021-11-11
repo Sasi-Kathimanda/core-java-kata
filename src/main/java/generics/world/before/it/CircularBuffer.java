@@ -1,7 +1,7 @@
-package generics;
+package generics.world.before.it;
 
 public class CircularBuffer {
-    private Object[] buffer;
+    private final Object[] buffer;
     private int readCursor = 0;
     private int writeCursor = 0;
 

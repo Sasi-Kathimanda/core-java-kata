@@ -1,5 +1,6 @@
 package generics;
 
+import generics.world.before.it.CircularBuffer;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
