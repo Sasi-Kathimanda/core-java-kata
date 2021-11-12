@@ -3,6 +3,8 @@ package arrays;
 import domain.Person;
 import org.junit.jupiter.api.Test;
 
+import java.util.Arrays;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class ArraysUtilsTest {
@@ -16,7 +18,9 @@ class ArraysUtilsTest {
 
         Person[] people = {p1, p2};
         Person p3 = new Person("Raja", 30);
-        assertEquals(3,utils.add(p3, people).length);
+        Person[] updatedPeople = utils.add(p3, people);
+        assertEquals(3, updatedPeople.length);
+        System.out.println("people = " + Arrays.toString(updatedPeople));
     }
 
 }
