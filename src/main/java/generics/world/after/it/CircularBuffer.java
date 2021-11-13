@@ -1,11 +1,11 @@
 package generics.world.after.it;
 
-public class  GenericCircularBuffer<T> {
+public class CircularBuffer<T> {
     private  T[] buffer;
     private int readCursor = 0;
     private int writeCursor = 0;
 
-    public GenericCircularBuffer(int size) {
+    public CircularBuffer(int size) {
         buffer = (T[]) new Object[size];
     }
 
