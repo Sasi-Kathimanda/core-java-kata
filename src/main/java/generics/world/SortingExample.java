@@ -6,8 +6,8 @@ import java.util.List;
 
 public class SortingExample {
 
-    public List<Person> sortByAge(List<Person> people)  {
-
-        return List.of();
+    public List<Person> sortByAge(List<Person> people) {
+        people.sort(new SortedByAgeComparator<>());
+        return people;
     }
 }

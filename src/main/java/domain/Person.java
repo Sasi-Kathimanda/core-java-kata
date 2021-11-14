@@ -32,4 +32,8 @@ public final class Person {
                 ", age=" + age +
                 '}';
     }
+
+    public int getAge() {
+        return age;
+    }
 }
