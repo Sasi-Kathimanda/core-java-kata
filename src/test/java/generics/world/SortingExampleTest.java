@@ -33,7 +33,7 @@ class SortingExampleTest {
 
     @Test
     void reverseComparatorShouldSortTheAgeByDesc() {
-        assertEquals(sortedPeopleByAgeDesc, new SortingExample().sortByAge(people));
+        assertEquals(sortedPeopleByAgeDesc, new SortingExample().sortByAgeDesc(people));
     }
 
 }
