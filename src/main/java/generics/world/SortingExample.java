@@ -12,6 +12,7 @@ public class SortingExample {
     }
 
     public List<Person> sortByAgeDesc(List<Person> people) {
+        //Passing a parameter to the Generic Type
         people.sort(new ReverseComparator<>(new SortedByAgeComparator<>()));
         return people;
     }

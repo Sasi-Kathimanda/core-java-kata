@@ -2,6 +2,10 @@ package generics.world;
 
 import java.util.Comparator;
 
+/**
+ *  Passing a parameter to generic type
+ * @param <T>
+ */
 public class ReverseComparator<T> implements Comparator<T> {
     private final Comparator<T> delegateComparator;
 
