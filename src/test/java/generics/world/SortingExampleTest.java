@@ -12,6 +12,7 @@ class SortingExampleTest {
 
     List<Person> people = Arrays.asList(new Person("Sasi", 26), new Person("Kiran", 37), new Person("Raja", 19));
     List<Person> sortedPeopleByAge = Arrays.asList(new Person("Raja", 19), new Person("Sasi", 26), new Person("Kiran", 37));
+    List<Person> sortedPeopleByAgeDesc = Arrays.asList(new Person("Kiran", 37), new Person("Sasi", 26), new Person("Raja", 19));
 
     @Test
     void sortByAgeShouldSortListByAgeAscendingForUnorderedList() {
@@ -28,6 +29,11 @@ class SortingExampleTest {
     @Test
     void shouldReturnZeroListWhenInputIsEmpty() {
         assertEquals(0, new SortingExample().sortByAge(Arrays.asList()).size());
+    }
+
+    @Test
+    void reverseComparatorShouldSortTheAgeByDesc() {
+        assertEquals(sortedPeopleByAgeDesc, new SortingExample().sortByAge(people));
     }
 
 }
