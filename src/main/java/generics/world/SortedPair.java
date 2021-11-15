@@ -1,12 +1,17 @@
 package generics.world;
 
-public class SortedPair<T extends Comparable> {
+public class SortedPair<T extends Comparable<T>> {
     private final T left;
     private final T right;
 
     public SortedPair(T left, T right) {
-        this.left = left;
-        this.right = right;
+        if (right.compareTo(left) < 0) {
+            this.left = right;
+            this.right = left;
+        } else {
+            this.left = left;
+            this.right = right;
+        }
     }
 
     public T getLeft() {
