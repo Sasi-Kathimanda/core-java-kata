@@ -1,8 +1,9 @@
 package generics.world;
 
 /**
- *  Bounded Type , i.e, any type that implements comparable interface could be
- *  able to use this class.
+ * Bounded Type , i.e, any type that implements comparable interface could be
+ * able to use this class.
+ *
  * @param <T>
  */
 public class SortedPair<T extends Comparable<T>> {
