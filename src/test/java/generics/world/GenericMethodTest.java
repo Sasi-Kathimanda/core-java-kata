@@ -24,6 +24,6 @@ class GenericMethodTest {
 
     @Test
     void shouldThrowExceptionGivenEmptyInput() {
-        assertThrows(IllegalArgumentException.class, () -> new GenericMethod().min(List.of(), Integer::compare));
+        assertThrows(IllegalArgumentException.class, () -> new GenericMethod().min(List.of(), Integer::compare), "list is empty");
     }
 }
