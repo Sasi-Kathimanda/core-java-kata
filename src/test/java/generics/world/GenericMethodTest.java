@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class GenericMethodTest {
     @Test
@@ -19,5 +20,10 @@ class GenericMethodTest {
         List<Person> people = List.of(new Person("Sasi", 19), new Person("Kiran", 29), new Person("Raja", 9));
         Person output = new GenericMethod().min(people, new SortedByAgeComparator<>());
         assertEquals(9, output.getAge());
+    }
+
+    @Test
+    void shouldThrowExceptionGivenEmptyInput() {
+        assertThrows(IllegalArgumentException.class, () -> new GenericMethod().min(List.of(), Integer::compare));
     }
 }
