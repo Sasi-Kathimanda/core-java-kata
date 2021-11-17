@@ -9,8 +9,8 @@ import java.io.RandomAccessFile;
 public class PersonLoader {
     private RandomAccessFile file;
 
-    public PersonLoader(final File file) throws FileNotFoundException {
-        this.file = new RandomAccessFile(file,"rw");
+    public PersonLoader(final RandomAccessFile file) throws FileNotFoundException {
+        this.file = new RandomAccessFile("build/xyz","rw");
     }
 
     public Person load() {
