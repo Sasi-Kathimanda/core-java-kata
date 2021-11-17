@@ -5,11 +5,11 @@ import domain.Partner;
 import domain.Person;
 import generics.world.bounded.PersonLoader;
 import generics.world.bounded.PersonSaver;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.io.File;
-import java.io.IOException;
-import java.io.RandomAccessFile;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -22,11 +22,23 @@ class PersonStorageTest {
     private PersonSaver saver;
 
     @Test
-    void saveAndLoadPerson() throws IOException {
-        Person person = new Person("Sas", 30);
-        saver = new PersonSaver(new RandomAccessFile("build/xyz", "rw"));
-        loader = new PersonLoader(new RandomAccessFile("build/xyz", "rw"));
+    void saveAndLoadPerson() throws Exception {
+        Person person = new Person("Sas", 5);
         saver.save(person);
         assertEquals(person, loader.load());
+    }
+
+    @BeforeEach
+    public void setUp() throws Exception {
+        file = File.createTempFile("build/tmp", "people");
+        saver = new PersonSaver(file);
+        loader = new PersonLoader(file);
+    }
+
+    @AfterEach
+    public void tearDown() {
+        if (file.exists()) {
+            file.delete();
+        }
     }
 }

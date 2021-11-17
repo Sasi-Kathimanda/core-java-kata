@@ -2,24 +2,34 @@ package generics.world.bounded;
 
 import domain.Person;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.RandomAccessFile;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.util.List;
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
 
 public class PersonLoader {
     private RandomAccessFile file;
 
-    public PersonLoader(final RandomAccessFile file) throws FileNotFoundException {
-        this.file = new RandomAccessFile("build/xyz", "rw");
+    public PersonLoader(final File file) throws FileNotFoundException {
+        this.file = new RandomAccessFile(file, "rw");
     }
 
-    public Person load() throws IOException {
-        List<String> read = Files.readAllLines(Path.of("build/xyz"), StandardCharsets.UTF_8);
-        var result = read.get(1).replaceAll("[^ -~]", "").split(",");
-        return new Person(result[1], Integer.parseInt(result[2]));
+    public Person load() throws IOException, ClassNotFoundException, NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException {
+        try {
+            final String className = file.readUTF();
+            final String personName = file.readUTF();
+            final int age = file.readInt();
+
+            final Class<?> personClass = Class.forName(className);
+            final Constructor<?> constructor = personClass.getConstructor(String.class, int.class);
+            return (Person) constructor.newInstance(personName, age);
+        } catch (IOException e) {
+            return null;
+        } catch (NoSuchMethodException | InvocationTargetException | InstantiationException | IllegalAccessException e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 }
