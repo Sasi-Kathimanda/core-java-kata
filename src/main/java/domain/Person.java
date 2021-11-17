@@ -2,7 +2,7 @@ package domain;
 
 import java.util.Objects;
 
-public final class Person {
+public class Person {
     private final String name;
     private final int age;
 
