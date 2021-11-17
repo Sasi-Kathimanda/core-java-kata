@@ -23,7 +23,7 @@ class PersonStorageTest {
 
     @Test
     void saveAndLoadPerson() throws IOException {
-        Person person = new Person("Sas", 3);
+        Person person = new Person("Sas", 30);
         saver = new PersonSaver(new RandomAccessFile("build/xyz", "rw"));
         loader = new PersonLoader(new RandomAccessFile("build/xyz", "rw"));
         saver.save(person);
