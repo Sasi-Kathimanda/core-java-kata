@@ -16,7 +16,7 @@ public class PersonLoader {
         this.file = new RandomAccessFile(file, "rw");
     }
 
-    public Person load() throws IOException, ClassNotFoundException, NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException {
+    public Person load() throws ClassNotFoundException{
         try {
             final String className = file.readUTF();
             final String personName = file.readUTF();
