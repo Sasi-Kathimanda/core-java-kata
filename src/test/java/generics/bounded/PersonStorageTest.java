@@ -38,9 +38,9 @@ class PersonStorageTest {
 //        people[0] = new Partner("Sasi", 1); // this causes Arrays store Exception
 //        people[1] = new Employee("Kiran", 2);
         // so replace it with Arrays
-        List<Person> people = new ArrayList<>();
+        List<Partner> people = new ArrayList<>();
         people.add(new Partner("Sasi", 1));
-        people.add(new Employee("Kiran", 2));
+        people.add(new Partner("Kiran", 2));
 
         saver.saveAll(people);
         assertEquals(people.get(0), loader.load());

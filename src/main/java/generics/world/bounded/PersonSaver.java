@@ -21,7 +21,7 @@ public class PersonSaver {
         file.writeInt(person.getAge());
     }
 
-    public void saveAll(List<Person> people) throws IOException {
+    public <T extends Person> void saveAll(List<T> people) throws IOException {
         for (Person person : people) {
             save(person);
         }
