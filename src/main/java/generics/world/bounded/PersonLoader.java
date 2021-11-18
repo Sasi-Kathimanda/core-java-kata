@@ -17,7 +17,7 @@ public class PersonLoader {
         this.file = new RandomAccessFile(file, "rw");
     }
 
-    public Person load() throws ClassNotFoundException{
+    public Person load() throws ClassNotFoundException {
         try {
             final String className = file.readUTF();
             final String personName = file.readUTF();
@@ -34,7 +34,11 @@ public class PersonLoader {
         }
     }
 
-    public List<Person> loadAll(List<Person> people) {
-        return List.of();
+    public List<Person> loadAll(List<Person> people) throws ClassNotFoundException {
+        Person person;
+        while ( (person = load()) != null) {
+            people.add(person);
+        }
+        return people;
     }
 }
