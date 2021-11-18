@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
+import java.util.List;
 
 public class PersonLoader {
     private RandomAccessFile file;
@@ -31,5 +32,9 @@ public class PersonLoader {
             e.printStackTrace();
             return null;
         }
+    }
+
+    public List<Person> loadAll(List<Person> people) {
+        return List.of();
     }
 }

@@ -47,6 +47,17 @@ class PersonStorageTest {
         assertEquals(people.get(1), loader.load());
     }
 
+    @Test
+    void loadListOfPeople() throws IOException, ClassNotFoundException {
+        saver.save(partner1);
+        saver.save(partner2);
+        List<Person> people = new ArrayList<>();
+        loader.loadAll(people);
+        assertEquals(2, people.size());
+        assertEquals(partner1, people.get(0));
+        assertEquals(partner2, people.get(1));
+    }
+
     @BeforeEach
     public void setUp() throws Exception {
         file = File.createTempFile("build/tmp", "people");
