@@ -11,6 +11,8 @@ import org.junit.jupiter.api.Test;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -31,12 +33,18 @@ class PersonStorageTest {
 
     @Test
     void saveAndLoadArraysOfPeople() throws ClassNotFoundException, IOException {
-        Person[] people = new Person[2];
-        people[0] = new Person("Sasi", 1);
-        people[1] = new Employee("Kiran", 2);
+        //Arrays are co variant but not type-safe!
+//        Person[] people = new Employee[2];
+//        people[0] = new Partner("Sasi", 1); // this causes Arrays store Exception
+//        people[1] = new Employee("Kiran", 2);
+        // so replace it with Arrays
+        List<Person> people = new ArrayList<>();
+        people.add(new Partner("Sasi", 1));
+        people.add(new Employee("Kiran", 2));
+
         saver.saveAll(people);
-        assertEquals(people[0], loader.load());
-        assertEquals(people[1], loader.load());
+        assertEquals(people.get(0), loader.load());
+        assertEquals(people.get(1), loader.load());
     }
 
     @BeforeEach

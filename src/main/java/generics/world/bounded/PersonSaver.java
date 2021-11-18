@@ -6,6 +6,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.RandomAccessFile;
+import java.util.List;
 
 public class PersonSaver {
     private final RandomAccessFile file;
@@ -20,6 +21,9 @@ public class PersonSaver {
         file.writeInt(person.getAge());
     }
 
-    public void saveAll(Person[] people) throws IOException {
+    public void saveAll(List<Person> people) throws IOException {
+        for (Person person : people) {
+            save(person);
+        }
     }
 }
