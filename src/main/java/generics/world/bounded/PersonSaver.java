@@ -19,4 +19,7 @@ public class PersonSaver {
         file.writeUTF(person.getName());
         file.writeInt(person.getAge());
     }
+
+    public void saveAll(Person[] people) throws IOException {
+    }
 }

@@ -10,6 +10,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.io.File;
+import java.io.IOException;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -26,6 +27,16 @@ class PersonStorageTest {
         Person person = new Person("Sas", 5);
         saver.save(person);
         assertEquals(person, loader.load());
+    }
+
+    @Test
+    void saveAndLoadArraysOfPeople() throws ClassNotFoundException, IOException {
+        Person[] people = new Person[2];
+        people[0] = new Person("Sasi", 1);
+        people[1] = new Employee("Kiran", 2);
+        saver.saveAll(people);
+        assertEquals(people[0], loader.load());
+        assertEquals(people[1], loader.load());
     }
 
     @BeforeEach
