@@ -11,7 +11,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 public class PersonLoader {
-    private RandomAccessFile file;
+    private final RandomAccessFile file;
 
     public PersonLoader(final File file) throws FileNotFoundException {
         this.file = new RandomAccessFile(file, "rw");

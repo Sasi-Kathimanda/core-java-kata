@@ -17,9 +17,9 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class PersonStorageTest {
-    private Partner partner1 = new Partner("Sasi", 19);
-    private Employee employee = new Employee("Kiran", 29);
-    private Partner partner2 = new Partner("Raja", 9);
+    private final Partner partner1 = new Partner("Sasi", 19);
+    private final Employee employee = new Employee("Kiran", 29);
+    private final Partner partner2 = new Partner("Raja", 9);
     private File file;
     private PersonLoader loader;
     private PersonSaver saver;
