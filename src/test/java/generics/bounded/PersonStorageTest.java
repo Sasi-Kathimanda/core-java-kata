@@ -51,7 +51,7 @@ class PersonStorageTest {
     void loadListOfPeople() throws IOException, ClassNotFoundException {
         saver.save(partner1);
         saver.save(partner2);
-        List<Person> people = new ArrayList<>();
+        List<Object> people = new ArrayList<>();
         loader.loadAll(people);
         assertEquals(2, people.size());
         assertEquals(partner1, people.get(0));
