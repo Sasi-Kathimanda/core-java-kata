@@ -14,6 +14,12 @@ public class LegacyUsageRawType {
         list.add(new Person("kiran",2));
         list.add(1);
 
+        //backward compatibility
+        List<Integer> ints =  new ArrayList<>();
+        ints = list;
+        ints.add(3);
+        ints.add(4);
+
         Iterator iterator = list.iterator();
         while (iterator.hasNext()){
             System.out.println("iterator.next() = " + iterator.next());
