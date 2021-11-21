@@ -2,16 +2,16 @@ package generics.world;
 
 import java.util.AbstractList;
 
-public class CustomArrayList extends AbstractList {
+public class CustomArrayList<T> extends AbstractList<T> {
 
-    private final Object[] values;
+    private final T[] values;
 
-    public CustomArrayList(Object[] values) {
+    public CustomArrayList(T[] values) {
         this.values = values;
     }
 
     @Override
-    public Object get(int index) {
+    public T get(int index) {
         return values[index];
     }
 
@@ -21,8 +21,8 @@ public class CustomArrayList extends AbstractList {
     }
 
     @Override
-    public boolean add(Object o) {
-        Object[] newValues = new Object[size() + 1];
+    public boolean add(T o) {
+        T[] newValues = (T[]) new Object[size() + 1];
         for (int i = 0; i < values.length; i++) {
                 newValues[i] = values[i];
         }

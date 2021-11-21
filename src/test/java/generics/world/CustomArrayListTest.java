@@ -8,7 +8,7 @@ class CustomArrayListTest {
     @Test
     void shouldStoreTheElements() {
         Integer[] ints = new Integer[] {1,2};
-        CustomArrayList arrayList = new CustomArrayList(ints);
+        CustomArrayList<Integer> arrayList = new CustomArrayList<>(ints);
         arrayList.add(1);
         arrayList.add(2);
         assertEquals(2, arrayList.size());
