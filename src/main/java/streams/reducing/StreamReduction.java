@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.stream.IntStream;
 
 /**
- *  elements in stream can be reduced by two methods reduce(), collect()
+ * elements in stream can be reduced by two methods reduce(), collect()
  */
 public class StreamReduction {
     public static void main(String[] args) {
@@ -17,7 +17,7 @@ public class StreamReduction {
         //finding max using  streams reduce
         System.out.println("finding max using stream's reduce");
         intStream = IntStream.of(1, 2, 3, 41, 5, 6, 7, 8, 9, 10);
-        System.out.println(intStream.reduce((i,n) -> i > n ? i:n));
+        System.out.println(intStream.reduce((i, n) -> i > n ? i : n));
         //System.out.println(intStream.reduce((i,n) -> Math.max(i, n))); // replacing Math.max
         //System.out.println(intStream.reduce(Math::max)); // replacing Lambda Method Reference
 
@@ -30,10 +30,14 @@ public class StreamReduction {
     }
 
     protected int getSumUsingPeek(List<Integer> ints) {
-        return  ints.stream().flatMapToInt(IntStream::of).peek(i -> System.out.format("%d", i)).sum();
+        return ints.stream().flatMapToInt(IntStream::of).peek(i -> System.out.format("%d", i)).sum();
     }
 
     protected int getSumUsingReduce(List<Integer> ints) {
-        return ints.stream().reduce((i,n) -> i+n).get();
+        return ints.stream().reduce((i, n) -> i + n).get();
+    }
+
+    public int findSumUsingReduce(List<Integer> ints) {
+        return ints.stream().reduce((i, n) -> i > n ? i : n).get();
     }
 }
