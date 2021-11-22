@@ -1,5 +1,6 @@
 package streams.reducing;
 
+import java.util.List;
 import java.util.stream.IntStream;
 
 /**
@@ -7,15 +8,11 @@ import java.util.stream.IntStream;
  */
 public class StreamReduction {
     public static void main(String[] args) {
-
         //finding sum using peek
-        System.out.println("finding sum using using peek");
-        IntStream intStream = IntStream.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
-        System.out.println(intStream.peek(i-> System.out.format("%d",i)).sum());
 
         // finding sum using Streams reduce method
         System.out.println("finding sum using stream's reduce");
-        intStream = IntStream.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+        IntStream intStream = IntStream.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
         System.out.println(intStream.reduce((i,n) -> i+n).getAsInt());
 
         //finding max using  streams reduce
@@ -26,12 +23,14 @@ public class StreamReduction {
         //System.out.println(intStream.reduce(Math::max)); // replacing Lambda Method Reference
 
 
-
         // finding sum using Streams sum method
         System.out.println("finding sum using stream's sum");
         intStream = IntStream.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
         System.out.println(intStream.sum());
 
+    }
 
+    protected int getSumUsingPeek(List<Integer> ints) {
+        return  ints.stream().flatMapToInt(IntStream::of).peek(i -> System.out.format("%d", i)).sum();
     }
 }
