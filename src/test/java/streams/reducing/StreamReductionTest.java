@@ -14,4 +14,8 @@ class StreamReductionTest {
         assertEquals(15, new StreamReduction().getSumUsingPeek(ints));
     }
 
+    @Test
+    void givenListOfIntsFindSumUsingReduce() {
+        assertEquals(15, new StreamReduction().getSumUsingReduce(ints));
+    }
 }
