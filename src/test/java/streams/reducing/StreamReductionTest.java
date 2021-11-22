@@ -21,11 +21,11 @@ class StreamReductionTest {
 
     @Test
     void givenListOfIntsFindMaxUsingReduce() {
-        assertEquals(5, new StreamReduction().findSumUsingReduce(ints));
+        assertEquals(5, new StreamReduction().findMaxOfIntsUsingReduce(ints));
     }
 
     @Test
     void givenListOfIntsFindMaxUsingStreamSum() {
-        assertEquals(5,new StreamReduction().findSumUsingStreamSum(ints));
+        assertEquals(5, new StreamReduction().findMaxUsingStreamMax(ints));
     }
 }
