@@ -23,4 +23,9 @@ class StreamReductionTest {
     void givenListOfIntsFindMaxUsingReduce() {
         assertEquals(5, new StreamReduction().findSumUsingReduce(ints));
     }
+
+    @Test
+    void givenListOfIntsFindMaxUsingStreamSum() {
+        assertEquals(5,new StreamReduction().findSumUsingStreamSum(ints));
+    }
 }
