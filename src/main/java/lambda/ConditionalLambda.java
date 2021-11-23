@@ -1,7 +1,6 @@
 package lambda;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class ConditionalLambda {
@@ -16,7 +15,7 @@ public class ConditionalLambda {
         return searchedPersons;
     }
 
-
+    @FunctionalInterface
     interface Searchable {
         boolean test(Person p);
     }
