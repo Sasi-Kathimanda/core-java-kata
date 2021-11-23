@@ -9,27 +9,25 @@ import java.io.IOException;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class LambdaExecuteAroundTest {
-    public static final String SIMPLE_FILE_TXT = "src/main/resources/simpleFile.txt";
+    private static final String SIMPLE_FILE_TXT = "src/main/resources/simpleFile.txt";
+    LambdaExecuteAround lambdaExecuteAround = new LambdaExecuteAround();
 
     @Test
     @DisplayName("givenFileProcessShouldGetTheFirstLine")
     void givenFileProcessShouldGetTheFirstLine() {
-        LambdaExecuteAround lambdaExecuteAround = new LambdaExecuteAround();
         assertEquals("This is Line One", lambdaExecuteAround.processFile(SIMPLE_FILE_TXT));
     }
 
     @Test
     @DisplayName("givenBehaviourEnhancedProcessFileWouldGiveTheExpectedOutput")
     void givenBehaviourEnhancedProcessFileWouldGiveTheExpectedOutput() {
-        LambdaExecuteAround lambdaExecuteAround = new LambdaExecuteAround();
-        String actual = lambdaExecuteAround.enhancedProcessFile(this::getFirstTwoLines,SIMPLE_FILE_TXT);
+        String actual = lambdaExecuteAround.enhancedProcessFile(this::getFirstTwoLines, SIMPLE_FILE_TXT);
         assertEquals("This is Line OneThis is Line Two", actual);
     }
 
     @Test
     @DisplayName("givenBehaviourEnhancedProcessFileUsingBuiltInFuncInterfaceGivesTheExpectedOutput")
     void givenBehaviourEnhancedProcessFileUsingBuiltInFuncInterfaceGivesTheExpectedOutput() {
-        LambdaExecuteAround lambdaExecuteAround = new LambdaExecuteAround();
         String actual = lambdaExecuteAround.enhancedProcessFileUsingBuiltInFuncInterface(this::getFirstTwoLines,
                 SIMPLE_FILE_TXT);
         assertEquals("This is Line OneThis is Line Two", actual);
