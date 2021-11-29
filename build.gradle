@@ -2,11 +2,12 @@ apply plugin: 'java'
 
 repositories {
     jcenter()
+    mavenCentral()
 }
 
 dependencies {
-    compile 'org.slf4j:slf4j-api:1.7.12'
-    compile 'org.junit.jupiter:junit-jupiter:5.8.0-M1'
+    compile 'org.slf4j:slf4j-api:1.7.32'
+    compile 'org.junit.jupiter:junit-jupiter:5.8.1'
 }
 
 test{
