@@ -15,7 +15,7 @@ public class GenericMethod {
         if (objects.isEmpty()) {
             throw new IllegalArgumentException("list is empty ");
         }
-        T lowestElement = objects.get(0);
+        var lowestElement = objects.get(0);
 
         for (T t : objects) {
             if (comparator.compare(t, lowestElement) < 0) {
