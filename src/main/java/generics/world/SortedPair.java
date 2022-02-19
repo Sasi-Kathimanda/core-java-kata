@@ -7,24 +7,24 @@ package generics.world;
  * @param <T>
  */
 public class SortedPair<T extends Comparable<T>> {
-    private final T left;
-    private final T right;
+    private final T first;
+    private final T second;
 
     public SortedPair(T left, T right) {
-        if (right.compareTo(left) < 0) {
-            this.left = right;
-            this.right = left;
+        if (left.compareTo(right) < 0) {
+            this.first = left;
+            this.second = right;
         } else {
-            this.left = left;
-            this.right = right;
+            this.first = right;
+            this.second = left;
         }
     }
 
     public T getLeft() {
-        return left;
+        return first;
     }
 
     public T getRight() {
-        return right;
+        return second;
     }
 }
