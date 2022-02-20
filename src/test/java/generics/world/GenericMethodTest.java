@@ -50,8 +50,7 @@ class GenericMethodTest {
     void shouldTransformArrayOfIntToListOfIntegersUsingVarArgsVersion() {
         GenericMethod method = new GenericMethod();
         List<Integer> expectedList = List.of(1, 2, 3);
-        Integer[] inputArray = new Integer[]{1, 2, 3};
-        List<Integer> derivedList = method.toListUsingVarArgs(inputArray);
+        List<Integer> derivedList = method.toListUsingVarArgs(1, 2, 3);
         assertEquals(derivedList, expectedList);
     }
 
@@ -59,8 +58,7 @@ class GenericMethodTest {
     void shouldTransformArrayOfStringsToListOfStringsUsingVarArgsVersion() {
         GenericMethod sut = new GenericMethod();
         List<String> expectedStringsList = List.of("Sasi", "Kathimanda", "Rajahmundry");
-        String[] stringArray = new String[]{"Sasi", "Kathimanda", "Rajahmundry"};
-        List<String> derivedList = sut.toListUsingVarArgs(stringArray);
+        List<String> derivedList = sut.toListUsingVarArgs("Sasi", "Kathimanda", "Rajahmundry");
         assertEquals(expectedStringsList, derivedList);
     }
 
