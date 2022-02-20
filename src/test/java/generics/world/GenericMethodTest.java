@@ -5,10 +5,10 @@ import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.*;
 
 class GenericMethodTest {
+
     @Test
     void shouldFindMinOfGivenListOfIntegers() {
         Integer output = new GenericMethod().min(List.of(5, 3, 4), Integer::compare);
@@ -25,5 +25,15 @@ class GenericMethodTest {
     @Test
     void shouldThrowExceptionGivenEmptyInput() {
         assertThrows(IllegalArgumentException.class, () -> new GenericMethod().min(List.of(), Integer::compare), "list is empty");
+    }
+
+    @Test
+    void shouldTransformArrayOfIntToListOfIntegers() {
+        GenericMethod method = new GenericMethod();
+        List<Integer> expectedList = List.of(1, 2, 3);
+        Integer[] inputArray = new Integer[]{1, 2, 3};
+        List<Integer> derivedList = method.toList(inputArray);
+        assertEquals(3, derivedList.size());
+        assertEquals(derivedList, expectedList);
     }
 }

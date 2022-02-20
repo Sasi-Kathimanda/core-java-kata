@@ -1,11 +1,12 @@
 package generics.world;
 
+import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
 public class GenericMethod {
     /**
-     *
+     *  Finds the min value of any Type T
      * @param objects list of any objects
      * @param comparator any T that implements comparator interface
      * @param <T> any type T
@@ -24,5 +25,9 @@ public class GenericMethod {
         }
 
         return lowestElement;
+    }
+
+    public <T> List<T> toList(T[] inputArray) {
+        return new ArrayList<>();
     }
 }
