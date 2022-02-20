@@ -45,4 +45,14 @@ class GenericMethodTest {
         List<String> derivedList = sut.toList(stringArray);
         assertEquals(expectedStringsList, derivedList);
     }
+
+    @Test
+    void shouldTransformArrayOfIntToListOfIntegersUsingVarArgsVersion() {
+        GenericMethod method = new GenericMethod();
+        List<Integer> expectedList = List.of(1, 2, 3);
+        Integer[] inputArray = new Integer[]{1, 2, 3};
+        List<Integer> derivedList = method.toListUsingVarArgs(inputArray);
+        assertEquals(derivedList, expectedList);
+    }
+
 }

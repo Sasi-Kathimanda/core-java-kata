@@ -32,4 +32,8 @@ public class GenericMethod {
         for(T elt: inputArray) result.add(elt);
         return result;
     }
+
+    public <T> List<T> toListUsingVarArgs(T... inputArray) {
+        return new ArrayList<>();
+    }
 }
