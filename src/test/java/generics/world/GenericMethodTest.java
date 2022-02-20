@@ -55,4 +55,13 @@ class GenericMethodTest {
         assertEquals(derivedList, expectedList);
     }
 
+    @Test
+    void shouldTransformArrayOfStringsToListOfStringsUsingVarArgsVersion() {
+        GenericMethod sut = new GenericMethod();
+        List<String> expectedStringsList = List.of("Sasi", "Kathimanda", "Rajahmundry");
+        String[] stringArray = new String[]{"Sasi", "Kathimanda", "Rajahmundry"};
+        List<String> derivedList = sut.toListUsingVarArgs(stringArray);
+        assertEquals(expectedStringsList, derivedList);
+    }
+
 }
