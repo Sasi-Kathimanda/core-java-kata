@@ -36,4 +36,13 @@ class GenericMethodTest {
         assertEquals(3, derivedList.size());
         assertEquals(derivedList, expectedList);
     }
+
+    @Test
+    void shouldTransformArrayOfStringsToListOfStrings() {
+        GenericMethod sut = new GenericMethod();
+        List<String> expectedStringsList = List.of("Sasi", "Kathimanda", "Rajahmundry");
+        String[] stringArray = new String[]{"Sasi", "Kathimanda", "Rajahmundry"};
+        List<String> derivedList = sut.toList(stringArray);
+        assertEquals(expectedStringsList, derivedList);
+    }
 }
