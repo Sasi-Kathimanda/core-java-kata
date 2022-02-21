@@ -85,6 +85,6 @@ class StringJoinerTest {
     void joinerUsingStreams() {
         List<String> names = List.of("Sasi", "Kiran", "Raja");
         String result = names.stream().collect(Collectors.joining(","));
-        assertEquals("Sasi-Kiran-Raja", result);
+        assertEquals("Sasi,Kiran,Raja", result);
     }
 }
