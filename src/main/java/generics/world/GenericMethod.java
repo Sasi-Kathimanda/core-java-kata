@@ -39,7 +39,10 @@ public class GenericMethod {
         return result;
     }
 
-    public List<Integer> addAll(List<Integer> integers, int[] ints) {
-        return new ArrayList<>();
+    public <T> List<T> addAll(List<T> tList, T... ints) {
+        List<T> result = new ArrayList<>();
+        for(T elt: tList) result.add(elt);
+        for(T elt: ints) result.add(elt);
+        return result;
     }
 }
