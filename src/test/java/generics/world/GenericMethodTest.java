@@ -62,4 +62,13 @@ class GenericMethodTest {
         assertEquals(expectedStringsList, derivedList);
     }
 
+    @Test
+    void shouldAddTheAllElementsToGivenList() {
+        GenericMethod sut = new GenericMethod();
+        List<Integer> expectedList = List.of(1, 2, 3, 4, 5);
+        int[] ints = new int[]{4, 5};
+        List<Integer> derivedList = sut.addAll(List.of(1, 2, 4), ints);
+        assertEquals(expectedList,derivedList);
+    }
+
 }

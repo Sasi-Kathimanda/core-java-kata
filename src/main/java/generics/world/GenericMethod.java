@@ -38,4 +38,8 @@ public class GenericMethod {
         for(T elt:inputArray) result.add(elt);
         return result;
     }
+
+    public List<Integer> addAll(List<Integer> integers, int[] ints) {
+        return new ArrayList<>();
+    }
 }
