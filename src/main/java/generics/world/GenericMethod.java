@@ -1,6 +1,7 @@
 package generics.world;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
@@ -53,5 +54,6 @@ public class GenericMethod {
      *************************************************/
 
     public <T> void copy(List<? super T> dest, List<? extends T> source) {
-    }
+        Collections.copy(dest,source);
+        }
 }

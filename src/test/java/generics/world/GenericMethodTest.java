@@ -3,6 +3,7 @@ package generics.world;
 import domain.Person;
 import org.junit.jupiter.api.Test;
 
+import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -74,10 +75,10 @@ class GenericMethodTest {
     @Test
     void shouldCopyListFromOther() {
         GenericMethod sut = new GenericMethod();
-        List<Object> objs = List.of(1, 2.1, "Five");
-        List<Integer> ints = List.of(3,4);
-        sut.copy(objs,ints);
-        assertEquals(objs.toString(), "[3,4,\"Five\"]");
+        List<Object> objs = Arrays.asList(1, 2.1, "Five");
+        List<Integer> ints = Arrays.asList(3, 4);
+        sut.copy(objs, ints);
+        assertEquals(objs.toString(), "[3, 4, Five]");
     }
 
 }
