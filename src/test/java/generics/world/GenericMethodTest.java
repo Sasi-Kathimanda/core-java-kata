@@ -71,4 +71,13 @@ class GenericMethodTest {
         assertEquals(expectedList,derivedList);
     }
 
+    @Test
+    void shouldCopyListFromOther() {
+        GenericMethod sut = new GenericMethod();
+        List<Object> objs = List.of(1, 2.1, "Five");
+        List<Integer> ints = List.of(3,4);
+        sut.copy(objs,ints);
+        assertEquals(objs.toString(), "[3,4,\"Five\"]");
+    }
+
 }

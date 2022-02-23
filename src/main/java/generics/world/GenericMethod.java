@@ -45,4 +45,13 @@ public class GenericMethod {
         for(T elt: ints) result.add(elt);
         return result;
     }
+
+
+
+    /************************************************
+     *                          WildCards
+     *************************************************/
+
+    public <T> void copy(List<? super T> dest, List<? extends T> source) {
+    }
 }
