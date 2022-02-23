@@ -69,7 +69,7 @@ class GenericMethodTest {
         List<Integer> expectedList = List.of(1, 2, 3, 4, 5);
         Integer[] ints = new Integer[]{4, 5};
         List<Integer> derivedList = sut.addAll(List.of(1, 2, 3), ints);
-        assertEquals(expectedList,derivedList);
+        assertEquals(expectedList, derivedList);
     }
 
     @Test
@@ -78,7 +78,7 @@ class GenericMethodTest {
         List<Object> objs = Arrays.asList(1, 2.1, "Five");
         List<Integer> ints = Arrays.asList(3, 4);
         sut.copy(objs, ints);
-        assertEquals(objs.toString(), "[3, 4, Five]");
+        assertEquals("[3, 4, Five]", objs.toString());
     }
 
 }

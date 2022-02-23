@@ -52,7 +52,6 @@ public class GenericMethod {
     /************************************************
      *                          WildCards
      *************************************************/
-
     public <T> void copy(List<? super T> dest, List<? extends T> source) {
         Collections.copy(dest,source);
         }
