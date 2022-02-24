@@ -17,9 +17,12 @@ public class CollectionMethods {
 
         List<Person> list = new ArrayList<>(Arrays.asList(p2,p3,p1));
         list.replaceAll( p ->  new Person(p.getName().toUpperCase(), p.getAge()) );
+        System.out.println("list = " + list);
 
         list.sort(Comparator.comparing(Person::getAge).reversed());
+        System.out.println("list = " + list);
+
         list2.sort(Comparator.comparing(s -> s+""));
-        System.out.println(list2);
+        System.out.println("list2 = " + list2);
         }
     }
