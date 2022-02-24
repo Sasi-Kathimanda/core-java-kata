@@ -53,6 +53,10 @@ public class GenericMethod {
      *                          WildCards
      *************************************************/
     public <T> void copy(List<? super T> dest, List<? extends T> source) {
-        Collections.copy(dest,source);
-        }
+        Collections.copy(dest, source);
+    }
+
+   // public <T> void copy(List<T> dest, List<T> src) {
+        //This accepts only dest and src of same type : eg: Integer, Object
+    //}
 }
