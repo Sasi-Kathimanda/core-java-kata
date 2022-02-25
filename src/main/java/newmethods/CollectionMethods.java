@@ -17,6 +17,6 @@ public class CollectionMethods {
     }
 
     public void sortByAge(List<Person> persons) {
-
+        persons.sort(Comparator.comparing(Person::getAge));
     }
 }
