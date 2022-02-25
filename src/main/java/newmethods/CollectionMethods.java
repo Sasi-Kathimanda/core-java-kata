@@ -1,25 +1,18 @@
 package newmethods;
 
-import java.util.ArrayList;
-import java.util.Arrays;
+import lambda.Person;
+
 import java.util.Comparator;
 import java.util.List;
-import lambda.Person;
+import java.util.function.Function;
 
 public class CollectionMethods {
 
-    public static void main(String[] args) {
-        Person p3 = new Person("raja", 39);
-        Person p2 = new Person("kiran", 29);
-        Person p1 = new Person("sasi", 19);
-
-
-        List<Person> list = new ArrayList<>(Arrays.asList(p2,p3,p1));
-        list.replaceAll( p ->  new Person(p.getName().toUpperCase(), p.getAge()) );
-        System.out.println("list = " + list);
-
-        list.sort(Comparator.comparing(Person::getAge).reversed());
-        System.out.println("list = " + list);
-
-        }
+    public void sort(List<String> names) {
+        names.sort(Comparator.comparing(Function.identity()));
     }
+
+    public void toCaps(List<Person> persons) {
+        persons.replaceAll( p -> new Person(p.getName().toUpperCase(), p.getAge()));
+    }
+}
