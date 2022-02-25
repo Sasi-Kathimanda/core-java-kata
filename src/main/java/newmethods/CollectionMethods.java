@@ -13,7 +13,6 @@ public class CollectionMethods {
         Person p2 = new Person("kiran", 29);
         Person p1 = new Person("sasi", 19);
 
-        List<String>  list2 = Arrays.asList("Anne","Kiran","Barbara");
 
         List<Person> list = new ArrayList<>(Arrays.asList(p2,p3,p1));
         list.replaceAll( p ->  new Person(p.getName().toUpperCase(), p.getAge()) );
@@ -22,7 +21,5 @@ public class CollectionMethods {
         list.sort(Comparator.comparing(Person::getAge).reversed());
         System.out.println("list = " + list);
 
-        list2.sort(Comparator.comparing(s -> s+""));
-        System.out.println("list2 = " + list2);
         }
     }
