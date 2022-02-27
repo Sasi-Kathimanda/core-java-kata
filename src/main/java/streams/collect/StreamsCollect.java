@@ -28,8 +28,6 @@ public class StreamsCollect {
                         ArrayList::addAll);
 
 
-     //using joining
-        System.out.println(Stream.of("this","is","a","string").collect(Collectors.joining("|","PRE","")));
 
      //using toMap()
         Map<Integer, Integer> map = Stream.of(1, 2, 3, 4, 5).collect(Collectors.toMap(Function.identity(), i -> i * 2));
@@ -51,16 +49,21 @@ public class StreamsCollect {
         Map<Integer, Long> groupByMapResultOrdered = Stream.of(2, 18, 25, 36, 35, 51, 54, 62, 68, 72, 78, 85).collect(Collectors.groupingBy(i -> i / 10 * 10, TreeMap::new, Collectors.counting()));
         System.out.println(groupByMapResultOrdered);
 
-     //partitionBy
+        //partitionBy
         Map<Boolean, List<Integer>> partitionMap = Stream.of(1, 9, 18, 18, 25, 32, 45, 56, 65, 72).collect(Collectors.partitioningBy(i -> i < 50));
         System.out.println(partitionMap);
 
-        Map<Boolean, Set<Integer>> partitionMapComposedCollector = Stream.of(1, 9, 18, 18, 25, 32, 45, 56, 65, 72).collect(Collectors.partitioningBy(i -> i < 50,Collectors.toSet()));
+        Map<Boolean, Set<Integer>> partitionMapComposedCollector = Stream.of(1, 9, 18, 18, 25, 32, 45, 56, 65, 72).collect(Collectors.partitioningBy(i -> i < 50, Collectors.toSet()));
         System.out.println(partitionMapComposedCollector);
     }
 
+    //using joining
+    protected String getJoinsOfStreamOfStings(final String delimiter, final String prefix, final String suffix, final String... strings) {
+        return Stream.of(strings).collect(Collectors.joining("|", "PRE", ""));
+    }
+
     //using preBuilt Collectors
-    public  <T> List<T> convertFromTypeToList(T... elements) {
+    public <T> List<T> convertFromTypeToList(T... elements) {
         return Stream.of(elements).collect(Collectors.toList());
     }
 }
