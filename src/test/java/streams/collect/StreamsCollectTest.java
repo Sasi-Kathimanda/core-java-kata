@@ -25,6 +25,7 @@ class StreamsCollectTest {
 
     @Test
     void getJoinsOfStreamOfStingsWillJoinWithPrefixes() {
-
+        String result = sut.getJoinsOfStreamOfStings("-", "<", ">", "This", "is", "a", "String");
+        assertEquals("<This-is-a-String>", result);
     }
 }

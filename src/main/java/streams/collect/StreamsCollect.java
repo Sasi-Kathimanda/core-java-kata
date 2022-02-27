@@ -59,7 +59,7 @@ public class StreamsCollect {
 
     //using joining
     protected String getJoinsOfStreamOfStings(final String delimiter, final String prefix, final String suffix, final String... strings) {
-        return Stream.of(strings).collect(Collectors.joining("|", "PRE", ""));
+        return Stream.of(strings).collect(Collectors.joining(delimiter, prefix, suffix));
     }
 
     //using preBuilt Collectors
