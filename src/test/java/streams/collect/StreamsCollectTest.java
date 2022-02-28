@@ -28,4 +28,9 @@ class StreamsCollectTest {
         String result = sut.getJoinsOfStreamOfStings("-", "<", ">", "This", "is", "a", "String");
         assertEquals("<This-is-a-String>", result);
     }
+
+    @Test
+    void doubleTheValuesInaMap() {
+
+    }
 }

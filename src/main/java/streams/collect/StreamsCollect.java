@@ -27,12 +27,6 @@ public class StreamsCollect {
                         ArrayList::add,
                         ArrayList::addAll);
 
-
-
-     //using toMap()
-        Map<Integer, Integer> map = Stream.of(1, 2, 3, 4, 5).collect(Collectors.toMap(Function.identity(), i -> i * 2));
-        System.out.println(map);
-
      //duplicate key using toMap()
         System.out.println(Stream.of(1,1,1,2,3,4).collect(Collectors.toMap(k->k , v-> new ArrayList<> (Collections.singletonList(v)),
                 (list1, list2) ->  { list1.addAll(list2); return list1;})));
@@ -55,6 +49,10 @@ public class StreamsCollect {
 
         Map<Boolean, Set<Integer>> partitionMapComposedCollector = Stream.of(1, 9, 18, 18, 25, 32, 45, 56, 65, 72).collect(Collectors.partitioningBy(i -> i < 50, Collectors.toSet()));
         System.out.println(partitionMapComposedCollector);
+    }
+
+    protected  Map<Integer, Integer> doubleTheValuesInAMap(Integer...ints) {
+        return Stream.of(ints).collect(Collectors.toMap(Function.identity(), i -> i * 2));
     }
 
     //using joining
