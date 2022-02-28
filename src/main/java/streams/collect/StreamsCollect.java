@@ -51,7 +51,7 @@ public class StreamsCollect {
         System.out.println(partitionMapComposedCollector);
     }
 
-    protected  Map<Integer, Integer> doubleTheValuesInAMap(Integer...ints) {
+    protected  Map<Integer, Integer> doubleTheValuesAndConvertToAMap(Integer...ints) {
         return Stream.of(ints).collect(Collectors.toMap(Function.identity(), i -> i * 2));
     }
 

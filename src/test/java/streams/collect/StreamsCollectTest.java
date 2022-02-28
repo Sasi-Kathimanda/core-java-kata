@@ -3,7 +3,9 @@ package streams.collect;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -30,7 +32,9 @@ class StreamsCollectTest {
     }
 
     @Test
-    void doubleTheValuesInaMap() {
-
+    void doubleTheValuesAndConvertToAMap() {
+        Map<Integer, Integer> actualMap = sut.doubleTheValuesAndConvertToAMap(1, 2, 3, 4, 5);
+        Map<Integer, Integer> expectedMap = Map.of(1, 2, 2, 4, 3, 6, 4, 8, 5, 10);
+        assertEquals(expectedMap, actualMap);
     }
 }
