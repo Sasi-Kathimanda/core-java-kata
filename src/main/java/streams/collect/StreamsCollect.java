@@ -33,8 +33,6 @@ public class StreamsCollect {
      // using foreach
 
      //groupBy
-        Map<Integer, List<Integer>> groupByMap = getMapOfGroupBy10();
-        System.out.println(groupByMap);
 
         Map<Integer, Long> groupByMapComposedCollector = Stream.of(2, 18, 25, 36, 35, 51, 54, 62, 68, 72, 78, 85).collect(Collectors.groupingBy(i -> i / 10 * 10, Collectors.counting()));
         System.out.println(groupByMapComposedCollector);
@@ -50,12 +48,13 @@ public class StreamsCollect {
         System.out.println(partitionMapComposedCollector);
     }
 
-    private static Map<Integer, List<Integer>> getMapOfGroupBy10() {
-        return Stream.of(2, 18, 25, 36, 35, 51, 54, 62, 68, 72, 78, 85)
+    //groupBy
+    protected Map<Integer, List<Integer>> getMapOfGroupBy10(Integer... ints) {
+        return Stream.of(ints)
                 .collect(Collectors.groupingBy(i -> i / 10 * 10));
     }
 
-    protected  Map<Integer, Integer> doubleTheValuesAndConvertToAMap(Integer...ints) {
+    protected Map<Integer, Integer> doubleTheValuesAndConvertToAMap(Integer... ints) {
         return Stream.of(ints).collect(Collectors.toMap(Function.identity(), i -> i * 2));
     }
 

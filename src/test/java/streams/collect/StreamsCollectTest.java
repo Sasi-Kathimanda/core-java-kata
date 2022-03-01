@@ -36,4 +36,18 @@ class StreamsCollectTest {
         Map<Integer, Integer> expectedMap = Map.of(1, 2, 2, 4, 3, 6, 4, 8, 5, 10);
         assertEquals(expectedMap, actualMap);
     }
+
+    @Test
+    void getGroupAgeBy10() {
+        Map<Integer, List<Integer>> actualMap = sut.getMapOfGroupBy10(2, 18, 25, 36, 35, 51, 54, 62, 68, 72, 78, 85);
+        Map<Integer, List<Integer>> expectedMap = Map.of(0, List.of(2),
+                10, List.of(18),
+                20, List.of(25),
+                30, List.of(36, 35),
+                50, List.of(51, 54),
+                60, List.of(62, 68),
+                70, List.of(72, 78),
+                80, List.of(85));
+        assertEquals(expectedMap, actualMap);
+    }
 }
