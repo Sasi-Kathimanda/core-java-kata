@@ -17,8 +17,13 @@ class GetAndPutTest {
         assertEquals(15.0, actual);
 
         //Can give List<Double>
-        actual = sut.sum(List.of(1.0, 2.0, 3.0, 4.1, 5));
+        actual = sut.sum(List.of(1.0, 2.0, 3.0, 4.1, 5.0));
         assertEquals(15.1, actual);
+
+        //Can give List<Number>
+        actual = sut.sum(List.of(1, 2, 3.0, 4.2, 5));
+        assertEquals(15.2, actual);
+
     }
 
 }
