@@ -30,9 +30,15 @@ class GetAndPutTest {
     @Test
     void putTheValueIntoTheStructure() {
         GetAndPut sut = new GetAndPut();
-        List<Integer> nums = new ArrayList<>();
-        sut.count(nums, 5);
-        assertEquals("[0, 1, 2, 3, 4]", nums.toString());
+        List<Integer> ints = new ArrayList<>();
+        sut.count(ints, 5);
+        assertEquals("[0, 1, 2, 3, 4]", ints.toString());
+
+        //Can give Number as it is super of Integer
+        List<Number> nums = new ArrayList<>();
+        sut.count(nums, 3);
+        nums.add(3.0);
+        assertEquals("[0, 1, 2, 3.0]", nums.toString());
     }
 
 }
