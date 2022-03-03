@@ -13,6 +13,8 @@ public class GetAndPut {
     }
 
     public void count(Collection<? super Integer> ints, int count) {
-
+        for (int i = 0; i < count; i++) {
+            ints.add(i);
+        }
     }
 }

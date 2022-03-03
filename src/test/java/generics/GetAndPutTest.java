@@ -32,7 +32,7 @@ class GetAndPutTest {
         GetAndPut sut = new GetAndPut();
         List<Integer> nums = new ArrayList<>();
         sut.count(nums, 5);
-        assertEquals("[1, 2, 3, 4, 5]", nums.toString());
+        assertEquals("[0, 1, 2, 3, 4]", nums.toString());
     }
 
 }
