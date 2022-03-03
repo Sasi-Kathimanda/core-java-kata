@@ -2,6 +2,7 @@ package generics;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -24,6 +25,14 @@ class GetAndPutTest {
         actual = sut.sum(List.of(1, 2, 3.0, 4.2, 5));
         assertEquals(15.2, actual);
 
+    }
+
+    @Test
+    void putTheValueIntoTheStructure() {
+        GetAndPut sut = new GetAndPut();
+        List<Integer> nums = new ArrayList<>();
+        sut.count(nums, 5);
+        assertEquals("[1, 2, 3, 4, 5]", nums.toString());
     }
 
 }
