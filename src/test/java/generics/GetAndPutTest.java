@@ -39,6 +39,14 @@ class GetAndPutTest {
         sut.count(nums, 3);
         nums.add(3.0);
         assertEquals("[0, 1, 2, 3.0]", nums.toString());
+
+
+        //Can give Object as it is super of Integer
+        List<Object> objs = new ArrayList<>();
+        sut.count(objs, 3);
+        objs.add(3.0);
+        objs.add("four");
+        assertEquals("[0, 1, 2, 3.0, four]", objs.toString());
     }
 
 }
