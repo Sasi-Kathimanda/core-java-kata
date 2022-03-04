@@ -19,7 +19,8 @@ public class GetAndPut {
         }
     }
 
-    public double sumCount(List<Integer> ints, int i) {
-        return 0.0;
+    public double sumCount(Collection<Number> nums, int i) {
+        count(nums, i);
+        return sum(nums);
     }
 }

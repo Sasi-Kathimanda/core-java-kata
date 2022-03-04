@@ -52,8 +52,8 @@ class GetAndPutTest {
     @Test
     void GetAndPutTheValuesIntoTheStructure() {
         GetAndPut sut = new GetAndPut();
-        List<Integer> ints = new ArrayList<>();
-        double result = sut.sumCount(ints, 5);
+        List<Number> nums = new ArrayList<>();
+        double result = sut.sumCount(nums, 5);
         assertEquals(10, result);
     }
 }
