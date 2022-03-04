@@ -1,6 +1,7 @@
 package generics;
 
 import java.util.Collection;
+import java.util.List;
 
 public class GetAndPut {
 
@@ -16,5 +17,9 @@ public class GetAndPut {
         for (int i = 0; i < count; i++) {
             ints.add(i);
         }
+    }
+
+    public double sumCount(List<Integer> ints, int i) {
+        return 0.0;
     }
 }

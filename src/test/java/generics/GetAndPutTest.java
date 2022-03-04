@@ -49,4 +49,11 @@ class GetAndPutTest {
         assertEquals("[0, 1, 2, 3.0, four]", objs.toString());
     }
 
+    @Test
+    void GetAndPutTheValuesIntoTheStructure() {
+        GetAndPut sut = new GetAndPut();
+        List<Integer> ints = new ArrayList<>();
+        double result = sut.sumCount(ints, 5);
+        assertEquals(10, result);
+    }
 }
