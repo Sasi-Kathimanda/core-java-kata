@@ -30,6 +30,8 @@ class GetAndPutTest {
         ints.add(2);
         List<? extends Number> nums = ints;
         assertEquals(1, nums.get(0));
+        assertEquals(3.0, sut.sum(nums));
+        // WARNING
         //nums.add(3.0) or nums.add(3) you cannot add to the structure as it uses extends
     }
 
@@ -53,6 +55,16 @@ class GetAndPutTest {
         objs.add(3.0);
         objs.add("four");
         assertEquals("[0, 1, 2, 3.0, four]", objs.toString());
+
+        List<Object> list = new ArrayList<>();
+        list.add(1.0);
+        list.add("Two");
+        List<? super Integer> integers = list;
+        integers.add(3);
+        assertEquals(3, list.size());
+        //WARNING : cannot use the get from wildcard super as sum of ints contains string is no sense
+        // double d1 = sut.sum(integers); // Compile Error
+
     }
 
     @Test
