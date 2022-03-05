@@ -25,6 +25,12 @@ class GetAndPutTest {
         actual = sut.sum(List.of(1, 2, 3.0, 4.2, 5));
         assertEquals(15.2, actual);
 
+        List<Integer> ints = new ArrayList<>();
+        ints.add(1);
+        ints.add(2);
+        List<? extends Number> nums = ints;
+        assertEquals(1, nums.get(0));
+        //nums.add(3.0) or nums.add(3) you cannot add to the structure as it uses extends
     }
 
     @Test
