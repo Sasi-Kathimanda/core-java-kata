@@ -11,9 +11,15 @@ import java.util.List;
 
 public class VariantTypes {
 
-    public void add(Integer[] ints) {
+    public void covariantTest(Integer[] ints) {
         Number[] nums = ints;
         nums[1] = 1.1; //Runtime Exception
     }
+
+    public void InvariantTest(List<Integer> ints) {
+      //  List<Number> nums = ints; //WARNING Compiler error you cannot assign as List<Integer> is not a subtype List<Number>
+          List<Integer> ints2 = ints; //This is allowes as both types are identical
+    };
+
 
 }
