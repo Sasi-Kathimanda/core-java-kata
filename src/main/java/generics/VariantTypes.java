@@ -12,7 +12,8 @@ import java.util.List;
 public class VariantTypes {
 
     public void add(Integer[] ints) {
-
+        Number[] nums = ints;
+        nums[1] = 1.1; //Runtime Exception
     }
 
 }
