@@ -68,6 +68,6 @@ public class StreamsCollect {
     //using collectors composing
 
     public Map<Integer, Long>  groupByMapComposedCollector(Integer... elements) {
-        return Map.of();
+        return Stream.of(elements).collect(Collectors.groupingBy(i -> i / 10 * 10, Collectors.counting()));
     }
 }
