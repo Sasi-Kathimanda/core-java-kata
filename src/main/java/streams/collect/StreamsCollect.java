@@ -34,9 +34,6 @@ public class StreamsCollect {
 
      //groupBy
 
-        Map<Integer, Long> groupByMapComposedCollector = Stream.of(2, 18, 25, 36, 35, 51, 54, 62, 68, 72, 78, 85).collect(Collectors.groupingBy(i -> i / 10 * 10, Collectors.counting()));
-        System.out.println(groupByMapComposedCollector);
-
         Map<Integer, Long> groupByMapResultOrdered = Stream.of(2, 18, 25, 36, 35, 51, 54, 62, 68, 72, 78, 85).collect(Collectors.groupingBy(i -> i / 10 * 10, TreeMap::new, Collectors.counting()));
         System.out.println(groupByMapResultOrdered);
 
@@ -66,5 +63,11 @@ public class StreamsCollect {
     //using preBuilt Collectors
     public <T> List<T> convertFromTypeToList(T... elements) {
         return Stream.of(elements).collect(Collectors.toList());
+    }
+
+    //using collectors composing
+
+    public Map<Integer, Long>  groupByMapComposedCollector(Integer... elements) {
+        return Map.of();
     }
 }

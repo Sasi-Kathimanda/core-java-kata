@@ -50,4 +50,19 @@ class StreamsCollectTest {
                 80, List.of(85));
         assertEquals(expectedMap, actualMap);
     }
+
+    @Test
+    void getCountOfNumberOfDecades() {
+        Map<Integer, Long> actualMap = sut.groupByMapComposedCollector(2, 18, 25, 36, 35, 51, 54, 62, 68, 72, 78, 85);
+        Map<Integer, Long> expectedMap = Map.of(0, 1L,
+                10, 1L,
+                20, 1L,
+                30, 2L,
+                50, 2L,
+                60, 2L,
+                70, 2L,
+                80, 1L);
+        assertEquals(expectedMap, actualMap);
+
+    }
 }
