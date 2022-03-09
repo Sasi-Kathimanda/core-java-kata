@@ -63,7 +63,6 @@ class StreamsCollectTest {
                 70, 2L,
                 80, 1L);
         assertEquals(expectedMap, actualMap);
-
     }
 
     @Test
@@ -78,6 +77,6 @@ class StreamsCollectTest {
                 70, 2L,
                 80, 1L);
         assertEquals(expectedMap, actualMap);
-
+        assertEquals("[0, 10, 20, 30, 50, 60, 70, 80]", actualMap.keySet().toString());
     }
 }

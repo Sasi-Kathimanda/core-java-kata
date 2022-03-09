@@ -66,6 +66,6 @@ public class StreamsCollect {
     }
 
     public Map<Integer, Long> groupByMapResultOrdered(Integer... elements) {
-        return Map.of();
+        return Stream.of(elements).collect(Collectors.groupingBy(i -> i / 10 * 10,TreeMap::new,Collectors.counting()));
     }
 }
