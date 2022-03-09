@@ -30,12 +30,6 @@ public class StreamsCollect {
      //duplicate key using toMap()
         System.out.println(Stream.of(1,1,1,2,3,4).collect(Collectors.toMap(k->k , v-> new ArrayList<> (Collections.singletonList(v)),
                 (list1, list2) ->  { list1.addAll(list2); return list1;})));
-     // using foreach
-
-     //groupBy
-
-        Map<Integer, Long> groupByMapResultOrdered = Stream.of(2, 18, 25, 36, 35, 51, 54, 62, 68, 72, 78, 85).collect(Collectors.groupingBy(i -> i / 10 * 10, TreeMap::new, Collectors.counting()));
-        System.out.println(groupByMapResultOrdered);
 
         //partitionBy
         Map<Boolean, List<Integer>> partitionMap = Stream.of(1, 9, 18, 18, 25, 32, 45, 56, 65, 72).collect(Collectors.partitioningBy(i -> i < 50));
@@ -67,7 +61,11 @@ public class StreamsCollect {
 
     //using collectors composing
 
-    public Map<Integer, Long>  groupByMapComposedCollector(Integer... elements) {
+    public Map<Integer, Long> groupByMapComposedCollector(Integer... elements) {
         return Stream.of(elements).collect(Collectors.groupingBy(i -> i / 10 * 10, Collectors.counting()));
+    }
+
+    public Map<Integer, Long> groupByMapResultOrdered(Integer... elements) {
+        return Map.of();
     }
 }
