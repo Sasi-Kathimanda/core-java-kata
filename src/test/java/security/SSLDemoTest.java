@@ -3,6 +3,7 @@ package security;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import javax.net.ssl.SSLException;
 import javax.net.ssl.SSLSocketFactory;
 
 import java.io.IOException;
@@ -20,8 +21,9 @@ class SSLDemoTest {
     }
 
     @Test
-    void testCreationOfSSLHandshakeSuccessfully() throws IOException {
+    void testCreationOfSSLHandshakeSuccessfully()  {
         SSLDemo sut = new SSLDemo();
-        sut.createSSLHandshake("localhost",8080);
+        SSLException thrown = assertThrows(SSLException.class, () -> sut.createSSLHandshake("localhost", 8080));
+        assertEquals("Unsupported or unrecognized SSL message",thrown.getMessage());
     }
 }
