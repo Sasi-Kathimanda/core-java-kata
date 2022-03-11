@@ -39,7 +39,7 @@ public class StreamsCollect {
 
     //partitionBy
     protected  Map<Boolean, List<Integer>> getPartitionMap(Integer... ints) {
-        return Map.of(true,List.of());
+        return Stream.of(ints).collect(Collectors.partitioningBy(i -> i < 50));
     }
 
     //groupBy
