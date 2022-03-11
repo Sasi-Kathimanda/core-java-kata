@@ -79,4 +79,11 @@ class StreamsCollectTest {
         assertEquals(expectedMap, actualMap);
         assertEquals("[0, 10, 20, 30, 50, 60, 70, 80]", actualMap.keySet().toString());
     }
+
+    @Test
+    void getPartitionMap() {
+        Map<Boolean, List<Integer>> partitionMap = sut.getPartitionMap(1, 9, 18, 18, 25, 32, 45, 56, 65, 72);
+        assertEquals("[1, 9, 18, 18, 25, 32, 45]", partitionMap.get(true).toString());
+
+    }
 }

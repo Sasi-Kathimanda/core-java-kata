@@ -31,12 +31,15 @@ public class StreamsCollect {
         System.out.println(Stream.of(1,1,1,2,3,4).collect(Collectors.toMap(k->k , v-> new ArrayList<> (Collections.singletonList(v)),
                 (list1, list2) ->  { list1.addAll(list2); return list1;})));
 
-        //partitionBy
-        Map<Boolean, List<Integer>> partitionMap = Stream.of(1, 9, 18, 18, 25, 32, 45, 56, 65, 72).collect(Collectors.partitioningBy(i -> i < 50));
-        System.out.println(partitionMap);
+
 
         Map<Boolean, Set<Integer>> partitionMapComposedCollector = Stream.of(1, 9, 18, 18, 25, 32, 45, 56, 65, 72).collect(Collectors.partitioningBy(i -> i < 50, Collectors.toSet()));
         System.out.println(partitionMapComposedCollector);
+    }
+
+    //partitionBy
+    protected  Map<Boolean, List<Integer>> getPartitionMap(Integer... ints) {
+        return Map.of(true,List.of());
     }
 
     //groupBy
