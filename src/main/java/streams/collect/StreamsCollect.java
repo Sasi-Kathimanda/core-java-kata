@@ -33,7 +33,8 @@ public class StreamsCollect {
 
 
 
-        Map<Boolean, Set<Integer>> partitionMapComposedCollector = Stream.of(1, 9, 18, 18, 25, 32, 45, 56, 65, 72).collect(Collectors.partitioningBy(i -> i < 50, Collectors.toSet()));
+        Map<Boolean, Set<Integer>> partitionMapComposedCollector = Stream.of(1, 9, 18, 18, 25, 32, 45, 56, 65, 72)
+                .collect(Collectors.partitioningBy(i -> i < 50, Collectors.toSet()));
         System.out.println(partitionMapComposedCollector);
     }
 

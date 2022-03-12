@@ -84,6 +84,6 @@ class StreamsCollectTest {
     void getPartitionMap() {
         Map<Boolean, List<Integer>> partitionMap = sut.getPartitionMap(1, 9, 18, 18, 25, 32, 45, 56, 65, 72);
         assertEquals("[1, 9, 18, 18, 25, 32, 45]", partitionMap.get(true).toString());
-
+        assertEquals("[56, 65, 72]", partitionMap.get(false).toString());
     }
 }
