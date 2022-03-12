@@ -43,6 +43,10 @@ public class StreamsCollect {
         return Stream.of(ints).collect(Collectors.partitioningBy(i -> i < 50));
     }
 
+    protected  Map<Boolean, Set<Integer>> getPartitionMapComposedCollector(Integer... ints) {
+        return Map.of(false, Set.of(0), true, Set.of(1));
+    }
+
     //groupBy
     protected Map<Integer, List<Integer>> getMapOfGroupBy10(Integer... ints) {
         return Stream.of(ints)

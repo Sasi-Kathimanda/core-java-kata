@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -85,5 +86,12 @@ class StreamsCollectTest {
         Map<Boolean, List<Integer>> partitionMap = sut.getPartitionMap(1, 9, 18, 18, 25, 32, 45, 56, 65, 72);
         assertEquals("[1, 9, 18, 18, 25, 32, 45]", partitionMap.get(true).toString());
         assertEquals("[56, 65, 72]", partitionMap.get(false).toString());
+    }
+
+    @Test
+    void getPartitionMapComposedCollector() {
+        Map<Boolean, Set<Integer>> partitionMapComposedCollector = sut.getPartitionMapComposedCollector(1, 9, 18, 18, 25, 32, 45, 56, 65, 72);
+        assertEquals("[1, 9, 18, 25, 32, 45]", partitionMapComposedCollector.get(true).toString());
+        assertEquals("[56, 65, 72]", partitionMapComposedCollector.get(false).toString());
     }
 }
