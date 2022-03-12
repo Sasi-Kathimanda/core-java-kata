@@ -44,7 +44,7 @@ public class StreamsCollect {
     }
 
     protected  Map<Boolean, Set<Integer>> getPartitionMapComposedCollector(Integer... ints) {
-        return Map.of(false, Set.of(0), true, Set.of(1));
+        return Stream.of(ints).collect(Collectors.partitioningBy(i -> i < 50, Collectors.toSet()));
     }
 
     //groupBy
