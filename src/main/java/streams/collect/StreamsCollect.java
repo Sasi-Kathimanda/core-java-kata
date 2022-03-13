@@ -30,12 +30,6 @@ public class StreamsCollect {
      //duplicate key using toMap()
         System.out.println(Stream.of(1,1,1,2,3,4).collect(Collectors.toMap(k->k , v-> new ArrayList<> (Collections.singletonList(v)),
                 (list1, list2) ->  { list1.addAll(list2); return list1;})));
-
-
-
-        Map<Boolean, Set<Integer>> partitionMapComposedCollector = Stream.of(1, 9, 18, 18, 25, 32, 45, 56, 65, 72)
-                .collect(Collectors.partitioningBy(i -> i < 50, Collectors.toSet()));
-        System.out.println(partitionMapComposedCollector);
     }
 
     //partitionBy
