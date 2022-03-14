@@ -2,12 +2,11 @@ package programming.challenges;
 
 import java.math.BigInteger;
 
-public class FactorialTest {
+public class Factorial {
     public static void main(String[] args) {
-        System.out.println(findFactorialForAVeryLargeNumber(100));
-        System.out.println(findFactorialForAVeryLargeNumberSimplified(100));
-        System.out.println(findFactorial(100));
-
+        //System.out.println(findFactorialForAVeryLargeNumber(100));
+        //System.out.println(findFactorialForAVeryLargeNumberSimplified(100));
+        //System.out.println(findFactorial(100));
     }
 
     private static BigInteger findFactorialForAVeryLargeNumber(int input) {
