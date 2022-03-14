@@ -9,7 +9,7 @@ public class Factorial {
         //System.out.println(findFactorial(100));
     }
 
-    private static BigInteger findFactorialForAVeryLargeNumber(int input) {
+    protected  BigInteger findFactorialForAVeryLargeNumber(int input) {
         BigInteger factorial = BigInteger.ONE ;
         for(int i = input-1; input > input-i; i--){
             factorial = factorial.add(factorial.multiply(BigInteger.valueOf(i)));
