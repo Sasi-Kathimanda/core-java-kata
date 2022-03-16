@@ -9,7 +9,7 @@ public class JavaTimeFormatter {
         return LocalDate.parse(date);
     }
 
-    public Instant convertToInstant(String s) {
-        return Instant.now();
+    public Instant convertToInstant(String date) {
+        return Instant.parse(date);
     }
 }
