@@ -4,8 +4,10 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
+import java.time.format.TextStyle;
+import java.util.Locale;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class JavaTimeFormatterTest {
 
@@ -16,7 +18,10 @@ class JavaTimeFormatterTest {
     @Test
     void convertStringToDate() {
         JavaTimeFormatter sut = new JavaTimeFormatter();
-        LocalDate localDate = sut.convertToDate("2022-03-17");
-        assertEquals("2022-03-17",localDate.toString());
+        LocalDate localDate = sut.convertToDate("1984-12-02");
+        assertEquals("1984-12-02",localDate.toString());
+        assertEquals("December",localDate.getMonth().getDisplayName(TextStyle.FULL, Locale.UK));
+        assertEquals("SUNDAY",localDate.getDayOfWeek().name());
+        assertEquals(1984,localDate.getYear());
     }
 }

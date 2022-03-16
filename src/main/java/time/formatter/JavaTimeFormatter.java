@@ -5,6 +5,6 @@ import java.time.LocalDate;
 
 public class JavaTimeFormatter {
     protected LocalDate convertToDate(String date) {
-        return LocalDate.now();
+        return LocalDate.parse(date);
     }
 }
