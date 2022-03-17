@@ -5,11 +5,12 @@ import java.time.Instant;
 import java.time.LocalDate;
 
 public class JavaTimeFormatter {
-    protected LocalDate convertToDate(String date) {
+    protected LocalDate parseToLocalDate(String date) {
         return LocalDate.parse(date);
     }
 
-    public Instant convertToInstant(String date) {
+    protected Instant parseStringToInstant(String date) {
         return Instant.parse(date);
     }
+
 }

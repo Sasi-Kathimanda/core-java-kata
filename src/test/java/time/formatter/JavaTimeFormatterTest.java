@@ -17,9 +17,9 @@ class JavaTimeFormatterTest {
     }
 
     @Test
-    void convertStringToDate() {
+    void parseStringToLocalDate() {
         JavaTimeFormatter sut = new JavaTimeFormatter();
-        LocalDate localDate = sut.convertToDate("1984-12-02");
+        LocalDate localDate = sut.parseToLocalDate("1984-12-02");
         assertEquals("1984-12-02", localDate.toString());
         assertEquals("December", localDate.getMonth().getDisplayName(TextStyle.FULL, Locale.UK));
         assertEquals("SUNDAY", localDate.getDayOfWeek().name());
@@ -27,10 +27,11 @@ class JavaTimeFormatterTest {
     }
 
     @Test
-    void convertStringToInstant() {
+    void parseStringToInstant() {
         JavaTimeFormatter sut = new JavaTimeFormatter();
-        Instant actual = sut.convertToInstant("1984-12-02T10:15:30.345Z"); //date string valid UTC time with  DateTimeFormatter.ISO_INSTANT
+        Instant actual = sut.parseStringToInstant("1984-12-02T10:15:30.345Z"); //date string valid UTC time with  DateTimeFormatter.ISO_INSTANT
         assertEquals(470830530, actual.getEpochSecond());
+        assertEquals(470830530345L, actual.toEpochMilli());
         assertEquals(345000000, actual.getNano());
     }
 }
