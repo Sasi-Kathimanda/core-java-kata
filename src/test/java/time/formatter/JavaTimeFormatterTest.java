@@ -29,7 +29,8 @@ class JavaTimeFormatterTest {
     @Test
     void convertStringToInstant() {
         JavaTimeFormatter sut = new JavaTimeFormatter();
-        Instant actual = sut.convertToInstant("1984-08-13T10:15:30.345Z"); //date string valid UTC time with  DateTimeFormatter.ISO_INSTANT
-        assertEquals(461240130, actual.getEpochSecond());
+        Instant actual = sut.convertToInstant("1984-12-02T10:15:30.345Z"); //date string valid UTC time with  DateTimeFormatter.ISO_INSTANT
+        assertEquals(470830530, actual.getEpochSecond());
+        assertEquals(345000000, actual.getNano());
     }
 }
