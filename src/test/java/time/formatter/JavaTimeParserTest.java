@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import java.time.Instant;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.time.format.TextStyle;
 import java.util.Locale;
 
@@ -20,6 +21,16 @@ class JavaTimeParserTest {
     void parseStringToLocalDate() {
         JavaTimeParser sut = new JavaTimeParser();
         LocalDate localDate = sut.parseToLocalDate("1984-12-02");
+        assertEquals("1984-12-02", localDate.toString());
+        assertEquals("December", localDate.getMonth().getDisplayName(TextStyle.FULL, Locale.UK));
+        assertEquals("SUNDAY", localDate.getDayOfWeek().name());
+        assertEquals(1984, localDate.getYear());
+    }
+
+    @Test
+    void parseStringToLocalDateAlongWithDateTimeFormatter() {
+        JavaTimeParser sut = new JavaTimeParser();
+        LocalDate localDate = sut.parseToLocalDate("1984-12-02", DateTimeFormatter.ofPattern("dd-MM-yyyy"));
         assertEquals("1984-12-02", localDate.toString());
         assertEquals("December", localDate.getMonth().getDisplayName(TextStyle.FULL, Locale.UK));
         assertEquals("SUNDAY", localDate.getDayOfWeek().name());
