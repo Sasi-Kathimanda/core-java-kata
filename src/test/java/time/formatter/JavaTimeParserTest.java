@@ -10,7 +10,7 @@ import java.util.Locale;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class JavaTimeFormatterTest {
+class JavaTimeParserTest {
 
     @BeforeEach
     void setUp() {
@@ -18,7 +18,7 @@ class JavaTimeFormatterTest {
 
     @Test
     void parseStringToLocalDate() {
-        JavaTimeFormatter sut = new JavaTimeFormatter();
+        JavaTimeParser sut = new JavaTimeParser();
         LocalDate localDate = sut.parseToLocalDate("1984-12-02");
         assertEquals("1984-12-02", localDate.toString());
         assertEquals("December", localDate.getMonth().getDisplayName(TextStyle.FULL, Locale.UK));
@@ -28,7 +28,7 @@ class JavaTimeFormatterTest {
 
     @Test
     void parseStringToInstant() {
-        JavaTimeFormatter sut = new JavaTimeFormatter();
+        JavaTimeParser sut = new JavaTimeParser();
         Instant actual = sut.parseStringToInstant("1984-12-02T10:15:30.345Z"); //date string valid UTC time with  DateTimeFormatter.ISO_INSTANT
         assertEquals(470830530, actual.getEpochSecond());
         assertEquals(470830530345L, actual.toEpochMilli());

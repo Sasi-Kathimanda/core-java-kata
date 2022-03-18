@@ -4,7 +4,7 @@ package time.formatter;
 import java.time.Instant;
 import java.time.LocalDate;
 
-public class JavaTimeFormatter {
+public class JavaTimeParser {
     protected LocalDate parseToLocalDate(String date) {
         return LocalDate.parse(date);
     }
