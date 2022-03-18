@@ -11,7 +11,7 @@ public class JavaTimeParser {
     }
 
     protected LocalDate parseToLocalDate(String date, DateTimeFormatter ofPattern) {
-        return LocalDate.now();
+        return LocalDate.parse(date, ofPattern);
     }
 
     protected Instant parseStringToInstant(String date) {
