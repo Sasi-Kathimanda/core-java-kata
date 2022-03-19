@@ -4,6 +4,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.time.Clock;
+import java.time.ZoneId;
+import java.util.stream.Collectors;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -25,5 +27,11 @@ class JavaClockTest {
     void testClockIsCreatedFromSystemUTC() {
         Clock clock = sut.createSystemUTC();
         assertEquals("Z", clock.getZone().toString());
+    }
+
+    @Test
+    void testClockIsCreatedFromGivenSystem() {
+        Clock clock = sut.createSystem("Asia/Kolkata");
+        assertEquals("Asia/Kolkata", clock.getZone().toString());
     }
 }
