@@ -1,6 +1,7 @@
 package time;
 
 import java.time.Clock;
+import java.time.Instant;
 import java.time.ZoneId;
 
 public class JavaClock {
@@ -15,4 +16,9 @@ public class JavaClock {
     protected Clock createSystem(String zoneId) {
         return Clock.system(ZoneId.of(zoneId));
     }
+
+    protected Clock createFixedClock(Instant instant, ZoneId zoneId) {
+        return  Clock.systemUTC();
+    }
+
 }
