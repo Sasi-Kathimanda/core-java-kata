@@ -18,7 +18,7 @@ public class JavaClock {
     }
 
     protected Clock createFixedClock(Instant instant, ZoneId zoneId) {
-        return  Clock.systemUTC();
+        return Clock.fixed(instant, zoneId);
     }
 
 }
