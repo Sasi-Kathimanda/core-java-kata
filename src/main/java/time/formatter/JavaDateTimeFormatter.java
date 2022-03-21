@@ -6,6 +6,6 @@ import java.time.format.DateTimeFormatter;
 public class JavaDateTimeFormatter {
 
     protected String formatter(DateTimeFormatter dateTimeFormatter, LocalDate localDate) {
-        return "";
+        return dateTimeFormatter.format(localDate);
     }
 }
