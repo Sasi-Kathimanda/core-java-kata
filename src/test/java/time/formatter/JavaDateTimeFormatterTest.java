@@ -23,5 +23,9 @@ class JavaDateTimeFormatterTest {
 
         actual = dateTimeFormatter.formatter(DateTimeFormatter.ISO_DATE, LocalDate.of(1984, 12, 2));
         assertEquals("1984-12-02", actual);
+
+        actual = dateTimeFormatter.formatter(DateTimeFormatter.ISO_LOCAL_DATE, LocalDate.of(1984, 12, 2));
+        assertEquals("1984-12-02", actual);
+
     }
 }
