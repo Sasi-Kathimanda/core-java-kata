@@ -12,6 +12,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class JavaDateTimeFormatterTest {
     private static final LocalDate LOCAL_DATE = LocalDate.of(1984, 12, 2);
+    private static final LocalTime LOCAL_TIME = LocalTime.of(10, 15, 30);
     JavaDateTimeFormatter sut;
 
     @BeforeEach
@@ -34,7 +35,10 @@ class JavaDateTimeFormatterTest {
 
     @Test
     void testInbuiltFormatterForTime() {
-        var actual = sut.formatter(DateTimeFormatter.ISO_TIME, LocalDateTime.of(LOCAL_DATE, LocalTime.of(10,15,30)));
+        var actual = sut.formatter(DateTimeFormatter.ISO_TIME, LocalDateTime.of(LOCAL_DATE, LOCAL_TIME));
+        assertEquals("10:15:30", actual);
+
+        actual = sut.formatter(DateTimeFormatter.ISO_LOCAL_TIME, LocalDateTime.of(LOCAL_DATE, LOCAL_TIME));
         assertEquals("10:15:30", actual);
     }
 }
