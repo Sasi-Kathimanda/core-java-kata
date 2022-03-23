@@ -6,6 +6,9 @@ import org.junit.jupiter.api.Test;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.time.OffsetTime;
+import java.time.ZoneId;
+import java.time.ZoneOffset;
 import java.time.format.DateTimeFormatter;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -37,6 +40,9 @@ class JavaDateTimeFormatterTest {
     void testInbuiltFormatterForTime() {
         var actual = sut.formatter(DateTimeFormatter.ISO_TIME, LocalDateTime.of(LOCAL_DATE, LOCAL_TIME));
         assertEquals("10:15:30", actual);
+
+         actual = sut.formatter(DateTimeFormatter.ISO_TIME, OffsetTime.of(LOCAL_TIME, ZoneOffset.ofHoursMinutes(5,30)));
+        assertEquals("10:15:30+05:30", actual);
 
         actual = sut.formatter(DateTimeFormatter.ISO_LOCAL_TIME, LocalDateTime.of(LOCAL_DATE, LOCAL_TIME));
         assertEquals("10:15:30", actual);
