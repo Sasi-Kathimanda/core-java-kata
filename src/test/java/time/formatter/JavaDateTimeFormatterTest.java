@@ -3,19 +3,16 @@ package time.formatter;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
-import java.time.OffsetTime;
-import java.time.ZoneId;
-import java.time.ZoneOffset;
+import java.time.*;
 import java.time.format.DateTimeFormatter;
 
+import static java.time.format.DateTimeFormatter.ISO_OFFSET_DATE;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class JavaDateTimeFormatterTest {
     private static final LocalDate LOCAL_DATE = LocalDate.of(1984, 12, 2);
     private static final LocalTime LOCAL_TIME = LocalTime.of(10, 15, 30);
+    private static final LocalDateTime LOCAL_DATE_TIME = LocalDateTime.of(LOCAL_DATE, LOCAL_TIME);
     JavaDateTimeFormatter sut;
 
     @BeforeEach
@@ -33,6 +30,9 @@ class JavaDateTimeFormatterTest {
 
         actual = sut.formatter(DateTimeFormatter.ISO_LOCAL_DATE, LOCAL_DATE);
         assertEquals("1984-12-02", actual);
+
+        actual = sut.formatter(DateTimeFormatter.ISO_OFFSET_DATE, OffsetDateTime.of(LOCAL_DATE_TIME, ZoneOffset.ofHoursMinutes(5, 30)));
+        assertEquals("1984-12-02+05:30", actual);
 
     }
 
