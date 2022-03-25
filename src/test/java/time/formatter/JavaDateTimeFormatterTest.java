@@ -49,6 +49,9 @@ class JavaDateTimeFormatterTest {
         var actual = sut.formatter(DateTimeFormatter.ISO_OFFSET_DATE, OffsetDateTime.of(LOCAL_DATE_TIME, ZoneOffset.ofHoursMinutes(5, 30)));
         assertEquals("1984-12-02+05:30", actual);
 
+        actual = sut.formatter(DateTimeFormatter.ISO_OFFSET_DATE_TIME, OffsetDateTime.of(LOCAL_DATE_TIME, ZoneOffset.ofHoursMinutes(5, 30)));
+        assertEquals("1984-12-02T10:15:30+05:30", actual);
+
         actual = sut.formatter(DateTimeFormatter.ISO_ZONED_DATE_TIME, ZonedDateTime.of(LOCAL_DATE_TIME, ZoneId.of("Asia/Kolkata")));
         assertEquals("1984-12-02T10:15:30+05:30[Asia/Kolkata]", actual);
     }
