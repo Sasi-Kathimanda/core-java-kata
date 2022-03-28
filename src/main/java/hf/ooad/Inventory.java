@@ -15,8 +15,7 @@ public class Inventory {
     }
 
     protected  Mobile search (Mobile mobileSpec) {
-        var temp = mobileList.stream().filter( it -> it.equals(mobileSpec)).collect(Collectors.toList());
-        return temp.size() > 0 ? temp.get(0) : Mobile.builder().build();
+        return mobileList.stream().filter( it -> it.equals(mobileSpec)).findAny().orElse(Mobile.builder().build());
     }
 
 }
