@@ -4,6 +4,7 @@ import lombok.Getter;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Inventory {
     @Getter
@@ -14,7 +15,8 @@ public class Inventory {
     }
 
     protected  Mobile search (Mobile mobileSpec) {
-        return Mobile.builder().build();
+        var temp = mobileList.stream().filter( it -> it.equals(mobileSpec)).collect(Collectors.toList());
+        return temp.size() > 0 ? temp.get(0) : Mobile.builder().build();
     }
 
 }
