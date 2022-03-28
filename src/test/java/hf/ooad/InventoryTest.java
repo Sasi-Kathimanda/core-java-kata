@@ -23,16 +23,16 @@ class InventoryTest {
 
     @Test
     void testSearchMobile() {
-        initializeInventory(sut);
+        initializeInventory();
         Mobile searchResults = sut.search(m1);
         assertEquals(m1, searchResults);
 
     }
 
-    private static void initializeInventory(Inventory inventory) {
-        inventory.addMobile(Mobile.builder().mobileNo(9440964913L).brand("Apple").modelName("X").network("Jio").price(999).simFree(true).build());
-        inventory.addMobile(Mobile.builder().mobileNo(9491279678L).brand("Apple").modelName("11").network("Jio").price(999).simFree(true).build());
-        inventory.addMobile(Mobile.builder().mobileNo(74405195886L).brand("Samsung").modelName("Oneplus").network("Sky").price(399).simFree(true).build());
-        inventory.addMobile(Mobile.builder().mobileNo(7511577533L).brand("Apple").modelName("13 Pro").network("o2").price(999).simFree(true).build());
+    private void initializeInventory() {
+        sut.addMobile(Mobile.builder().mobileNo(9440964913L).brand("Apple").modelName("X").network("Jio").price(999).simFree(true).build());
+        sut.addMobile(Mobile.builder().mobileNo(9491279678L).brand("Apple").modelName("11").network("Jio").price(999).simFree(true).build());
+        sut.addMobile(Mobile.builder().mobileNo(74405195886L).brand("Samsung").modelName("Oneplus").network("Sky").price(399).simFree(true).build());
+        sut.addMobile(Mobile.builder().mobileNo(7511577533L).brand("Apple").modelName("13 Pro").network("o2").price(999).simFree(true).build());
     }
 }
