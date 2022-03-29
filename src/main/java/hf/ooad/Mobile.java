@@ -8,8 +8,16 @@ import lombok.Data;
 public class Mobile {
     private long mobileNo;
     private int price;
-    private String brand;
+    private Type brand;
     private String network;
     private String modelName;
     private  boolean simFree;
+}
+
+enum Type {
+    APPLE,
+    SAMSUNG,
+    ONE_PLUS,
+    MICROSOFT,
+    NOKIA
 }

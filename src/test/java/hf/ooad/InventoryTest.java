@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class InventoryTest {
     Inventory sut;
-    Mobile m1 = Mobile.builder().mobileNo(7511577533L).brand("Apple").modelName("13 Pro").network("o2").price(999).simFree(true).build();
+    Mobile m1 = Mobile.builder().mobileNo(7511577533L).brand(Type.APPLE).modelName("13 Pro").network("o2").price(999).simFree(true).build();
 
     @BeforeEach
     void setUp() {
@@ -16,9 +16,9 @@ class InventoryTest {
 
     @Test
     void testAddMobileToInventory() {
-        Mobile m1 = Mobile.builder().mobileNo(9440964913L).brand("Apple").network("Jio").price(999).simFree(true).build();
+        Mobile m1 = Mobile.builder().mobileNo(9440964913L).brand(Type.APPLE).network("Jio").price(999).simFree(true).build();
         sut.addMobile(m1);
-        assertEquals("Apple", sut.getMobileList().get(0).getBrand());
+        assertEquals(Type.APPLE, sut.getMobileList().get(0).getBrand());
     }
 
     @Test
@@ -30,9 +30,9 @@ class InventoryTest {
     }
 
     private void initializeInventory() {
-        sut.addMobile(Mobile.builder().mobileNo(9440964913L).brand("Apple").modelName("X").network("Jio").price(999).simFree(true).build());
-        sut.addMobile(Mobile.builder().mobileNo(9491279678L).brand("Apple").modelName("11").network("Jio").price(999).simFree(true).build());
-        sut.addMobile(Mobile.builder().mobileNo(74405195886L).brand("Samsung").modelName("Oneplus").network("Sky").price(399).simFree(true).build());
-        sut.addMobile(Mobile.builder().mobileNo(7511577533L).brand("Apple").modelName("13 Pro").network("o2").price(999).simFree(true).build());
+        sut.addMobile(Mobile.builder().mobileNo(9440964913L).brand(Type.APPLE).modelName("X").network("Jio").price(999).simFree(true).build());
+        sut.addMobile(Mobile.builder().mobileNo(9491279678L).brand(Type.APPLE).modelName("11").network("Jio").price(999).simFree(true).build());
+        sut.addMobile(Mobile.builder().mobileNo(74405195886L).brand(Type.SAMSUNG).modelName("Oneplus").network("Sky").price(399).simFree(true).build());
+        sut.addMobile(Mobile.builder().mobileNo(7511577533L).brand(Type.APPLE).modelName("13 Pro").network("o2").price(999).simFree(true).build());
     }
 }
