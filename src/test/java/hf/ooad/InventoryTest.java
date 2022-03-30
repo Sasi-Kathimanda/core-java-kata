@@ -3,11 +3,13 @@ package hf.ooad;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class InventoryTest {
     Inventory sut;
-    Mobile m1 = Mobile.builder().mobileNo(7511577533L).brand(Type.APPLE).modelName("13 Pro").network(Network.O2).price(999).simFree(true).build();
+    Mobile m1 = Mobile.builder().mobileNo(7511577533L).brand(Type.APPLE).build();
 
     @BeforeEach
     void setUp() {
@@ -24,8 +26,9 @@ class InventoryTest {
     @Test
     void testSearchMobile() {
         initializeInventory();
-        Mobile searchResults = sut.search(m1);
-        assertEquals(m1, searchResults);
+        List<Mobile> searchResults = sut.search(m1);
+        assertEquals(3, searchResults.size());
+        assertEquals(m1, searchResults.get(0));
 
     }
 
