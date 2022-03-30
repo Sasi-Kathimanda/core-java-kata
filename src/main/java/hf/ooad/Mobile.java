@@ -7,12 +7,17 @@ import lombok.EqualsAndHashCode;
 @Data
 @Builder
 public class Mobile {
+    @EqualsAndHashCode.Exclude
     private long mobileNo;
+    @EqualsAndHashCode.Exclude
     private int price;
     private Type brand;
+    @EqualsAndHashCode.Exclude
     private Network network;
+    @EqualsAndHashCode.Exclude
     private String modelName;
-    private  boolean simFree;
+    @EqualsAndHashCode.Exclude
+    private boolean simFree;
 }
 
 enum Type {
