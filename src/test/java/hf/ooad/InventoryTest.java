@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class InventoryTest {
     Inventory sut;
-    Mobile m1 = Mobile.builder().mobileNo(7511577533L).brand(Type.SAMSUNG).modelName("ONEPLUS").build();
+    Mobile m1 = Mobile.builder().mobileNo(7511577533L).brand(Type.SAMSUNG).network(Network.SKY).modelName("ONEPLUS").simFree(true).build();
 
     @BeforeEach
     void setUp() {
