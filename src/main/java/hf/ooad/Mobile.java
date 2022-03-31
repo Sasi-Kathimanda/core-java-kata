@@ -14,7 +14,6 @@ public class Mobile {
     private Type brand;
     @EqualsAndHashCode.Exclude
     private Network network;
-    @EqualsAndHashCode.Exclude
     private String modelName;
     @EqualsAndHashCode.Exclude
     private boolean simFree;
