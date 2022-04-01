@@ -14,12 +14,12 @@ public class Inventory {
         mobileList.add(mobile);
     }
 
-    protected List<Mobile> search(Mobile mobileSpec) {
+    protected List<Mobile> search(Mobile mobile) {
         return mobileList.stream()
-                .filter(it -> it.getBrand() == mobileSpec.getBrand())
-                .filter(it -> it.getNetwork() == mobileSpec.getNetwork())
-                .filter(it -> it.getModelName().equalsIgnoreCase(mobileSpec.getModelName()))
-                .filter(it -> it.isSimFree() == mobileSpec.isSimFree())
+                .filter(it -> it.mobileSpec.getBrand() == mobile.mobileSpec.getBrand())
+                .filter(it -> it.mobileSpec.getNetwork() == mobile.mobileSpec.getNetwork())
+                .filter(it -> it.mobileSpec.getModelName().equalsIgnoreCase(mobile.mobileSpec.getModelName()))
+                .filter(it -> it.mobileSpec.isSimFree() == mobile.mobileSpec.isSimFree())
                 .collect(Collectors.toList());
     }
 
