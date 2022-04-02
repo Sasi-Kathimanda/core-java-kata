@@ -66,5 +66,9 @@ class JavaDateTimeFormatterTest {
 
         actual = sut.formatter(DateTimeFormatter.ISO_ORDINAL_DATE, ZonedDateTime.of(LOCAL_DATE_TIME, ZoneId.of("Asia/Kolkata")));
         assertEquals("1984-337+05:30", actual);
+
+        actual = sut.formatter(DateTimeFormatter.ISO_WEEK_DATE, ZonedDateTime.of(LOCAL_DATE_TIME, ZoneId.of("Asia/Kolkata")));
+        assertEquals("1984-W48-7+05:30", actual);
+
     }
 }
