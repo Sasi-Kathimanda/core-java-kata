@@ -10,7 +10,6 @@ import static org.junit.jupiter.api.Assertions.*;
 class InventoryTest {
     Inventory sut;
     MobileSpec mobileSpec = MobileSpec.builder().brand(Type.SAMSUNG).network(Network.SKY).modelName("ONEPLUS").simFree(true).build();
-    Mobile m1 = Mobile.builder().mobileNo(7511577533L).mobileSpec(mobileSpec).build();
 
     @BeforeEach
     void setUp() {
@@ -27,7 +26,7 @@ class InventoryTest {
     @Test
     void testSearchMobile() {
         initializeInventory();
-        List<Mobile> searchResults = sut.search(m1);
+        List<Mobile> searchResults = sut.search(mobileSpec);
         assertEquals(3, searchResults.size());
         assertEquals("Oneplus", searchResults.get(0).getMobileSpec().getModelName());
         assertEquals("oneplus", searchResults.get(1).getMobileSpec().getModelName());
