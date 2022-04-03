@@ -1,4 +1,4 @@
-package time.formatter;
+package time;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
