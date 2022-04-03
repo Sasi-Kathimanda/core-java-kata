@@ -1,4 +1,4 @@
-package time.formatter;
+package time;
 
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.Temporal;
