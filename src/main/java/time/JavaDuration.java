@@ -11,6 +11,6 @@ public class JavaDuration {
     }
 
     public Duration between(Instant instant1, Instant instant2) {
-        return Duration.ofDays(30L);
+        return Duration.between(instant1, instant2);
     }
 }

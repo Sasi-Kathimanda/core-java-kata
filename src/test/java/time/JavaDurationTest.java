@@ -30,6 +30,6 @@ class JavaDurationTest {
         Instant instant1 = Instant.parse("1984-12-02T10:15:30.345Z");
         Instant instant2 = Instant.parse("2022-04-04T21:18:20.1845Z");
         Duration duration = sut.between(instant1,instant2);
-        assertEquals(36,duration.toDays()/12);
+        assertEquals(37,duration.toDays()/365);
     }
 }
