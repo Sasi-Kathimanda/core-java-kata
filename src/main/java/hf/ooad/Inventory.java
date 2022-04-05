@@ -15,12 +15,7 @@ public class Inventory {
     }
 
     protected List<Mobile> search(MobileSpec mobileSpec) {
-        return mobileList.stream()
-                .filter(it -> it.mobileSpec.getBrand() == mobileSpec.getBrand())
-                .filter(it -> it.mobileSpec.getNetwork() == mobileSpec.getNetwork())
-                .filter(it -> it.mobileSpec.getModelName().equalsIgnoreCase(mobileSpec.getModelName()))
-                .filter(it -> it.mobileSpec.isSimFree() == mobileSpec.isSimFree())
-                .filter(it -> it.mobileSpec.isFiveGSupported() == mobileSpec.isFiveGSupported())
+        return mobileList.stream().filter(it-> it.getMobileSpec().matches(mobileSpec))
                 .collect(Collectors.toList());
     }
 
