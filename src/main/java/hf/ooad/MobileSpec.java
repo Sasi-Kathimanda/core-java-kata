@@ -10,6 +10,15 @@ public class MobileSpec {
     private Network network;
     private String modelName;
     private boolean simFree;
+    private boolean fiveGSupported;
+
+    public boolean matches(MobileSpec otherSpec) {
+         return this.getBrand().equals(otherSpec.getBrand())
+                 && this.getModelName().equalsIgnoreCase(otherSpec.getModelName())
+                 && this.getNetwork().equals(otherSpec.getNetwork())
+                 && this.isSimFree() == otherSpec.isSimFree()
+                 && this.isFiveGSupported() == otherSpec.isFiveGSupported();
+    }
 }
 
 enum Type {
@@ -25,4 +34,3 @@ enum Network {
     JIO,
     O2
 }
-
