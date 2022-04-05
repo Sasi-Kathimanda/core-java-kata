@@ -10,6 +10,7 @@ public class MobileSpec {
     private Network network;
     private String modelName;
     private boolean simFree;
+    private boolean fiveGSupported;
 }
 
 enum Type {

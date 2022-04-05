@@ -20,6 +20,7 @@ public class Inventory {
                 .filter(it -> it.mobileSpec.getNetwork() == mobileSpec.getNetwork())
                 .filter(it -> it.mobileSpec.getModelName().equalsIgnoreCase(mobileSpec.getModelName()))
                 .filter(it -> it.mobileSpec.isSimFree() == mobileSpec.isSimFree())
+                .filter(it -> it.mobileSpec.isFiveGSupported() == mobileSpec.isFiveGSupported())
                 .collect(Collectors.toList());
     }
 
