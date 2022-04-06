@@ -34,7 +34,13 @@ class JavaDurationTest {
 
     @Test
     void durationParse() {
-        Duration duration = sut.parse("p1DT1H1M10.5s"); //text has to be in the format PnDTnHnMn.nS
+        Duration duration = sut.parse("p1DT2H1M10.5s"); //text has to be in the format PnDTnHnMn.nS
         assertEquals(1, duration.toDays());
+        assertEquals(26, duration.toHours());
+        assertEquals(2, duration.toHoursPart());
+        assertEquals(1561, duration.toMinutes());
+        assertEquals(93670, duration.toSeconds());
+        assertEquals(10, duration.toSecondsPart());
+        assertEquals(500000000, duration.toNanosPart());
     }
 }
