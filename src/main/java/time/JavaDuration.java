@@ -13,4 +13,8 @@ public class JavaDuration {
     public Duration between(Instant instant1, Instant instant2) {
         return Duration.between(instant1, instant2);
     }
+
+    public Duration parse(String textSequence) {
+        return Duration.ZERO;
+    }
 }

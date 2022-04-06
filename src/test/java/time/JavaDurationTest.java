@@ -28,7 +28,13 @@ class JavaDurationTest {
     void durationBetween() {
         Instant instant1 = Instant.parse("1984-12-02T10:15:30.345Z");
         Instant instant2 = Instant.parse("2022-04-04T21:18:20.1845Z");
-        Duration duration = sut.between(instant1,instant2);
-        assertEquals(37,duration.toDays()/365);
+        Duration duration = sut.between(instant1, instant2);
+        assertEquals(37, duration.toDays() / 365);
+    }
+
+    @Test
+    void durationParse() {
+        Duration duration = sut.parse("p1DT1H1M10.5s"); //text has to be in the format PnDTnHnMn.nS
+        assertEquals(1, duration.toDays());
     }
 }
