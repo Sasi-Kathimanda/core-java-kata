@@ -18,4 +18,8 @@ public class JavaDuration {
     public Duration parse(String textSequence) {
         return Duration.parse(textSequence);
     }
+
+    public Duration durationOfDays(long days) {
+        return Duration.ZERO;
+    }
 }

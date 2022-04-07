@@ -15,13 +15,19 @@ class JavaDurationTest {
 
     @BeforeEach
     void setUp() {
-        sut =  new JavaDuration();
+        sut = new JavaDuration();
     }
 
     @Test
     void durationOf() {
         Duration duration = sut.of(30, ChronoUnit.DAYS);
         assertEquals(30, duration.toDays());
+    }
+
+    @Test
+    void durationOfDays() {
+        Duration duration = sut.durationOfDays(7L);
+        assertEquals("PT168H", duration.toString());
     }
 
     @Test
