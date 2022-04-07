@@ -20,6 +20,6 @@ public class JavaDuration {
     }
 
     public Duration durationOfDays(long days) {
-        return Duration.ZERO;
+        return Duration.ofDays(days);
     }
 }
