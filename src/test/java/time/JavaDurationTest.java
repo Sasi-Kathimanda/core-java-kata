@@ -49,4 +49,11 @@ class JavaDurationTest {
         assertEquals(10, duration.toSecondsPart());
         assertEquals(500000000, duration.toNanosPart());
     }
+
+    @Test
+    void durationOfDaysAddingDays() {
+        Duration duration = sut.durationOfDays(1L);
+        duration = duration.plusDays(4);
+        assertEquals(5, duration.toDays());
+    }
 }
