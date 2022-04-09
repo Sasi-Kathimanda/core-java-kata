@@ -56,4 +56,10 @@ class JavaDurationTest {
         duration = duration.plusDays(4);
         assertEquals(5, duration.toDays());
     }
+
+    @Test
+    void durationOfSeconds() {
+        Duration duration = sut.durationOfSeconds(90);
+        assertEquals("PT1M30S", duration.toString());
+    }
 }
