@@ -26,4 +26,8 @@ public class JavaDuration {
     protected Duration durationOfSeconds(long seconds) {
         return Duration.ofSeconds(seconds);
     }
+
+    protected Duration durationOfSeconds(long seconds, long nanos) {
+        return Duration.ofSeconds(seconds, nanos);
+    }
 }

@@ -62,4 +62,10 @@ class JavaDurationTest {
         Duration duration = sut.durationOfSeconds(90);
         assertEquals("PT1M30S", duration.toString());
     }
+
+    @Test
+    void durationOfSecondsWithNanosAdjustment() {
+        Duration duration = sut.durationOfSeconds(90, 30);
+        assertEquals("PT1M30.00000003S", duration.toString());
+    }
 }
