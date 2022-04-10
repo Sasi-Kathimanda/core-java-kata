@@ -30,4 +30,8 @@ public class JavaDuration {
     protected Duration durationOfSeconds(long seconds, long nanos) {
         return Duration.ofSeconds(seconds, nanos);
     }
+
+    protected Duration durationMinus(Duration duration) {
+        return Duration.ZERO;
+    }
 }
