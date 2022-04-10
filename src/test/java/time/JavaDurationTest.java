@@ -71,7 +71,7 @@ class JavaDurationTest {
 
     @Test
     void durationMinus() {
-        Duration duration = sut.durationMinus(Duration.ofDays(3L));
-        assertEquals("PT1D",duration.toString());
+        Duration duration = sut.durationMinus(Duration.ofDays(2),1);
+        assertEquals("PT24H",duration.toString());
     }
 }

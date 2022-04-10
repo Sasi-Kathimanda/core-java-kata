@@ -31,7 +31,7 @@ public class JavaDuration {
         return Duration.ofSeconds(seconds, nanos);
     }
 
-    protected Duration durationMinus(Duration duration) {
-        return Duration.ZERO;
+    protected Duration durationMinus(Duration duration , long days) {
+        return duration.minus(Duration.ofDays(days));
     }
 }
