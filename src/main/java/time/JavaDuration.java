@@ -36,6 +36,6 @@ public class JavaDuration {
     }
 
     public Duration durationMinusDays(Duration duration, long daysToSubtract) {
-        return Duration.ZERO;
+        return duration.minusDays(daysToSubtract);
     }
 }
