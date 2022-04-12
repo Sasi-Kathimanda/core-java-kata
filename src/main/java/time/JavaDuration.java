@@ -38,8 +38,10 @@ public class JavaDuration {
     protected Duration durationMinusDays(Duration duration, long daysToSubtract) {
         return duration.minusDays(daysToSubtract);
     }
-
     protected Duration durationPlusDays(Duration ofDays, long daysToAdd) {
         return ofDays.plusDays(daysToAdd);
+    }
+    protected Duration plusDuration(Duration duration, long daysToDuration) {
+        return Duration.ZERO;
     }
 }
