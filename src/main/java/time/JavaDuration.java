@@ -42,6 +42,6 @@ public class JavaDuration {
         return ofDays.plusDays(daysToAdd);
     }
     protected Duration plusDuration(Duration duration, long daysToDuration) {
-        return Duration.ZERO;
+        return duration.plus(Duration.ofDays(daysToDuration));
     }
 }
