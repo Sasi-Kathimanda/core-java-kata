@@ -7,7 +7,7 @@ public class JavaPeriod {
         return Period.of(years, months, days);
     }
 
-    protected Period ofDays(long days) {
-        return Period.ZERO;
+    protected Period ofDays(int days) {
+        return Period.ofDays(days);
     }
 }
