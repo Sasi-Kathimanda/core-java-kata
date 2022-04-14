@@ -26,4 +26,10 @@ class JavaPeriodTest {
         Period period = sut.ofDays(2);
         assertEquals("P2D",period.toString());
     }
+
+    @Test
+    void parse() {
+        Period period = sut.parse("1984-12-02T10:15:30.345Z");
+        assertEquals("",period.toString());
+    }
 }

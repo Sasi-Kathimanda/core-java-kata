@@ -10,4 +10,8 @@ public class JavaPeriod {
     protected Period ofDays(int days) {
         return Period.ofDays(days);
     }
+
+    protected Period parse(String charSeqText) {
+        return Period.ZERO;
+    }
 }
