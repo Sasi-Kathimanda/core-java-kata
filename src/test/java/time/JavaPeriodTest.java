@@ -29,7 +29,7 @@ class JavaPeriodTest {
 
     @Test
     void parse() {
-        Period period = sut.parse("1984-12-02T10:15:30.345Z");
-        assertEquals("",period.toString());
+        Period period = sut.parse("P5Y3M15D");
+        assertEquals(15,period.getDays());
     }
 }

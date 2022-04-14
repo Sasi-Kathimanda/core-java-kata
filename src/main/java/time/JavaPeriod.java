@@ -12,6 +12,6 @@ public class JavaPeriod {
     }
 
     protected Period parse(String charSeqText) {
-        return Period.ZERO;
+        return Period.parse(charSeqText);
     }
 }
