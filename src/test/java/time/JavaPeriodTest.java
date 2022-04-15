@@ -30,6 +30,7 @@ class JavaPeriodTest {
     @Test
     void parse() {
         Period period = sut.parse("P5Y3M15D");
+        assertEquals(5,period.getYears());
         assertEquals(15,period.getDays());
     }
 }
