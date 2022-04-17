@@ -19,5 +19,8 @@ class AnimalTest {
     void sleep() {
         Animal animal = new Dog();
         assertEquals("Zzzz", animal.sleep());
+
+        animal = new Cat();
+        assertEquals("Zzzz", animal.sleep());
     }
 }
