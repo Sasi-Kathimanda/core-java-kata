@@ -44,4 +44,8 @@ public class JavaDuration {
     protected Duration plusDuration(Duration duration, long daysToDuration) {
         return duration.plus(Duration.ofDays(daysToDuration));
     }
+
+    protected Duration ofNanos(long nanos) {
+        return Duration.ZERO;
+    }
 }

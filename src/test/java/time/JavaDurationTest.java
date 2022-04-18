@@ -25,6 +25,12 @@ class JavaDurationTest {
     }
 
     @Test
+    void durationOfNanos() {
+        Duration duration = sut.ofNanos(1_000_000_000);
+        assertEquals("PT1S", duration.toString());
+    }
+
+    @Test
     void durationOfDays() {
         Duration duration = sut.durationOfDays(7L);
         assertEquals("PT168H", duration.toString());
