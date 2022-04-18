@@ -46,6 +46,6 @@ public class JavaDuration {
     }
 
     protected Duration ofNanos(long nanos) {
-        return Duration.ZERO;
+        return Duration.ofNanos(nanos);
     }
 }
