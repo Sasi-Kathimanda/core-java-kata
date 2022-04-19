@@ -3,6 +3,7 @@ package time;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.time.LocalDate;
 import java.time.Period;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -25,6 +26,12 @@ class JavaPeriodTest {
     void ofDays() {
         Period period = sut.ofDays(2);
         assertEquals("P2D",period.toString());
+    }
+
+    @Test
+    void between() {
+        Period period = sut.between(LocalDate.of(1984,12,2),LocalDate.of(2022,04,19));
+        assertEquals("P35Y2M6D",period.toString());
     }
 
     @Test
