@@ -17,6 +17,6 @@ public class JavaPeriod {
     }
 
     protected Period between(LocalDate startDate, LocalDate endDate) {
-        return Period.ZERO;
+        return Period.between(startDate, endDate);
     }
 }
