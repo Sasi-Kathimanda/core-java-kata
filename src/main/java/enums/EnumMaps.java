@@ -1,11 +1,12 @@
 package enums;
 
 import java.util.EnumMap;
-import java.util.Map;
 
 public class EnumMaps {
 
-    public EnumMap<DaysOfTheWeek, String> of(DaysOfTheWeek daysOfTheWeek, String activity) {
-        return new EnumMap<>(DaysOfTheWeek.class);
+    protected EnumMap<DaysOfTheWeek, String> of(DaysOfTheWeek daysOfTheWeek, String activity) {
+        EnumMap<DaysOfTheWeek, String> enumMap = new EnumMap<>(DaysOfTheWeek.class);
+        enumMap.put(daysOfTheWeek, activity);
+        return enumMap;
     }
 }
