@@ -17,7 +17,7 @@ class EnumMapsTest {
     @Test
     void GivenEnums_CreateEnumMap() {
         EnumMap<DaysOfTheWeek, String> actualEnumMap = sut.of(DaysOfTheWeek.MONDAY, "Yoga");
-        Assertions.assertTrue(actualEnumMap.size() == 1);
+        Assertions.assertEquals(1, actualEnumMap.size());
     }
 
 }
