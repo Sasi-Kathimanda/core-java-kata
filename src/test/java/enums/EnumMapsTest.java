@@ -5,6 +5,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.EnumMap;
+import java.util.List;
 
 class EnumMapsTest {
     EnumMaps sut;
@@ -15,9 +16,16 @@ class EnumMapsTest {
     }
 
     @Test
-    void GivenEnums_CreateEnumMap() {
+    void GivenEnum_CreateEnumMap() {
         EnumMap<DaysOfTheWeek, String> actualEnumMap = sut.of(DaysOfTheWeek.MONDAY, "Yoga");
         Assertions.assertEquals(1, actualEnumMap.size());
+    }
+
+    @Test
+    void GivenEnums_CreateEnumMap() {
+        List<String> activities = List.of("Yoga","Boxing", "Pilate","Swimming","Running");
+        EnumMap<DaysOfTheWeek, String> actualEnumMap = sut.of(DaysOfTheWeek.values(), activities);
+        Assertions.assertEquals(5, actualEnumMap.size());
     }
 
 }
