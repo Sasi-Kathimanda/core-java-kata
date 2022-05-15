@@ -35,6 +35,7 @@ class EnumMapsTest {
         Map<DaysOfTheWeek, String> map = Map.of(DaysOfTheWeek.FRIDAY, "TGIF");
         EnumMap<DaysOfTheWeek, String> enumMap = sut.of(map);
         assertEquals(1, enumMap.size());
+        assertEquals("{FRIDAY=TGIF}", enumMap.toString());
     }
 
 }
