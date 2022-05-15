@@ -26,6 +26,6 @@ public class EnumMaps {
     }
 
     public EnumMap<DaysOfTheWeek, String> of(Map<DaysOfTheWeek, String> map) {
-        return new EnumMap<>(DaysOfTheWeek.class);
+        return new EnumMap<>(map);
     }
 }
