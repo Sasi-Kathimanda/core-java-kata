@@ -1,8 +1,8 @@
 package enums;
 
-import java.util.Arrays;
 import java.util.EnumMap;
 import java.util.List;
+import java.util.Map;
 
 public class EnumMaps {
 
@@ -23,5 +23,9 @@ public class EnumMaps {
             i++;
         }
         return eMap;
+    }
+
+    public EnumMap<DaysOfTheWeek, String> of(Map<DaysOfTheWeek, String> map) {
+        return new EnumMap<>(DaysOfTheWeek.class);
     }
 }

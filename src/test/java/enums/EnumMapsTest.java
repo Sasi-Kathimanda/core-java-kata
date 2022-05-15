@@ -1,11 +1,13 @@
 package enums;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.EnumMap;
 import java.util.List;
+import java.util.Map;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class EnumMapsTest {
     EnumMaps sut;
@@ -16,16 +18,23 @@ class EnumMapsTest {
     }
 
     @Test
-    void GivenEnum_CreateEnumMap() {
+    void givenEnum_CreateEnumMap() {
         EnumMap<DaysOfTheWeek, String> actualEnumMap = sut.of(DaysOfTheWeek.MONDAY, "Yoga");
-        Assertions.assertEquals(1, actualEnumMap.size());
+        assertEquals(1, actualEnumMap.size());
     }
 
     @Test
-    void GivenEnums_CreateEnumMap() {
-        List<String> activities = List.of("Yoga","Boxing", "Pilate","Swimming","Running");
+    void givenEnums_CreateEnumMap() {
+        List<String> activities = List.of("Yoga", "Boxing", "Pilate", "Swimming", "Running");
         EnumMap<DaysOfTheWeek, String> actualEnumMap = sut.of(DaysOfTheWeek.values(), activities);
-        Assertions.assertEquals(5, actualEnumMap.size());
+        assertEquals(5, actualEnumMap.size());
+    }
+
+    @Test
+    void givenMap_CreateEnumMapFromCopyConstructor() {
+        Map<DaysOfTheWeek, String> map = Map.of(DaysOfTheWeek.FRIDAY, "TGIF");
+        EnumMap<DaysOfTheWeek, String> enumMap = sut.of(map);
+        assertEquals(1, enumMap.size());
     }
 
 }
