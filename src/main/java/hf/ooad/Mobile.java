@@ -8,11 +8,11 @@ import lombok.Getter;
 public class Mobile extends Device {
     @EqualsAndHashCode.Exclude
     private final long mobileNo;
-    MobileSpec mobileSpec;
+    private final MobileSpec mobileSpec;
 
     @Builder
     public Mobile(long mobileNo, MobileSpec mobileSpec, int price) {
-        super(price);
+        super(price, mobileSpec);
         this.mobileSpec = mobileSpec;
         this.mobileNo = mobileNo;
     }

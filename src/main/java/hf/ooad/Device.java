@@ -9,4 +9,5 @@ import lombok.Getter;
 public abstract class Device {
     @EqualsAndHashCode.Exclude
     private int price;
+    private DeviceSpec deviceSpec;
 }
