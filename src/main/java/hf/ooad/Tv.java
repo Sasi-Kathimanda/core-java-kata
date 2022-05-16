@@ -5,11 +5,11 @@ import lombok.Getter;
 
 @Getter
 public class Tv extends Device {
-    private final String modelName;
+    private final int modelNo;
 
     @Builder
-    public Tv(String modelName, int price) {
+    public Tv(int modelNo, int price) {
         super(price);
-        this.modelName = modelName;
+        this.modelNo = modelNo;
     }
 }

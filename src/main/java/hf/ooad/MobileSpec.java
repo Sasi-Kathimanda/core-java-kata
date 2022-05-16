@@ -5,7 +5,7 @@ import lombok.Data;
 
 @Data
 @Builder
-public class MobileSpec {
+public class MobileSpec extends DeviceSpec {
     private Type brand;
     private Network network;
     private String modelName;
