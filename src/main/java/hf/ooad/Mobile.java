@@ -1,15 +1,19 @@
 package hf.ooad;
 
 import lombok.Builder;
-import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.Getter;
 
-@Data
-@Builder
-public class Mobile {
+@Getter
+public class Mobile extends Device {
     @EqualsAndHashCode.Exclude
-    private long mobileNo;
-    @EqualsAndHashCode.Exclude
-    private int price;
-    MobileSpec mobileSpec;
+    private final long mobileNo;
+    private final MobileSpec mobileSpec;
+
+    @Builder
+    public Mobile(long mobileNo, MobileSpec mobileSpec, int price) {
+        super(price, mobileSpec);
+        this.mobileSpec = mobileSpec;
+        this.mobileNo = mobileNo;
+    }
 }
