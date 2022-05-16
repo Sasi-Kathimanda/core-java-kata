@@ -13,11 +13,16 @@ public class MobileSpec {
     private boolean fiveGSupported;
 
     public boolean matches(MobileSpec otherSpec) {
-         return this.getBrand().equals(otherSpec.getBrand())
-                 && this.getModelName().equalsIgnoreCase(otherSpec.getModelName())
-                 && this.getNetwork().equals(otherSpec.getNetwork())
-                 && this.isSimFree() == otherSpec.isSimFree()
-                 && this.isFiveGSupported() == otherSpec.isFiveGSupported();
+        return this.getBrand().equals(otherSpec.getBrand())
+                && getModelName(otherSpec)
+                && this.getNetwork().equals(otherSpec.getNetwork())
+                && this.isSimFree() == otherSpec.isSimFree()
+                && this.isFiveGSupported() == otherSpec.isFiveGSupported();
+    }
+
+    private boolean getModelName(MobileSpec otherSpec) {
+        if (otherSpec.getModelName() == null) return true;
+        return this.getModelName().equalsIgnoreCase(otherSpec.getModelName());
     }
 }
 

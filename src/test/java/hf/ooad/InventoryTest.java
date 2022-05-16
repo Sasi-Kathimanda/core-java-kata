@@ -21,6 +21,8 @@ class InventoryTest {
         MobileSpec mobileSpec = MobileSpec.builder().brand(Type.APPLE).network(Network.JIO).simFree(true).build();
         Mobile m1 = Mobile.builder().price(999).mobileNo(9440964913L).mobileSpec(mobileSpec).build();
         sut.addMobile(m1);
+        assertEquals(1, sut.search(mobileSpec).size());
+        assertEquals(9440964913L, sut.search(mobileSpec).get(0).getMobileNo());
     }
 
     @Test
