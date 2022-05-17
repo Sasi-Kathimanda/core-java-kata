@@ -91,7 +91,7 @@ class StreamsCollectTest {
     @Test
     void getPartitionMapComposedCollector() {
         Map<Boolean, Set<Integer>> partitionMapComposedCollector = sut.getPartitionMapComposedCollector(1, 9, 18, 18, 25, 32, 45, 56, 65, 72);
-        assertEquals("[1, 9, 18, 25, 32, 45]", partitionMapComposedCollector.get(true).toString());
-        assertEquals("[56, 65, 72]", partitionMapComposedCollector.get(false).toString());
+        assertEquals("[32, 1, 18, 9, 25, 45]", partitionMapComposedCollector.get(true).toString());
+        assertEquals("[65, 56, 72]", partitionMapComposedCollector.get(false).toString());
     }
 }
