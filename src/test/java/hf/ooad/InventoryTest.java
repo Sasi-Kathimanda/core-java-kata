@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class InventoryTest {
     Inventory sut;
-    MobileSpec mobileSpec = MobileSpec.builder().brand(Type.SAMSUNG).network(Network.SKY).modelName("ONEPLUS").simFree(true).build();
+    MobileSpec mobileSpec = MobileSpec.builder().brand(MobileSpec.Brand.SAMSUNG).network(MobileSpec.Network.SKY).modelName("ONEPLUS").simFree(true).build();
 
     @BeforeEach
     void setUp() {
@@ -18,7 +18,7 @@ class InventoryTest {
 
     @Test
     void testAddMobileToInventory() {
-        MobileSpec mobileSpec = MobileSpec.builder().brand(Type.APPLE).network(Network.JIO).simFree(true).build();
+        MobileSpec mobileSpec = MobileSpec.builder().brand(MobileSpec.Brand.APPLE).network(MobileSpec.Network.JIO).simFree(true).build();
         Mobile m1 = Mobile.builder().price(999).mobileNo(9440964913L).mobileSpec(mobileSpec).build();
         sut.addMobile(m1);
         assertEquals(1, sut.search(mobileSpec).size());
@@ -35,11 +35,11 @@ class InventoryTest {
     }
 
     private void initializeInventory() {
-        sut.addMobile(Mobile.builder().mobileNo(9440964913L).price(999).mobileSpec(MobileSpec.builder().brand(Type.APPLE).modelName("X").network(Network.JIO).simFree(true).build()).build());
-        sut.addMobile(Mobile.builder().mobileNo(9491279678L).price(999).mobileSpec(MobileSpec.builder().brand(Type.APPLE).modelName("11").network(Network.JIO).simFree(true).build()).build());
-        sut.addMobile(Mobile.builder().mobileNo(74405195886L).price(399).mobileSpec(MobileSpec.builder().brand(Type.SAMSUNG).modelName("Oneplus").network(Network.SKY).simFree(true).build()).build());
-        sut.addMobile(Mobile.builder().mobileNo(74405195886L).price(499).mobileSpec(MobileSpec.builder().brand(Type.SAMSUNG).modelName("oneplus").network(Network.SKY).simFree(true).build()).build());
-        sut.addMobile(Mobile.builder().mobileNo(74405195886L).price(599).mobileSpec(MobileSpec.builder().brand(Type.SAMSUNG).modelName("onePlus").network(Network.SKY).simFree(true).fiveGSupported(true).build()).build());
-        sut.addMobile(Mobile.builder().mobileNo(7511577533L).price(999).mobileSpec(MobileSpec.builder().brand(Type.APPLE).modelName("13 Pro").network(Network.O2).simFree(true).fiveGSupported(true).build()).build());
+        sut.addMobile(Mobile.builder().mobileNo(9440964913L).price(999).mobileSpec(MobileSpec.builder().brand(MobileSpec.Brand.APPLE).modelName("X").network(MobileSpec.Network.JIO).simFree(true).build()).build());
+        sut.addMobile(Mobile.builder().mobileNo(9491279678L).price(999).mobileSpec(MobileSpec.builder().brand(MobileSpec.Brand.APPLE).modelName("11").network(MobileSpec.Network.JIO).simFree(true).build()).build());
+        sut.addMobile(Mobile.builder().mobileNo(74405195886L).price(399).mobileSpec(MobileSpec.builder().brand(MobileSpec.Brand.SAMSUNG).modelName("Oneplus").network(MobileSpec.Network.SKY).simFree(true).build()).build());
+        sut.addMobile(Mobile.builder().mobileNo(74405195886L).price(499).mobileSpec(MobileSpec.builder().brand(MobileSpec.Brand.SAMSUNG).modelName("oneplus").network(MobileSpec.Network.SKY).simFree(true).build()).build());
+        sut.addMobile(Mobile.builder().mobileNo(74405195886L).price(599).mobileSpec(MobileSpec.builder().brand(MobileSpec.Brand.SAMSUNG).modelName("onePlus").network(MobileSpec.Network.SKY).simFree(true).fiveGSupported(true).build()).build());
+        sut.addMobile(Mobile.builder().mobileNo(7511577533L).price(999).mobileSpec(MobileSpec.builder().brand(MobileSpec.Brand.APPLE).modelName("13 Pro").network(MobileSpec.Network.O2).simFree(true).fiveGSupported(true).build()).build());
     }
 }

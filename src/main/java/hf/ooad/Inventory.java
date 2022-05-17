@@ -8,15 +8,15 @@ import java.util.stream.Collectors;
 
 public class Inventory {
     @Getter
-    private final List<Mobile> mobileList = new ArrayList<>();
+    private final List<Mobile> mobiles = new ArrayList<>();
 
     protected void addMobile(Mobile mobile) {
-        mobileList.add(mobile);
+        mobiles.add(mobile);
     }
 
     protected List<Mobile> search(MobileSpec mobileSpec) {
-        return mobileList.stream().filter(it-> it.getMobileSpec().matches(mobileSpec))
-                .collect(Collectors.toList());
+        return mobiles.stream().filter(it-> it.getMobileSpec().matches(mobileSpec))
+                      .collect(Collectors.toList());
     }
 
 }
