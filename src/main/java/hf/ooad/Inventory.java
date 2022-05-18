@@ -1,6 +1,7 @@
 package hf.ooad;
 
 import lombok.Getter;
+import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,7 +11,8 @@ public class Inventory {
     @Getter
     private final List<Mobile> mobiles = new ArrayList<>();
     @Getter
-    private final List<Tv> tvs = new ArrayList<>();
+    @Setter
+    private  List<Tv> tvs = new ArrayList<>();
 
     protected void addMobile(Mobile mobile) {
         mobiles.add(mobile);
@@ -19,13 +21,5 @@ public class Inventory {
     protected List<Mobile> search(MobileSpec mobileSpec) {
         return mobiles.stream().filter(it-> it.getMobileSpec().matches(mobileSpec))
                       .collect(Collectors.toList());
-    }
-
-    protected void addTv(Tv tv) {
-        tvs.add(tv);
-    }
-
-    protected List<Tv> getTvs() {
-        return tvs;
     }
 }

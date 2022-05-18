@@ -32,7 +32,7 @@ class InventoryTest {
         Tv tv = Tv.builder().modelNo(1).price(1600).tvSpec(tvSpec).build();
 
         //When
-        sut.addTv(tv);
+        sut.setTvs(List.of(tv));
 
         //Then
         assertEquals(1, sut.getTvs().size());
