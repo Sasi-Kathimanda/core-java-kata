@@ -9,6 +9,8 @@ import java.util.stream.Collectors;
 public class Inventory {
     @Getter
     private final List<Mobile> mobiles = new ArrayList<>();
+    @Getter
+    private final List<Tv> tvs = new ArrayList<>();
 
     protected void addMobile(Mobile mobile) {
         mobiles.add(mobile);
@@ -23,6 +25,6 @@ public class Inventory {
     }
 
     protected List<Tv> getTvs() {
-        return List.of();
+        return tvs;
     }
 }
