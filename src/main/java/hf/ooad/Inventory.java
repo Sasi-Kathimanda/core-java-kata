@@ -22,6 +22,7 @@ public class Inventory {
     }
 
     protected void addTv(Tv tv) {
+        tvs.add(tv);
     }
 
     protected List<Tv> getTvs() {
