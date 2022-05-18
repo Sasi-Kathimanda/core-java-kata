@@ -19,4 +19,10 @@ public class Inventory {
                       .collect(Collectors.toList());
     }
 
+    protected void addTv(Tv tv) {
+    }
+
+    protected List<Tv> getTvs() {
+        return List.of();
+    }
 }

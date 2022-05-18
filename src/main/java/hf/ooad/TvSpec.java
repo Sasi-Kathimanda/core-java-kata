@@ -1,5 +1,8 @@
 package hf.ooad;
 
+import lombok.Builder;
+
+@Builder
 public class TvSpec extends DeviceSpec {
     private final ScreenSize screenSize;
     private final Resolution resolution;
@@ -9,7 +12,7 @@ public class TvSpec extends DeviceSpec {
         this.resolution = resolution;
     }
 
-    private enum ScreenSize {
+     enum ScreenSize {
         FORTY_THREE_INCH(43),
         FIFTY_FIVE_INCH(55),
         SIXTY_FIVE_INCH(65),
@@ -20,7 +23,7 @@ public class TvSpec extends DeviceSpec {
         }
     }
 
-    private enum Resolution {
+     enum Resolution {
         FULL_HD,
         ULTRA_HD,
         FOUR_K,

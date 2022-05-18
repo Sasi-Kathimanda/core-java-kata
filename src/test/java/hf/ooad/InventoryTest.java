@@ -26,6 +26,20 @@ class InventoryTest {
     }
 
     @Test
+    void givenTv_WhenAddTvToInventory_ShouldAddTvs() {
+        //Given
+        TvSpec tvSpec = TvSpec.builder().screenSize(TvSpec.ScreenSize.FORTY_THREE_INCH).resolution(TvSpec.Resolution.FOUR_K).build();
+        Tv tv = Tv.builder().modelNo(1).price(1600).tvSpec(tvSpec).build();
+
+        //When
+        sut.addTv(tv);
+
+        //Then
+        assertEquals(1, sut.getTvs().size());
+
+    }
+
+    @Test
     void testSearchMobile() {
         initializeInventory();
         List<Mobile> searchResults = sut.search(mobileSpec);
