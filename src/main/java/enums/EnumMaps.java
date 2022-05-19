@@ -28,4 +28,8 @@ public class EnumMaps {
     public EnumMap<DaysOfTheWeek, String> of(Map<DaysOfTheWeek, String> map) {
         return new EnumMap<>(map);
     }
+
+    public <T extends Enum<T>> EnumMap<T, String> of(T k1, String v1, T k2, String v2, T k3, String v3, T k4, String v4, DaysOfTheWeek k5, String v5) {
+        return new EnumMap<>(Map.of(k1, v1));
+    }
 }
