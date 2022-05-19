@@ -48,7 +48,7 @@ class EnumMapsTest {
                 DaysOfTheWeek.FRIDAY, "Running");
 
         assertEquals(5, actualEnumMap.size());
-        assertEquals("[Yoga,Boxing,Pilates,Swimming,Running]", actualEnumMap.values());
+        assertEquals("[Yoga, Boxing, Pilates, Swimming, Running]", actualEnumMap.values().toString());
     }
 
 }

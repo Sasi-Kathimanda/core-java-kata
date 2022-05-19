@@ -29,7 +29,7 @@ public class EnumMaps {
         return new EnumMap<>(map);
     }
 
-    public <T extends Enum<T>> EnumMap<T, String> of(T k1, String v1, T k2, String v2, T k3, String v3, T k4, String v4, DaysOfTheWeek k5, String v5) {
-        return new EnumMap<>(Map.of(k1, v1));
+    public <T extends Enum<T>> EnumMap<T, String> of(T k1, String v1, T k2, String v2, T k3, String v3, T k4, String v4, T k5, String v5) {
+        return new EnumMap<>(Map.of(k1, v1, k2, v2, k3, v3, k4, v4, k5, v5));
     }
 }
