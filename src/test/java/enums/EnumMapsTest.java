@@ -51,4 +51,14 @@ class EnumMapsTest {
         assertEquals("[Yoga, Boxing, Pilates, Swimming, Running]", actualEnumMap.values().toString());
     }
 
+    @Test
+    void givenEnum_InvokeKeySet_ShouldGetAllKeysInEnumMap() {
+        EnumMap<DaysOfTheWeek, String> actualEnumMap = sut.of(DaysOfTheWeek.MONDAY, "Yoga",
+                DaysOfTheWeek.TUESDAY, "Boxing",
+                DaysOfTheWeek.WEDNESDAY, "Pilates",
+                DaysOfTheWeek.THURSDAY, "Swimming",
+                DaysOfTheWeek.FRIDAY, "Running");
+        assertEquals("[MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY]", actualEnumMap.keySet().toString());
+    }
+
 }
