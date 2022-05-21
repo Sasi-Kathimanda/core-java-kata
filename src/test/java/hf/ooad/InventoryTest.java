@@ -10,6 +10,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class InventoryTest {
     Inventory sut;
     MobileSpec mobileSpec = MobileSpec.builder().brand(MobileSpec.Brand.SAMSUNG).network(MobileSpec.Network.SKY).modelName("ONEPLUS").simFree(true).build();
+    TvSpec tvSpec = TvSpec.builder().resolution(TvSpec.Resolution.FOUR_K).build();
 
     @BeforeEach
     void setUp() {
@@ -48,6 +49,15 @@ class InventoryTest {
         assertEquals("oneplus", searchResults.get(1).getMobileSpec().getModelName());
     }
 
+    @Test
+    void testSearchTv() {
+        initializeInventory();
+        List<Tv> searchResults = sut.search(tvSpec);
+        assertEquals(2, searchResults.size());
+        assertEquals("FOUR_K", searchResults.get(0).getTvSpec().getResolution().name());
+        assertEquals("FOUR_K", searchResults.get(1).getTvSpec().getResolution().name());
+    }
+
     private void initializeInventory() {
         sut.addMobile(Mobile.builder().mobileNo(9440964913L).price(999).mobileSpec(MobileSpec.builder().brand(MobileSpec.Brand.APPLE).modelName("X").network(MobileSpec.Network.JIO).simFree(true).build()).build());
         sut.addMobile(Mobile.builder().mobileNo(9491279678L).price(999).mobileSpec(MobileSpec.builder().brand(MobileSpec.Brand.APPLE).modelName("11").network(MobileSpec.Network.JIO).simFree(true).build()).build());
@@ -55,5 +65,10 @@ class InventoryTest {
         sut.addMobile(Mobile.builder().mobileNo(74405195886L).price(499).mobileSpec(MobileSpec.builder().brand(MobileSpec.Brand.SAMSUNG).modelName("oneplus").network(MobileSpec.Network.SKY).simFree(true).build()).build());
         sut.addMobile(Mobile.builder().mobileNo(74405195886L).price(599).mobileSpec(MobileSpec.builder().brand(MobileSpec.Brand.SAMSUNG).modelName("onePlus").network(MobileSpec.Network.SKY).simFree(true).fiveGSupported(true).build()).build());
         sut.addMobile(Mobile.builder().mobileNo(7511577533L).price(999).mobileSpec(MobileSpec.builder().brand(MobileSpec.Brand.APPLE).modelName("13 Pro").network(MobileSpec.Network.O2).simFree(true).fiveGSupported(true).build()).build());
+
+        sut.setTvs(List.of(
+                Tv.builder().modelNo(1).tvSpec(TvSpec.builder().resolution(TvSpec.Resolution.FOUR_K).screenSize(TvSpec.ScreenSize.SIXTY_FIVE_INCH).build()).build(),
+                Tv.builder().modelNo(2).tvSpec(TvSpec.builder().resolution(TvSpec.Resolution.FOUR_K).screenSize(TvSpec.ScreenSize.SIXTY_FIVE_INCH).build()).build()
+        ));
     }
 }

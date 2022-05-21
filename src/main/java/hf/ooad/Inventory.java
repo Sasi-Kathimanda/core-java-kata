@@ -12,14 +12,19 @@ public class Inventory {
     private final List<Mobile> mobiles = new ArrayList<>();
     @Getter
     @Setter
-    private  List<Tv> tvs = new ArrayList<>();
+    private List<Tv> tvs = new ArrayList<>();
 
     protected void addMobile(Mobile mobile) {
         mobiles.add(mobile);
     }
 
     protected List<Mobile> search(MobileSpec mobileSpec) {
-        return mobiles.stream().filter(it-> it.getMobileSpec().matches(mobileSpec))
-                      .collect(Collectors.toList());
+        return mobiles.stream().filter(it -> it.getMobileSpec().matches(mobileSpec))
+                .collect(Collectors.toList());
+    }
+
+    protected List<Tv> search(TvSpec tvSpec) {
+        return tvs.stream().filter(it -> it.getTvSpec().matches(tvSpec))
+                .collect(Collectors.toList());
     }
 }
