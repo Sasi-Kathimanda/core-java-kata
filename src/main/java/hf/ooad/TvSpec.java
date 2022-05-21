@@ -16,7 +16,8 @@ public class TvSpec extends DeviceSpec {
 
     public boolean matches(TvSpec otherTvSpec) {
         return this.getResolution().equals(otherTvSpec.getResolution())
-                && this.getScreenSize().equals(otherTvSpec.getScreenSize());
+                && (otherTvSpec.getScreenSize() == null || this.getScreenSize().equals(otherTvSpec.getScreenSize()));
+
     }
 
     enum ScreenSize {
