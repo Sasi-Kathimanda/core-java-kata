@@ -1,4 +1,4 @@
-package hf.ooad.abstraction;
+package abstraction;
 
 public class Cat extends Animal {
     @Override
