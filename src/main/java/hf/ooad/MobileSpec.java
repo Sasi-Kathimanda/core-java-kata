@@ -12,12 +12,14 @@ public class MobileSpec extends DeviceSpec {
     private boolean simFree;
     private boolean fiveGSupported;
 
-    public boolean matches(MobileSpec otherSpec) {
-        return this.getBrand().equals(otherSpec.getBrand())
-                && getModelName(otherSpec)
-                && this.getNetwork().equals(otherSpec.getNetwork())
-                && this.isSimFree() == otherSpec.isSimFree()
-                && this.isFiveGSupported() == otherSpec.isFiveGSupported();
+    @Override
+    public boolean matches(DeviceSpec otherSpec) {
+        if (otherSpec instanceof TvSpec) return false;
+        return this.getBrand().equals(((MobileSpec) otherSpec).getBrand())
+                && getModelName((MobileSpec) otherSpec)
+                && this.getNetwork().equals(((MobileSpec) otherSpec).getNetwork())
+                && this.isSimFree() == ((MobileSpec) otherSpec).isSimFree()
+                && this.isFiveGSupported() == ((MobileSpec) otherSpec).isFiveGSupported();
     }
 
     private boolean getModelName(MobileSpec otherSpec) {

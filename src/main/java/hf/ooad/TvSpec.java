@@ -14,10 +14,11 @@ public class TvSpec extends DeviceSpec {
         this.resolution = resolution;
     }
 
-    public boolean matches(TvSpec otherTvSpec) {
-        return this.getResolution().equals(otherTvSpec.getResolution())
-                && (otherTvSpec.getScreenSize() == null || this.getScreenSize().equals(otherTvSpec.getScreenSize()));
-
+    @Override
+    public boolean matches(DeviceSpec otherTvSpec) {
+        if (otherTvSpec instanceof MobileSpec) return false;
+        return this.getResolution().equals(((TvSpec) otherTvSpec).getResolution())
+                && ((TvSpec) otherTvSpec).getScreenSize() == null || this.getScreenSize().equals(((TvSpec) otherTvSpec).getScreenSize());
     }
 
     enum ScreenSize {
