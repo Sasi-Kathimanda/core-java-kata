@@ -2,9 +2,11 @@ package hf.ooad;
 
 import lombok.Builder;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
-@Builder
 @Data
+@EqualsAndHashCode(callSuper = false)
+@Builder
 public class TvSpec extends DeviceSpec {
     private final ScreenSize screenSize;
     private final Resolution resolution;
@@ -40,3 +42,4 @@ public class TvSpec extends DeviceSpec {
         EIGHT_K
     }
 }
+

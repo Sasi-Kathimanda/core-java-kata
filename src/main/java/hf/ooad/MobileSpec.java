@@ -2,8 +2,10 @@ package hf.ooad;
 
 import lombok.Builder;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 @Data
+@EqualsAndHashCode(callSuper = false)
 @Builder
 public class MobileSpec extends DeviceSpec {
     private Brand brand;
