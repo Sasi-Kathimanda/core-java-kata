@@ -1,11 +1,8 @@
-package hf.ooad.abstraction;
+package abstraction;
 
-import abstraction.Animal;
-import abstraction.Cat;
-import abstraction.Dog;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class AnimalTest {
 
