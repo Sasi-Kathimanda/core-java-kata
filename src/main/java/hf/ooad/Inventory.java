@@ -20,8 +20,9 @@ public class Inventory {
                 .collect(Collectors.toList());
     }
 
-    protected List<Device> search(TvSpec tvSpec) {
+    protected List<Tv> search(TvSpec tvSpec) {
         return devices.stream().filter(it -> it.getDeviceSpec().matches(tvSpec))
+                .map(it -> new Tv(((Tv) it).getModelNo(), it.getPrice(), ((Tv) it).getTvSpec()))
                 .collect(Collectors.toList());
     }
 }

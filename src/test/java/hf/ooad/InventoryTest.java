@@ -53,7 +53,7 @@ class InventoryTest {
     @Test
     void testSearchTv() {
         initializeInventory();
-        List<Device> searchResults = sut.search(tvSpec);
+        List<Tv> searchResults = sut.search(tvSpec);
         assertEquals(2, searchResults.size());
         assertEquals("FOUR_K", ((TvSpec) searchResults.get(0).getDeviceSpec()).getResolution().name());
         assertEquals("FOUR_K", ((TvSpec) searchResults.get(1).getDeviceSpec()).getResolution().name());
