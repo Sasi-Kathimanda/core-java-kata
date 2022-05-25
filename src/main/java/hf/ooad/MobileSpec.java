@@ -15,8 +15,11 @@ public class MobileSpec extends DeviceSpec {
     private boolean fiveGSupported;
 
     @Override
-    public boolean matches(DeviceSpec otherSpec) {
-        if (otherSpec instanceof TvSpec) return false;
+    boolean matches(DeviceSpec otherSpec) {
+        if (!super.matches(otherSpec))
+            return false;
+        if (!(otherSpec instanceof MobileSpec))
+            return false;
         return this.getBrand().equals(((MobileSpec) otherSpec).getBrand())
                 && getModelName((MobileSpec) otherSpec)
                 && this.getNetwork().equals(((MobileSpec) otherSpec).getNetwork())
@@ -28,6 +31,7 @@ public class MobileSpec extends DeviceSpec {
         if (otherSpec.getModelName() == null) return true;
         return this.getModelName().equalsIgnoreCase(otherSpec.getModelName());
     }
+
     enum Brand {
         APPLE,
         SAMSUNG,

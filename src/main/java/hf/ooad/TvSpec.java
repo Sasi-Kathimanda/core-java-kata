@@ -18,9 +18,11 @@ public class TvSpec extends DeviceSpec {
 
     @Override
     public boolean matches(DeviceSpec otherTvSpec) {
-        if (otherTvSpec instanceof MobileSpec) return false;
+        if (!(otherTvSpec instanceof TvSpec)) return false;
+        if (!super.matches(otherTvSpec)) return false;
         return this.getResolution().equals(((TvSpec) otherTvSpec).getResolution())
-                && ((TvSpec) otherTvSpec).getScreenSize() == null || this.getScreenSize().equals(((TvSpec) otherTvSpec).getScreenSize());
+                && ((TvSpec) otherTvSpec).getScreenSize() == null
+                || this.getScreenSize().equals(((TvSpec) otherTvSpec).getScreenSize());
     }
 
     enum ScreenSize {
