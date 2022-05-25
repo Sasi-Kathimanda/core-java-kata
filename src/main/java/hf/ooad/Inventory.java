@@ -14,8 +14,9 @@ public class Inventory {
         devices.add(device);
     }
 
-    protected List<Device> search(MobileSpec mobileSpec) {
+    protected List<Mobile> search(MobileSpec mobileSpec) {
         return devices.stream().filter(it -> it.getDeviceSpec().matches(mobileSpec))
+                .map(it -> new Mobile(((Mobile) it).getMobileNo(), ((Mobile) it).getMobileSpec(), it.getPrice()))
                 .collect(Collectors.toList());
     }
 

@@ -44,7 +44,7 @@ class InventoryTest {
     @Test
     void testSearchMobile() {
         initializeInventory();
-        List<Device> searchResults = sut.search(mobileSpec);
+        List<Mobile> searchResults = sut.search(mobileSpec);
         assertEquals(2, searchResults.size());
         assertEquals("Oneplus", ((MobileSpec) searchResults.get(0).getDeviceSpec()).getModelName());
         assertEquals("oneplus", ((MobileSpec) searchResults.get(1).getDeviceSpec()).getModelName());
