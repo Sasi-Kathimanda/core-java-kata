@@ -16,13 +16,19 @@ public class Inventory {
 
     protected List<Mobile> search(MobileSpec mobileSpec) {
         return devices.stream().filter(it -> it.getDeviceSpec().matches(mobileSpec))
-                .map(it -> new Mobile(((Mobile) it).getMobileNo(), ((Mobile) it).getMobileSpec(), it.getPrice()))
-                .collect(Collectors.toList());
+                      .map(it -> Mobile.builder()
+                                       .mobileNo(((Mobile) it).getMobileNo())
+                                       .mobileSpec(((Mobile) it).getMobileSpec())
+                                       .price(it.getPrice()).build())
+                      .collect(Collectors.toList());
     }
 
     protected List<Tv> search(TvSpec tvSpec) {
         return devices.stream().filter(it -> it.getDeviceSpec().matches(tvSpec))
-                .map(it -> new Tv(((Tv) it).getModelNo(), it.getPrice(), ((Tv) it).getTvSpec()))
-                .collect(Collectors.toList());
+                      .map(it -> Tv.builder()
+                                   .modelNo(((Tv) it).getModelNo())
+                                   .tvSpec(((Tv) it).getTvSpec())
+                                   .price(it.getPrice()).build())
+                      .collect(Collectors.toList());
     }
 }
