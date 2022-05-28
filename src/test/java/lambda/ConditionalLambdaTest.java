@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class ConditionalLambdaTest {
     private final List<Person> persons = List.of(
@@ -18,5 +18,4 @@ class ConditionalLambdaTest {
         assertEquals(1, new ConditionalLambda().findPersons(persons, persons -> persons.getAge() > 75).size());
         assertEquals(3, new ConditionalLambda().findPersons(persons, persons -> persons.getAge() > 12).size());
     }
-
 }
