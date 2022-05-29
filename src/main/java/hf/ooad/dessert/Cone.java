@@ -7,18 +7,24 @@ public class Cone extends Dessert {
     private IceCream iceCream;
     private Topping topping;
 
-    public Cone addScoop(IceCream iceCream) {
-        this.iceCream = iceCream;
-        return this;
+    public Cone() {
+        super(null, null);
     }
 
-    public Cone addTopping(Topping topping) {
+    @Override
+    Cone addTopping(Topping topping) {
         this.topping = topping;
         return this;
     }
 
+    @Override
+    Cone addScooping(IceCream iceCream) {
+        this.iceCream = iceCream;
+        return this;
+    }
+
     public void serve() {
-        System.out.println("serving cone");
+        System.out.println("serving Cone");
     }
 
     public IceCream getIceCream() {
