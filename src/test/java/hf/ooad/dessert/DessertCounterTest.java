@@ -1,5 +1,7 @@
 package hf.ooad.dessert;
 
+import hf.ooad.dessert.icecream.IceCream;
+import hf.ooad.dessert.topping.Topping;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

@@ -1,5 +1,8 @@
 package hf.ooad.dessert;
 
+import hf.ooad.dessert.icecream.IceCream;
+import hf.ooad.dessert.topping.Topping;
+
 public class Sundae extends Dessert {
     private IceCream[] iceCreams;
     private Topping[] toppings;

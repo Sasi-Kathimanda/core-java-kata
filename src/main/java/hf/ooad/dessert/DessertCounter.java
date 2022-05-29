@@ -1,5 +1,8 @@
 package hf.ooad.dessert;
 
+import hf.ooad.dessert.icecream.IceCream;
+import hf.ooad.dessert.topping.Topping;
+
 public interface DessertCounter {
     Cone cone = new Cone();
 
@@ -9,5 +12,5 @@ public interface DessertCounter {
 
     Cone addTopping(Cone cone, Topping topping);
 
-    Dessert addTopping(Dessert dessert, Topping topping);
+    Dessert addTopping(Sundae sundae, Topping topping);
 }

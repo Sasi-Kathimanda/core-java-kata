@@ -1,5 +1,8 @@
 package hf.ooad.dessert;
 
+import hf.ooad.dessert.icecream.IceCream;
+import hf.ooad.dessert.topping.Topping;
+
 public class DessertCounterImpl implements DessertCounter {
     @Override
     public Cone orderCone(IceCream iceCream, Topping topping) {
@@ -19,7 +22,7 @@ public class DessertCounterImpl implements DessertCounter {
     }
 
     @Override
-    public Dessert addTopping(Dessert dessert, Topping topping) {
+    public Dessert addTopping(Sundae dessert, Topping topping) {
         return null;
     }
 }
