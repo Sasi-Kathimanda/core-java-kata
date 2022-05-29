@@ -3,9 +3,9 @@ package hf.ooad.dessert;
 public interface DessertCounter {
     Cone cone = new Cone();
 
-    Cone orderCone(IceCream[] iceCreams, Topping[] toppings);
+    Cone orderCone(IceCream iceCream, Topping topping);
 
-    Sundae orderSundae(IceCream[] iceCreams, Topping[] toppings, Syrup[] syrups);
+    Sundae orderSundae(IceCream iceCreams, Topping toppings, Syrup syrups);
 
     Cone addTopping(Cone cone, Topping topping);
 

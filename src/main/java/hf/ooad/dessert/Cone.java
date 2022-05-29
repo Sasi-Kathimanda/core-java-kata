@@ -1,18 +1,28 @@
 package hf.ooad.dessert;
 
 public class Cone extends Dessert {
-    private IceCream[] iceCreams;
-    private Topping[] toppings;
+    private IceCream iceCream;
+    private Topping topping;
 
-    public void  addScoop(IceCream iceCream) {
-
+    public Cone addScoop(IceCream iceCream) {
+        this.iceCream = iceCream;
+        return this;
     }
 
-    public void addTopping(Topping topping) {
-
+    public Cone addTopping(Topping topping) {
+        this.topping = topping;
+        return this;
     }
 
     public void serve() {
         System.out.println("serving cone");
     }
-  }
+
+    public IceCream getIceCream() {
+        return iceCream;
+    }
+
+    public Topping getTopping() {
+        return topping;
+    }
+}
