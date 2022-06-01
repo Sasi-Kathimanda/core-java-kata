@@ -1,6 +1,8 @@
 package programming.challenges;
 
-import java.util.*;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class TwoSumTest {
     public static void main(String[] args) {
