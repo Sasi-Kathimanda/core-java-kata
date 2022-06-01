@@ -23,14 +23,17 @@ public class Cone extends Dessert {
         return this;
     }
 
+    @Override
     public void serve() {
         System.out.println("serving Cone");
     }
 
+    @Override
     public IceCream getIceCream() {
         return iceCream;
     }
 
+    @Override
     public Topping getTopping() {
         return topping;
     }

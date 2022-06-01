@@ -27,6 +27,7 @@ public class Sundae extends Dessert {
         return this;
     }
 
+    @Override
     public void serve() {
         System.out.println("serving Sundae");
     }
@@ -34,10 +35,13 @@ public class Sundae extends Dessert {
     public Syrup getSyrup() {
         return syrup;
     }
+
+    @Override
     public IceCream getIceCream() {
         return iceCream;
     }
 
+    @Override
     public Topping getTopping() {
         return topping;
     }
