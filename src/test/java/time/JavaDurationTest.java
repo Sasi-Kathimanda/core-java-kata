@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 
 import java.time.Duration;
 import java.time.Instant;
+import java.time.Period;
 import java.time.temporal.ChronoUnit;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -26,6 +27,14 @@ class JavaDurationTest {
 
         duration = sut.of(30, ChronoUnit.HALF_DAYS);
         assertEquals(15, duration.toDays());
+        assertEquals("PT360H", duration.toString());
+
+        duration = Duration.of(1, ChronoUnit.HOURS);
+        assertEquals(60, duration.toMinutes());
+        assertEquals(3600, duration.toSeconds());
+        assertEquals(3600000000000L, duration.toNanos());
+
+        assertEquals("PT1H", duration.toString());
     }
 
     @Test
