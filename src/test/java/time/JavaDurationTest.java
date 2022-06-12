@@ -22,6 +22,7 @@ class JavaDurationTest {
     void durationOf() {
         Duration duration = sut.of(30, ChronoUnit.DAYS);
         assertEquals(30, duration.toDays());
+        assertEquals("PT720H", duration.toString());
 
         duration = sut.of(30, ChronoUnit.HALF_DAYS);
         assertEquals(15, duration.toDays());
