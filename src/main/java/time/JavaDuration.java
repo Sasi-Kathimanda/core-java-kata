@@ -31,16 +31,18 @@ public class JavaDuration {
         return Duration.ofSeconds(seconds, nanos);
     }
 
-    protected Duration durationMinus(Duration duration , long days) {
+    protected Duration durationMinus(Duration duration, long days) {
         return duration.minus(Duration.ofDays(days));
     }
 
     protected Duration durationMinusDays(Duration duration, long daysToSubtract) {
         return duration.minusDays(daysToSubtract);
     }
+
     protected Duration durationPlusDays(Duration ofDays, long daysToAdd) {
         return ofDays.plusDays(daysToAdd);
     }
+
     protected Duration plusDuration(Duration duration, long daysToDuration) {
         return duration.plus(Duration.ofDays(daysToDuration));
     }

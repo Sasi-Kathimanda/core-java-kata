@@ -22,6 +22,9 @@ class JavaDurationTest {
     void durationOf() {
         Duration duration = sut.of(30, ChronoUnit.DAYS);
         assertEquals(30, duration.toDays());
+
+        duration = sut.of(30, ChronoUnit.HALF_DAYS);
+        assertEquals(15, duration.toDays());
     }
 
     @Test
@@ -77,25 +80,25 @@ class JavaDurationTest {
 
     @Test
     void durationMinus() {
-        Duration duration = sut.durationMinus(Duration.ofDays(2),1);
-        assertEquals("PT24H",duration.toString());
+        Duration duration = sut.durationMinus(Duration.ofDays(2), 1);
+        assertEquals("PT24H", duration.toString());
     }
 
     @Test
     void durationMinusDays() {
-        Duration duration =  sut.durationMinusDays(Duration.ofDays(3) , 2);
-        assertEquals("PT24H",duration.toString());
+        Duration duration = sut.durationMinusDays(Duration.ofDays(3), 2);
+        assertEquals("PT24H", duration.toString());
     }
 
     @Test
     void durationPlusDays() {
-        Duration duration = sut.durationPlusDays(Duration.ofDays(3),2);
-        assertEquals("PT120H",duration.toString());
+        Duration duration = sut.durationPlusDays(Duration.ofDays(3), 2);
+        assertEquals("PT120H", duration.toString());
     }
 
     @Test
     void durationPlus() {
-        Duration duration = sut.plusDuration(Duration.ofDays(1),1);
-        assertEquals("PT48H",duration.toString());
+        Duration duration = sut.plusDuration(Duration.ofDays(1), 1);
+        assertEquals("PT48H", duration.toString());
     }
 }
