@@ -40,6 +40,12 @@ class JavaDurationTest {
         assertEquals(600_000_000_00L, duration.toNanos());
         assertEquals("PT1M", duration.toString());
 
+        duration = Duration.of(1, ChronoUnit.SECONDS);
+        assertEquals(0, duration.toMinutes());
+        assertEquals(1, duration.toSeconds());
+        assertEquals(100_000_000_0L, duration.toNanos());
+        assertEquals("PT1S", duration.toString());
+
     }
 
     @Test
