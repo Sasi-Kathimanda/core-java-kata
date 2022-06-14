@@ -7,8 +7,10 @@ import org.junit.jupiter.api.Test;
 import java.time.Duration;
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
+import java.time.temporal.UnsupportedTemporalTypeException;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class JavaDurationTest {
     JavaDuration sut;
@@ -51,6 +53,11 @@ class JavaDurationTest {
         assertEquals(0, duration.toSeconds());
         assertEquals(1L, duration.toNanos());
         assertEquals("PT0.000000001S", duration.toString());
+    }
+
+    @Test
+    void durationOfShouldThrowException_WhenWePassMoreThanADay() {
+        assertThrows(UnsupportedTemporalTypeException.class, () -> sut.of(12, ChronoUnit.MONTHS));
     }
 
     @Test
