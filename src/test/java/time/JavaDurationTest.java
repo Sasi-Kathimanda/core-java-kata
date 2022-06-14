@@ -58,6 +58,11 @@ class JavaDurationTest {
     @Test
     void durationOfShouldThrowException_WhenWePassMoreThanADay() {
         assertThrows(UnsupportedTemporalTypeException.class, () -> sut.of(12, ChronoUnit.MONTHS));
+        assertThrows(UnsupportedTemporalTypeException.class, () -> sut.of(1, ChronoUnit.DECADES));
+        assertThrows(UnsupportedTemporalTypeException.class, () -> sut.of(1, ChronoUnit.ERAS));
+        assertThrows(UnsupportedTemporalTypeException.class, () -> sut.of(1, ChronoUnit.CENTURIES));
+        assertThrows(UnsupportedTemporalTypeException.class, () -> sut.of(1, ChronoUnit.MILLENNIA));
+        assertThrows(UnsupportedTemporalTypeException.class, () -> sut.of(1, ChronoUnit.FOREVER));
     }
 
     @Test
