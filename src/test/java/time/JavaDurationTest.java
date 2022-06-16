@@ -131,6 +131,7 @@ class JavaDurationTest {
     @Test
     void durationPlusDays() {
         Duration duration = sut.durationPlusDays(Duration.ofDays(3), 2);
+        assertEquals(5, duration.toDays());
         assertEquals("PT120H", duration.toString());
     }
 
