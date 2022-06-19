@@ -8,6 +8,7 @@ import java.time.Duration;
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 import java.time.temporal.UnsupportedTemporalTypeException;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -142,5 +143,11 @@ class JavaDurationTest {
     void durationPlus() {
         Duration duration = sut.plusDuration(Duration.ofDays(1), 1);
         assertEquals("PT48H", duration.toString());
+    }
+
+    @Test
+    void givenDurationsWhenFindLongestDurationInvokedThenGivesLongestDuration() {
+        var durations = List.of(Duration.ofSeconds(100), Duration.ofSeconds(200), Duration.ofSeconds(300));
+        assertEquals(Duration.ofSeconds(300), sut.findLongestDuration(durations));
     }
 }

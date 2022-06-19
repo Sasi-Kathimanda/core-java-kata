@@ -3,6 +3,7 @@ package time;
 import java.time.Duration;
 import java.time.Instant;
 import java.time.temporal.TemporalUnit;
+import java.util.List;
 
 public class JavaDuration {
 
@@ -49,5 +50,9 @@ public class JavaDuration {
 
     protected Duration ofNanos(long nanos) {
         return Duration.ofNanos(nanos);
+    }
+
+    protected Duration findLongestDuration(List<Duration> durations) {
+        return Duration.ZERO;
     }
 }
