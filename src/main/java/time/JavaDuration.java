@@ -53,6 +53,10 @@ public class JavaDuration {
     }
 
     protected Duration findLongestDuration(List<Duration> durations) {
-        return Duration.ZERO;
+        Duration longest = Duration.ZERO;
+        for (Duration duration : durations) {
+            longest = duration.compareTo(longest) > 0 ? duration : longest;
+        }
+        return longest;
     }
 }
