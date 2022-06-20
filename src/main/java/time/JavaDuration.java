@@ -59,4 +59,8 @@ public class JavaDuration {
         }
         return longest;
     }
+
+    protected Duration totalDuration(List<Duration> durations) {
+        return Duration.ZERO;
+    }
 }

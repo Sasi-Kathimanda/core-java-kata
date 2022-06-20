@@ -150,4 +150,10 @@ class JavaDurationTest {
         var durations = List.of(Duration.ofSeconds(100), Duration.ofSeconds(200), Duration.ofSeconds(300));
         assertEquals(Duration.ofSeconds(300), sut.findLongestDuration(durations));
     }
+
+    @Test
+    void givenDurationWhenTotalDurationInvokedThenGivesTotalDuration() {
+        var durations = List.of(Duration.ofSeconds(100), Duration.ofSeconds(200), Duration.ofSeconds(300));
+        assertEquals(Duration.ofSeconds(600), sut.totalDuration(durations));
+    }
 }
