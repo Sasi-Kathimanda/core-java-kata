@@ -4,8 +4,11 @@ import java.time.LocalDateTime;
 
 public class WorkPeriods {
 
-    public static WorkPeriod createWorkPeriod(LocalDateTime start) {
+    private WorkPeriods() {
+    }
 
-        return new WorkPeriod(start, LocalDateTime.MIN);
+    public static WorkPeriod createWorkPeriod(LocalDateTime start) {
+        LocalDateTime end = LocalDateTime.from(start).plusHours(8).plusMinutes(0);
+        return new WorkPeriod(start, end);
     }
 }
