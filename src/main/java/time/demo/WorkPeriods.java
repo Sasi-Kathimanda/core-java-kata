@@ -46,7 +46,7 @@ public class WorkPeriods {
     public static List<WorkPeriod> createWorkingPeriodsForAM_AND_PM(LocalDate start, int dayCount) {
         List<LocalDate> workingDays = generateWorkingDays(start, dayCount);
         return workingDays.stream()
-                .flatMap(d -> Stream.of(createMorningWorkPeriod(d), createMorningWorkPeriod(d)))
+                .flatMap(d -> Stream.of(createMorningWorkPeriod(d), createEveningWorkPeriod(d)))
                 .collect(Collectors.toList());
     }
 
