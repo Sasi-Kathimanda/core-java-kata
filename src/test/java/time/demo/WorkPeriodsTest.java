@@ -7,7 +7,8 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 
 class WorkPeriodsTest {
     public static final LocalDateTime LOCAL_DATE_TIME = LocalDateTime.of(2022, 6, 21, 9, 5);
