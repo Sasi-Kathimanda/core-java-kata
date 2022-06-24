@@ -37,8 +37,10 @@ class WorkPeriodsTest {
     void createWorkingPeriodsForAM_PM() {
         List<WorkPeriod> workPeriods = WorkPeriods.createWorkingPeriodsForAM_AND_PM(LOCAL_DATE, 2);
         assertEquals(4, workPeriods.size());
+        //AM
         assertEquals(21, workPeriods.get(0).getStartTime().getDayOfMonth());
         assertEquals(21, workPeriods.get(1).getStartTime().getDayOfMonth());
+        //PM
         assertEquals(22, workPeriods.get(2).getStartTime().getDayOfMonth());
         assertEquals(22, workPeriods.get(3).getStartTime().getDayOfMonth());
     }
