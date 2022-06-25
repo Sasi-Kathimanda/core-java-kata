@@ -13,7 +13,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class WorkPeriodsTest {
     public static final LocalDateTime LOCAL_DATE_TIME = LocalDateTime.of(2022, 6, 21, 9, 5);
     public static final LocalDate LOCAL_DATE = LocalDate.of(2022, 6, 21);
-    private WorkPeriods sut;
 
     @Test
     void createFullWorkPeriod() {
