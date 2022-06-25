@@ -15,10 +15,6 @@ class WorkPeriodsTest {
     public static final LocalDate LOCAL_DATE = LocalDate.of(2022, 6, 21);
     private WorkPeriods sut;
 
-    @BeforeEach
-    void setUp() {
-    }
-
     @Test
     void createFullWorkPeriod() {
         WorkPeriod actual = WorkPeriods.createFullWorkPeriod(LOCAL_DATE_TIME);
