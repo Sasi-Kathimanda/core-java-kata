@@ -37,7 +37,7 @@ class JavaClockTest {
 
     @Test
     void testFixedClockWithAGivenInstant() {
-        Clock clock = sut.createFixedClock(Instant.parse("1984-12-02T10:15:30.345Z"),ZoneId.of("Asia/Kolkata"));
+        Clock clock = sut.createFixedClock(Instant.parse("1984-12-02T10:15:30.345Z"), ZoneId.of("Asia/Kolkata"));
         assertEquals("1984-12-02T10:15:30.345Z", clock.instant().toString());
     }
 }
