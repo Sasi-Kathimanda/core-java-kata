@@ -4,6 +4,6 @@ import java.time.Instant;
 
 public class JavaInstant {
     protected Instant Of() {
-        return Instant.now();
+        return Instant.EPOCH;
     }
 }
