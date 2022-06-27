@@ -31,25 +31,25 @@ class JavaDurationTest {
         assertEquals(15, duration.toDays());
         assertEquals("PT360H", duration.toString());
 
-        duration = Duration.of(1, ChronoUnit.HOURS);
+        duration = sut.of(1, ChronoUnit.HOURS);
         assertEquals(60, duration.toMinutes());
         assertEquals(3600, duration.toSeconds());
         assertEquals(3600000000000L, duration.toNanos());
         assertEquals("PT1H", duration.toString());
 
-        duration = Duration.of(1, ChronoUnit.MINUTES);
+        duration = sut.of(1, ChronoUnit.MINUTES);
         assertEquals(1, duration.toMinutes());
         assertEquals(60, duration.toSeconds());
         assertEquals(600_000_000_00L, duration.toNanos());
         assertEquals("PT1M", duration.toString());
 
-        duration = Duration.of(1, ChronoUnit.SECONDS);
+        duration = sut.of(1, ChronoUnit.SECONDS);
         assertEquals(0, duration.toMinutes());
         assertEquals(1, duration.toSeconds());
         assertEquals(100_000_000_0L, duration.toNanos());
         assertEquals("PT1S", duration.toString());
 
-        duration = Duration.of(1, ChronoUnit.NANOS);
+        duration = sut.of(1, ChronoUnit.NANOS);
         assertEquals(0, duration.toMinutes());
         assertEquals(0, duration.toSeconds());
         assertEquals(1L, duration.toNanos());
