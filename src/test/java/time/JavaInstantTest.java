@@ -30,5 +30,10 @@ class JavaInstantTest {
 
         var zonedTime = time.atZone(ZoneId.of("America/New_York"));
         Assertions.assertEquals("1970-04-26T01:59:59-05:00[America/New_York]", zonedTime.toString());
+
+        //add ONE second
+        time = time.plusSeconds(1);
+        zonedTime = time.atZone(ZoneId.of("America/New_York"));
+        Assertions.assertEquals("1970-04-26T03:00-04:00[America/New_York]", zonedTime.toString());
     }
 }
