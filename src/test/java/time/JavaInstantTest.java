@@ -47,7 +47,7 @@ class JavaInstantTest {
         assertEquals(470811618, utc.toInstant().getEpochSecond());
 
 
-        utc = Instant.ofEpochSecond(455860818).atZone(ZoneId.of("Europe/London"));
+        utc = Instant.ofEpochSecond(470811618).atZone(ZoneId.of("Europe/London"));
         assertEquals("1984-12-02T05:00:18Z[Europe/London]", utc.toString());
         assertEquals(470811618, utc.toInstant().getEpochSecond());
 
