@@ -43,19 +43,19 @@ class JavaInstantTest {
         assertEquals("1984-12-02T05:00:18Z", Instant.ofEpochSecond(470811618).toString());
 
         //First Home
-        var utc = Instant.ofEpochSecond(470811618).atZone(ZoneId.of("Asia/Kolkata"));
-        assertEquals("1984-12-02T10:30:18+05:30[Asia/Kolkata]", utc.toString());
-        assertEquals(470811618, utc.toInstant().getEpochSecond());
+        var zonedDateTime = Instant.ofEpochSecond(470811618).atZone(ZoneId.of("Asia/Kolkata"));
+        assertEquals("1984-12-02T10:30:18+05:30[Asia/Kolkata]", zonedDateTime.toString());
+        assertEquals(470811618, zonedDateTime.toInstant().getEpochSecond());
 
         //Second Home
-        utc = Instant.ofEpochSecond(470811618).atZone(ZoneId.of("Europe/London"));
-        assertEquals("1984-12-02T05:00:18Z[Europe/London]", utc.toString());
-        assertEquals(470811618, utc.toInstant().getEpochSecond());
+        zonedDateTime = Instant.ofEpochSecond(470811618).atZone(ZoneId.of("Europe/London"));
+        assertEquals("1984-12-02T05:00:18Z[Europe/London]", zonedDateTime.toString());
+        assertEquals(470811618, zonedDateTime.toInstant().getEpochSecond());
 
         //Akka Home
-        utc = Instant.ofEpochSecond(470811618).atZone(ZoneId.of("America/Chicago"));
-        assertEquals("1984-12-01T23:00:18-06:00[America/Chicago]", utc.toString());
+        zonedDateTime = Instant.ofEpochSecond(470811618).atZone(ZoneId.of("America/Chicago"));
+        assertEquals("1984-12-01T23:00:18-06:00[America/Chicago]", zonedDateTime.toString());
 
-        assertEquals("1984-12-02T05:00:18Z",utc.toInstant().toString());
+        assertEquals("1984-12-02T05:00:18Z",zonedDateTime.toInstant().toString());
     }
 }
