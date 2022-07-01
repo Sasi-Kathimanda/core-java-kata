@@ -25,3 +25,9 @@ java.time    <------.parse(...)----------  String
 | LocalDate	 | 	                | 1969-12-31 <br/>Dec31 </br>Wed,31 December  	 |
 | LocalTime	 | 	                | 1900</br>7pm</br>19:00:00:000	                |
 | ZoneId	    | 	                | America/New_York</br>-05</br>UTC-05:00	       |
+
+<h2> Interoperability with legacy classes(java.util) and sql</h2>
+<h4> java.util.classes</h4>
+<blockquote> 
+Date.from(Instant)
+</blockquote>
