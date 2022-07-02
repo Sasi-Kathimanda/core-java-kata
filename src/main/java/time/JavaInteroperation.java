@@ -8,4 +8,8 @@ public class JavaInteroperation {
     protected Instant dateToInstant(Date date) {
         return date.toInstant();
     }
+
+    public Date dateFromInstant(Instant epochSeconds) {
+        return Date.from(epochSeconds);
+    }
 }
