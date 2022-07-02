@@ -29,5 +29,8 @@ java.time    <------.parse(...)----------  String
 <h2> Interoperability with legacy classes(java.util) and sql</h2>
 <h4> java.util.classes</h4>
 <blockquote> 
-Date.from(Instant)
+
+    Date.from(Instant)
+    Date.to(Instant)
+
 </blockquote>
