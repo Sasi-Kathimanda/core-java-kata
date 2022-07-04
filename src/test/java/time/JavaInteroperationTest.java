@@ -7,6 +7,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.Instant;
 import java.util.Date;
+import java.util.TimeZone;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -19,19 +20,26 @@ class JavaInteroperationTest {
     }
 
     @Test
-    void convertLegacyDateToInstant() throws ParseException {
+    void shouldGetInstantFromLegacyDate() throws ParseException {
+        //Given
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
-        Date date = format.parse("1970-01-01T00:00:00Z");
-        //FIXME: understand why its clocking back when convert to Instant
-        assertEquals("1969-12-31T23:00:00Z", sut.dateToInstant(date).toString());
+        format.setTimeZone(TimeZone.getTimeZone("GMT"));
+        var date = format.parse("1970-01-01T00:00:00Z");
+        //When
+        var expectedInstant = date.toInstant();
+        //Then
+        assertEquals(Instant.EPOCH, expectedInstant);
     }
 
     @Test
-    void convertDateFromInstant() throws ParseException {
+    void shouldGetLegacyDateFromInstant() throws ParseException {
+        //Given
         Instant epochSeconds = Instant.ofEpochSecond(470811618);
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
-        Date date = format.parse("1970-01-01T00:00:00Z");
+        Date expectedDate = format.parse("1984-12-02T05:00:18Z");
 
-        assertEquals(date, sut.dateFromInstant(epochSeconds));
+        //When
+        var actualDate = sut.dateFromInstant(epochSeconds);
+        assertEquals(expectedDate, actualDate);
     }
 }
