@@ -27,7 +27,7 @@ class JavaInteroperationTest {
         format.setTimeZone(TimeZone.getTimeZone("UTC"));
         var date = format.parse("1970-01-01T00:00:00Z");
         //When
-        var expectedInstant = date.toInstant();
+        var expectedInstant = sut.dateToInstant(date);
         //Then
         assertEquals(Instant.EPOCH, expectedInstant);
     }
