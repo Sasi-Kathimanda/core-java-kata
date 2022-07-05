@@ -4,6 +4,7 @@ import java.time.Instant;
 import java.time.ZoneId;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.TimeZone;
 
 public class JavaInteroperation {
 
@@ -19,7 +20,7 @@ public class JavaInteroperation {
         return calendar.toInstant();
     }
 
-    protected ZoneId timeZoneToZoneId() {
-        return ZoneId.systemDefault();
+    protected ZoneId timeZoneToZoneId(TimeZone timeZone) {
+        return timeZone.toZoneId();
     }
 }
