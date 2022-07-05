@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.Instant;
+import java.time.ZoneId;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.TimeZone;
@@ -56,5 +57,15 @@ class JavaInteroperationTest {
         //When
         var actualInstant = sut.calendarToInstant(calendar);
         assertEquals(Instant.ofEpochMilli(470_811_618_000L), actualInstant);
+    }
+
+    @Test
+    void shouldGetZoneIdFromTimeZone() {
+        //Given
+        var timezone = TimeZone.getTimeZone("UTC");
+        //When
+        var expectedZoneId = sut.timeZoneToZoneId();
+
+        assertEquals(ZoneId.of("UTC"), expectedZoneId);
     }
 }

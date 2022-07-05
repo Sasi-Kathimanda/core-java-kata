@@ -1,6 +1,7 @@
 package time;
 
 import java.time.Instant;
+import java.time.ZoneId;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -16,5 +17,9 @@ public class JavaInteroperation {
 
     protected Instant calendarToInstant(Calendar calendar) {
         return calendar.toInstant();
+    }
+
+    protected ZoneId timeZoneToZoneId() {
+        return ZoneId.systemDefault();
     }
 }
