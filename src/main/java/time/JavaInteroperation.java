@@ -25,6 +25,6 @@ public class JavaInteroperation {
     }
 
     protected TimeZone zoneIdToTimeZone(ZoneId zoneId) {
-        return TimeZone.getDefault();
+        return TimeZone.getTimeZone(zoneId);
     }
 }
