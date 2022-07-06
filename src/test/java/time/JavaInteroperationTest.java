@@ -65,7 +65,17 @@ class JavaInteroperationTest {
         var timezone = TimeZone.getTimeZone("UTC");
         //When
         var actualZoneId = sut.timeZoneToZoneId(timezone);
-
+        //Then
         assertEquals(ZoneId.of("UTC"), actualZoneId);
+    }
+
+    @Test
+    void shouldGetTimeZoneFromZoneId() {
+        //Given
+        var zoneId = ZoneId.of("UTC");
+        //When
+        var actualTimeZone = sut.zoneIdToTimeZone(zoneId);
+        //Then
+        assertEquals(TimeZone.getTimeZone("UTC"), actualTimeZone);
     }
 }
