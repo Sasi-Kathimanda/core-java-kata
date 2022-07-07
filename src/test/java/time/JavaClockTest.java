@@ -18,25 +18,25 @@ class JavaClockTest {
     }
 
     @Test
-    void testClockIsCreatedFromClockSystemDefaultZone() {
+    void shouldGetSystemDefaultZone() {
         Clock clock = sut.createSystemDefaultZone();
         assertEquals("Europe/London", clock.getZone().toString());
     }
 
     @Test
-    void testClockIsCreatedFromSystemUTC() {
+    void shouldGetSystemUTC() {
         Clock clock = sut.createSystemUTC();
-        assertEquals("Z", clock.getZone().toString());
+        assertEquals("Z", clock.getZone().toString()); //UTC is standard and not have a timezone
     }
 
     @Test
-    void testClockIsCreatedFromGivenSystem() {
+    void shouldGetFromGivenZoneId() {
         Clock clock = sut.createSystem("Asia/Kolkata");
         assertEquals("Asia/Kolkata", clock.getZone().toString());
     }
 
     @Test
-    void testFixedClockWithAGivenInstant() {
+    void shouldGetFixedClockWithAGivenInstant() {
         Clock clock = sut.createFixedClock(Instant.parse("1984-12-02T10:15:30.345Z"), ZoneId.of("Asia/Kolkata"));
         assertEquals("1984-12-02T10:15:30.345Z", clock.instant().toString());
     }
