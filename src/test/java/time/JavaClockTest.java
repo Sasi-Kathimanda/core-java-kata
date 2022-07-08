@@ -32,6 +32,7 @@ class JavaClockTest {
     @Test
     void shouldGetFromGivenZoneId() {
         Clock clock = sut.createSystem("Asia/Kolkata");
+        assertEquals("SystemClock[Asia/Kolkata]",clock.toString());
         assertEquals("Asia/Kolkata", clock.getZone().toString());
     }
 
