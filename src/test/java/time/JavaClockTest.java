@@ -26,13 +26,14 @@ class JavaClockTest {
     @Test
     void shouldGetSystemUTC() {
         Clock clock = sut.createSystemUTC();
+        assertEquals("SystemClock[Z]", clock.toString());
         assertEquals("Z", clock.getZone().toString()); //UTC is standard and not have a timezone
     }
 
     @Test
     void shouldGetFromGivenZoneId() {
         Clock clock = sut.createSystem("Asia/Kolkata");
-        assertEquals("SystemClock[Asia/Kolkata]",clock.toString());
+        assertEquals("SystemClock[Asia/Kolkata]", clock.toString());
         assertEquals("Asia/Kolkata", clock.getZone().toString());
     }
 
