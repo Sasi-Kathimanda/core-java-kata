@@ -20,6 +20,7 @@ class JavaClockTest {
     @Test
     void shouldGetSystemDefaultZone() {
         Clock clock = sut.createSystemDefaultZone();
+        assertEquals("SystemClock[Europe/London]", clock.toString());
         assertEquals("Europe/London", clock.getZone().toString());
     }
 
