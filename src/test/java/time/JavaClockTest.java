@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import java.time.Clock;
 import java.time.Instant;
+import java.time.LocalDateTime;
 import java.time.ZoneId;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -44,5 +45,9 @@ class JavaClockTest {
         assertEquals("FixedClock[1984-12-02T10:15:30.345Z,Asia/Kolkata]", clock.toString());
         assertEquals("1984-12-02T10:15:30.345Z", clock.instant().toString());
         assertEquals("Asia/Kolkata", clock.getZone().getId());
+
+        var localDateTime = LocalDateTime.now(clock);
+        //FIXME: understand why local time is showing 5 hours behind
+        assertEquals("1984-12-02T15:45:30.345", localDateTime.toString());
     }
 }
