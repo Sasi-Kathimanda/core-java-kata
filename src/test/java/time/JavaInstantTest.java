@@ -55,7 +55,6 @@ class JavaInstantTest {
         //Akka Home
         zonedDateTime = Instant.ofEpochSecond(470811618).atZone(ZoneId.of("America/Chicago"));
         assertEquals("1984-12-01T23:00:18-06:00[America/Chicago]", zonedDateTime.toString());
-
         assertEquals("1984-12-02T05:00:18Z",zonedDateTime.toInstant().toString());
     }
 }
