@@ -12,6 +12,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class JavaInstantTest {
     public static final String INSTANCE_EPOCH = "1970-01-01T00:00:00Z";
+    public static final int BIRTH_DAY_IN_EPOCH_SECOND = 470811618;
     private JavaInstant sut;
 
     @BeforeEach
@@ -39,21 +40,21 @@ class JavaInstantTest {
     }
 
     @Test
-    void testBirthdayInDifferentZones() {
-        assertEquals("1984-12-02T05:00:18Z", Instant.ofEpochSecond(470811618).toString());
+    void getBirthdayInDifferentZones() {
+        assertEquals("1984-12-02T05:00:18Z", Instant.ofEpochSecond(BIRTH_DAY_IN_EPOCH_SECOND).toString());
 
         //First Home
-        var zonedDateTime = Instant.ofEpochSecond(470811618).atZone(ZoneId.of("Asia/Kolkata"));
+        var zonedDateTime = Instant.ofEpochSecond(BIRTH_DAY_IN_EPOCH_SECOND).atZone(ZoneId.of("Asia/Kolkata"));
         assertEquals("1984-12-02T10:30:18+05:30[Asia/Kolkata]", zonedDateTime.toString());
-        assertEquals(470811618, zonedDateTime.toInstant().getEpochSecond());
+        assertEquals(BIRTH_DAY_IN_EPOCH_SECOND, zonedDateTime.toInstant().getEpochSecond());
 
         //Second Home
-        zonedDateTime = Instant.ofEpochSecond(470811618).atZone(ZoneId.of("Europe/London"));
+        zonedDateTime = Instant.ofEpochSecond(BIRTH_DAY_IN_EPOCH_SECOND).atZone(ZoneId.of("Europe/London"));
         assertEquals("1984-12-02T05:00:18Z[Europe/London]", zonedDateTime.toString());
-        assertEquals(470811618, zonedDateTime.toInstant().getEpochSecond());
+        assertEquals(BIRTH_DAY_IN_EPOCH_SECOND, zonedDateTime.toInstant().getEpochSecond());
 
         //Akka Home
-        zonedDateTime = Instant.ofEpochSecond(470811618).atZone(ZoneId.of("America/Chicago"));
+        zonedDateTime = Instant.ofEpochSecond(BIRTH_DAY_IN_EPOCH_SECOND).atZone(ZoneId.of("America/Chicago"));
         assertEquals("1984-12-01T23:00:18-06:00[America/Chicago]", zonedDateTime.toString());
         assertEquals("1984-12-02T05:00:18Z",zonedDateTime.toInstant().toString());
     }
