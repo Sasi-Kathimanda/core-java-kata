@@ -6,6 +6,6 @@ import java.time.ZoneOffset;
 
 public class JavaOffSetDateTime {
     protected static OffsetDateTime of(LocalDateTime dateTime, ZoneOffset zof) {
-        return OffsetDateTime.MAX;
+        return OffsetDateTime.of(dateTime, zof);
     }
 }

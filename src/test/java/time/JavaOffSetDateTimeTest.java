@@ -17,6 +17,6 @@ class JavaOffSetDateTimeTest {
                 LocalTime.of(5, 15));
 
         var offSetTime = JavaOffSetDateTime.of(dateTime, ZoneOffset.of("+05:30"));
-        Assertions.assertEquals("1984-12-02T05:15:00:000+05:30", offSetTime.toString());
+        Assertions.assertEquals("1984-12-02T05:15+05:30", offSetTime.toString());
     }
 }
