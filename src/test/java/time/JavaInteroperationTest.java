@@ -73,9 +73,16 @@ class JavaInteroperationTest {
     void shouldGetTimeZoneFromZoneId() {
         //Given
         var zoneId = ZoneId.of("UTC");
+        var gmtZoneId = ZoneId.of("GMT");
         //When
         var actualTimeZone = sut.zoneIdToTimeZone(zoneId);
         //Then
         assertEquals(TimeZone.getTimeZone("UTC"), actualTimeZone);
+
+        assertEquals("ZoneRules[currentStandardOffset=Z]", zoneId.getRules().toString());
+        assertEquals("[]", zoneId.getRules().getTransitionRules().toString());
+        assertEquals("ZoneRules[currentStandardOffset=Z]", gmtZoneId.getRules().toString());
+        assertEquals("[]", gmtZoneId.getRules().getTransitionRules().toString());
+
     }
 }
