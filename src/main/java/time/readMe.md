@@ -37,3 +37,11 @@ java.time    <------.parse(...)----------  String
     TimeZone.getTimeZone(ZoneId)
 
 </blockquote>
+
+<h2>TimeZones</h2>
+<blockquote>
+
+    ZoneOffset + LocalDateTime = OffsetDateTime
+    ZoneRegion + LocalDateTime = ZonedDateTime
+
+</blockquote>
