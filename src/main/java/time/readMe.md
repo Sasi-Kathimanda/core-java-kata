@@ -39,6 +39,14 @@ java.time    <------.parse(...)----------  String
 </blockquote>
 
 <h2>TimeZones</h2>
+<p>
+    The TimeZone classes:
+
+        - Fixed TimeZones
+            - ZoneOffset And OffsetDateTime            
+        - Geographic Timezones
+            - ZoneId and ZonedDateTime
+</p>
 <blockquote>
 
     ZoneOffset + LocalDateTime = OffsetDateTime
