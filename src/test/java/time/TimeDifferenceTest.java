@@ -1,11 +1,12 @@
 package time;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
 import java.time.Period;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class TimeDifferenceTest {
     TimeDifference sut;
@@ -18,14 +19,13 @@ class TimeDifferenceTest {
     @Test
     void differenceUsingPeriod() {
         //given
-         LocalDate startDate = LocalDate.of(1983,9,30);
-         LocalDate endDate = LocalDate.of(1984,12,2);
+        LocalDate startDate = LocalDate.of(1983, 9, 30);
+        LocalDate endDate = LocalDate.of(1984, 12, 2);
 
         //when
-        Period period = sut.between(startDate,endDate);
+        Period period = sut.between(startDate, endDate);
 
         //then
-        Assertions.assertEquals("P1Y3M2D",period.toString());
+        assertEquals("P1Y2M3D", period.toString());
     }
-
 }
