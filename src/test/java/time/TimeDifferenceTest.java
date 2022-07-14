@@ -5,6 +5,8 @@ import org.junit.jupiter.api.Test;
 
 import java.time.Duration;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.time.Period;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -35,9 +37,11 @@ class TimeDifferenceTest {
         //given
         LocalDate startDate = LocalDate.of(1983, 9, 30);
         LocalDate endDate = LocalDate.of(1984, 12, 2);
+        LocalDateTime startDateTime =  LocalDateTime.of(startDate, LocalTime.of(0,0));
+        LocalDateTime endDateTime =  LocalDateTime.of(endDate, LocalTime.of(0,0));
 
         //when
-        Duration duration = sut.betweenUsingDuration(startDate, endDate);
+        Duration duration = sut.betweenUsingDuration(startDateTime, endDateTime);
 
         //then
         assertEquals("PT10320H", duration.toString());

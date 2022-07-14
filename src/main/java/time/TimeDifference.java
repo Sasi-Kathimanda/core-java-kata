@@ -2,6 +2,7 @@ package time;
 
 import java.time.Duration;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.Period;
 
 /**
@@ -15,7 +16,7 @@ public class TimeDifference {
         return Period.between(startDate, endDate.plusDays(1));
     }
 
-    protected Duration betweenUsingDuration(LocalDate startDate, LocalDate endDate) {
-        return Duration.ZERO;
+    protected Duration betweenUsingDuration(LocalDateTime startDate, LocalDateTime endDate) {
+        return Duration.between(startDate, endDate.plusDays(1));
     }
 }
