@@ -3,6 +3,7 @@ package time;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.time.Duration;
 import java.time.LocalDate;
 import java.time.Period;
 
@@ -28,4 +29,18 @@ class TimeDifferenceTest {
         //then
         assertEquals("P1Y2M3D", period.toString());
     }
+
+    @Test
+    void differenceUsingDuration() {
+        //given
+        LocalDate startDate = LocalDate.of(1983, 9, 30);
+        LocalDate endDate = LocalDate.of(1984, 12, 2);
+
+        //when
+        Duration duration = sut.betweenUsingDuration(startDate, endDate);
+
+        //then
+        assertEquals("PT10320H", duration.toString());
+    }
+
 }
