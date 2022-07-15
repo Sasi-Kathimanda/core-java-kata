@@ -19,4 +19,8 @@ public class TimeDifference {
     protected Duration betweenUsingDuration(LocalDateTime startDate, LocalDateTime endDate) {
         return Duration.between(startDate, endDate.plusDays(1));
     }
+
+    public long betweenUsingChronoDays(LocalDate startDate, LocalDate endDate) {
+        return 0L;
+    }
 }

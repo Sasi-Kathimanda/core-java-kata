@@ -8,6 +8,9 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.Period;
+import java.time.chrono.ChronoLocalDate;
+import java.time.chrono.ChronoPeriod;
+import java.time.temporal.ChronoUnit;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -24,10 +27,8 @@ class TimeDifferenceTest {
         //given
         LocalDate startDate = LocalDate.of(1983, 9, 30);
         LocalDate endDate = LocalDate.of(1984, 12, 2);
-
         //when
         Period period = sut.between(startDate, endDate);
-
         //then
         assertEquals("P1Y2M3D", period.toString());
     }
@@ -37,20 +38,22 @@ class TimeDifferenceTest {
         //given
         LocalDate startDate = LocalDate.of(1983, 9, 30);
         LocalDate endDate = LocalDate.of(1984, 12, 2);
-        LocalDateTime startDateTime =  LocalDateTime.of(startDate, LocalTime.of(0,0));
-        LocalDateTime endDateTime =  LocalDateTime.of(endDate, LocalTime.of(0,0));
-
+        LocalDateTime startDateTime = LocalDateTime.of(startDate, LocalTime.of(0, 0));
+        LocalDateTime endDateTime = LocalDateTime.of(endDate, LocalTime.of(0, 0));
         //when
         Duration duration = sut.betweenUsingDuration(startDateTime, endDateTime);
-
         //then
         assertEquals("PT10320H", duration.toString());
     }
 
     @Test
-    void  findTimeDifferenceUsingChronoUnits() {
+    void findTimeDifferenceUsingChronoUnits() {
         //given
+        LocalDate startDate = LocalDate.of(1983, 9, 30);
+        LocalDate endDate = LocalDate.of(1984, 12, 2);
         //when
+        var differenceInDAYS = sut.betweenUsingChronoDays(startDate, endDate);
         //then
+        assertEquals(430L, differenceInDAYS);
     }
 }
