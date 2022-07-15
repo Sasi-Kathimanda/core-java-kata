@@ -20,7 +20,7 @@ class TimeDifferenceTest {
     }
 
     @Test
-    void differenceUsingPeriod() {
+    void findTimeDifferenceUsingPeriod() {
         //given
         LocalDate startDate = LocalDate.of(1983, 9, 30);
         LocalDate endDate = LocalDate.of(1984, 12, 2);
@@ -33,7 +33,7 @@ class TimeDifferenceTest {
     }
 
     @Test
-    void differenceUsingDuration() {
+    void findTimeDifferenceUsingDuration() {
         //given
         LocalDate startDate = LocalDate.of(1983, 9, 30);
         LocalDate endDate = LocalDate.of(1984, 12, 2);
@@ -47,4 +47,10 @@ class TimeDifferenceTest {
         assertEquals("PT10320H", duration.toString());
     }
 
+    @Test
+    void  findTimeDifferenceUsingChronoUnits() {
+        //given
+        //when
+        //then
+    }
 }
