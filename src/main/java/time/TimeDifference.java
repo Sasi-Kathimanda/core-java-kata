@@ -4,6 +4,7 @@ import java.time.Duration;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.Period;
+import java.time.temporal.ChronoUnit;
 
 /**
  * have two versions to find time difference :
@@ -21,6 +22,6 @@ public class TimeDifference {
     }
 
     public long betweenUsingChronoDays(LocalDate startDate, LocalDate endDate) {
-        return 0L;
+        return ChronoUnit.DAYS.between(startDate, endDate.plusDays(1));
     }
 }
