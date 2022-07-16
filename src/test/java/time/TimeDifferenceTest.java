@@ -14,6 +14,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class TimeDifferenceTest {
     TimeDifference sut;
+    private static final LocalDate startDate = LocalDate.of(1983, 9, 30);
+    private static final LocalDate endDate = LocalDate.of(1984, 12, 2);
+    private final LocalDateTime startDateTime = LocalDateTime.of(startDate, LocalTime.of(0, 0));
+    private final LocalDateTime endDateTime = LocalDateTime.of(endDate, LocalTime.of(0, 0));
 
     @BeforeEach
     void setUp() {
@@ -22,9 +26,6 @@ class TimeDifferenceTest {
 
     @Test
     void findTimeDifferenceUsingPeriod() {
-        //given
-        LocalDate startDate = LocalDate.of(1983, 9, 30);
-        LocalDate endDate = LocalDate.of(1984, 12, 2);
         //when
         Period period = sut.between(startDate, endDate);
         //then
@@ -34,8 +35,6 @@ class TimeDifferenceTest {
     @Test
     void findTimeDifferenceUsingDuration() {
         //given
-        LocalDate startDate = LocalDate.of(1983, 9, 30);
-        LocalDate endDate = LocalDate.of(1984, 12, 2);
         LocalDateTime startDateTime = LocalDateTime.of(startDate, LocalTime.of(0, 0));
         LocalDateTime endDateTime = LocalDateTime.of(endDate, LocalTime.of(0, 0));
         //when
@@ -46,12 +45,11 @@ class TimeDifferenceTest {
 
     @Test
     void findTimeDifferenceUsingChronoUnits() {
-        //given
-        LocalDate startDate = LocalDate.of(1983, 9, 30);
-        LocalDate endDate = LocalDate.of(1984, 12, 2);
         //when
         var differenceInDAYS = sut.betweenUsingChrono(startDate, endDate, ChronoUnit.DAYS);
+        var differenceInHOURS = sut.betweenUsingChrono(startDateTime, endDateTime, ChronoUnit.HOURS);
         //then
         assertEquals(430L, differenceInDAYS);
+        assertEquals(10320L, differenceInHOURS);
     }
 }
