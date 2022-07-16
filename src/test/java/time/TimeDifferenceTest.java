@@ -8,8 +8,6 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.Period;
-import java.time.chrono.ChronoLocalDate;
-import java.time.chrono.ChronoPeriod;
 import java.time.temporal.ChronoUnit;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -52,7 +50,7 @@ class TimeDifferenceTest {
         LocalDate startDate = LocalDate.of(1983, 9, 30);
         LocalDate endDate = LocalDate.of(1984, 12, 2);
         //when
-        var differenceInDAYS = sut.betweenUsingChronoDays(startDate, endDate);
+        var differenceInDAYS = sut.betweenUsingChrono(startDate, endDate, ChronoUnit.DAYS);
         //then
         assertEquals(430L, differenceInDAYS);
     }

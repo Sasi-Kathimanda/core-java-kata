@@ -21,7 +21,7 @@ public class TimeDifference {
         return Duration.between(startDate, endDate.plusDays(1));
     }
 
-    public long betweenUsingChronoDays(LocalDate startDate, LocalDate endDate) {
-        return ChronoUnit.DAYS.between(startDate, endDate.plusDays(1));
+    public long betweenUsingChrono(LocalDate startDate, LocalDate endDate , ChronoUnit chronUnit) {
+        return chronUnit.between(startDate, endDate.plusDays(1));
     }
 }
