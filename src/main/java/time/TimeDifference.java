@@ -4,6 +4,7 @@ import java.time.Duration;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.Period;
+import java.time.temporal.ChronoField;
 import java.time.temporal.ChronoUnit;
 import java.time.temporal.Temporal;
 
@@ -24,5 +25,9 @@ public class TimeDifference {
 
     protected long betweenUsingChrono(Temporal startDateTime, Temporal endDateTime, ChronoUnit chronUnit) {
         return chronUnit.between(startDateTime, endDateTime);
+    }
+
+    protected long until(Temporal startDateTime, Temporal endDateTime, ChronoUnit days) {
+        return LocalDate.now().getLong(ChronoField.DAY_OF_MONTH);
     }
 }

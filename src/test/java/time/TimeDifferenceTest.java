@@ -57,4 +57,11 @@ class TimeDifferenceTest {
         assertEquals(430L, differenceInDAYS);
         assertEquals(10320L, differenceInHOURS);
     }
+
+    @Test
+    void findTimeDifferenceUsingUntil() {
+        //when
+        long differenceInDays = sut.until(startDateTime, endDateTime, ChronoUnit.DAYS);
+        assertEquals(430L, differenceInDays);
+    }
 }
