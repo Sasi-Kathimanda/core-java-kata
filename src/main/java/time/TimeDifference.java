@@ -28,6 +28,6 @@ public class TimeDifference {
     }
 
     protected long until(Temporal startDateTime, Temporal endDateTime, ChronoUnit days) {
-        return LocalDate.now().getLong(ChronoField.DAY_OF_MONTH);
+        return startDateTime.until(endDateTime, days);
     }
 }
