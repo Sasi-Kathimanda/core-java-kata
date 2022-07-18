@@ -28,7 +28,7 @@ class JavaDateTimeFormatterTest {
     }
 
     @Test
-    void testInbuiltFormatterForDates() {
+    void differentDateFormatterForApplyingOnDates() {
         var actual = sut.formatter(DateTimeFormatter.BASIC_ISO_DATE, LOCAL_DATE);
         assertEquals("19841202", actual);
 
@@ -43,7 +43,7 @@ class JavaDateTimeFormatterTest {
     }
 
     @Test
-    void testInbuiltFormatterForTime() {
+    void differentDateFormatterForApplyingOnTime() {
         var actual = sut.formatter(DateTimeFormatter.ISO_TIME, LocalDateTime.of(LOCAL_DATE, LOCAL_TIME));
         assertEquals("10:15:30", actual);
 
@@ -58,7 +58,7 @@ class JavaDateTimeFormatterTest {
     }
 
     @Test
-    void testInbuiltFormatterForDateTime() {
+    void differentDateFormatterForApplyingOnDateAndTime() {
         var actual = sut.formatter(DateTimeFormatter.ISO_OFFSET_DATE, OffsetDateTime.of(LOCAL_DATE_TIME, ZoneOffset.ofHoursMinutes(5, 30)));
         assertEquals("1984-12-02+05:30", actual);
 
