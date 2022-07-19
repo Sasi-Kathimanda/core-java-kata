@@ -80,4 +80,13 @@ class JavaDateTimeFormatterTest {
         actual = sut.formatter(DateTimeFormatter.ISO_INSTANT, ZonedDateTime.of(LOCAL_DATE_TIME, ZoneId.of("Asia/Kolkata")));
         assertEquals("1984-12-02T04:45:30Z", actual);
     }
+
+    @Test
+    void applyFormatterUsingPattern() {
+        //when
+        DateTimeFormatter formatter = sut.ofPattern("'uuuu' 'MM' 'DD'");
+        //then
+        assertEquals("1984 12 2", formatter.format(LOCAL_DATE));
+
+    }
 }
