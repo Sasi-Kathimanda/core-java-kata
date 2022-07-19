@@ -84,7 +84,7 @@ class JavaDateTimeFormatterTest {
     @Test
     void applyFormatterUsingPattern() {
         //when
-        DateTimeFormatter formatter = sut.ofPattern("'uuuu' 'MM' 'DD'");
+        DateTimeFormatter formatter = sut.ofPattern("uuuu MM d");
         //then
         assertEquals("1984 12 2", formatter.format(LOCAL_DATE));
 

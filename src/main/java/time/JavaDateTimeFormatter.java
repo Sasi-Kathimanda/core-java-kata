@@ -10,6 +10,6 @@ public class JavaDateTimeFormatter {
     }
 
     protected DateTimeFormatter ofPattern(String pattern) {
-        return  DateTimeFormatter.ISO_DATE;
+        return DateTimeFormatter.ofPattern(pattern);
     }
 }
