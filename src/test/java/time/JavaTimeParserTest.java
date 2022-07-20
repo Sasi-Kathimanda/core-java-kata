@@ -32,7 +32,7 @@ class JavaTimeParserTest {
     void parseStringToLocalDateTime() {
         JavaTimeParser sut = new JavaTimeParser();
         LocalDateTime localDateTime = sut.parseToLocalDateTime("1984-12-02T00:00:00");
-        assertEquals("1984-12-02", localDateTime.toString());
+        assertEquals("1984-12-02T00:00", localDateTime.toString());
         assertEquals("December", localDateTime.getMonth().getDisplayName(TextStyle.FULL, Locale.UK));
         assertEquals("SUNDAY", localDateTime.getDayOfWeek().name());
         assertEquals(1984, localDateTime.getYear());
