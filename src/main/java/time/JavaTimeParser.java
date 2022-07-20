@@ -3,6 +3,7 @@ package time;
 
 import java.time.Instant;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class JavaTimeParser {
@@ -16,5 +17,9 @@ public class JavaTimeParser {
 
     protected Instant parseStringToInstant(String date) {
         return Instant.parse(date);
+    }
+
+    protected LocalDateTime parseToLocalDateTime(String dateTimeString) {
+       return LocalDateTime.parse(dateTimeString);
     }
 }
