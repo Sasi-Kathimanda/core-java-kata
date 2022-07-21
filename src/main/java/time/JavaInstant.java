@@ -10,6 +10,6 @@ public class JavaInstant {
     }
 
     public LocalDateTime instantToLocalDateTime(Instant instant, ZoneId zoneId) {
-        return LocalDateTime.MAX;
+        return LocalDateTime.ofInstant(instant, zoneId);
     }
 }
