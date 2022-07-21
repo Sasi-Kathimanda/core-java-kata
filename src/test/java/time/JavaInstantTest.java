@@ -46,8 +46,16 @@ class JavaInstantTest {
         var instant = Instant.parse("2022-07-21T20:06:00.999999999Z");
         //when
         var ldt = sut.instantToLocalDateTime(instant,ZoneId.of("UTC"));
-        assertEquals("",ldt.toString());
-    }
+        var ldt_utc = sut.instantToLocalDateTime(instant, ZoneId.of("UTC"));
+        var ldt_gmt = sut.instantToLocalDateTime(instant, ZoneId.of("GMT"));
+        var ldt_London =sut.instantToLocalDateTime(instant, ZoneId.of("Europe/London"));
+        var ldt_ist = sut.instantToLocalDateTime(instant, ZoneId.of("Asia/Kolkata"));
+        //then
+        assertEquals("2022-07-21T20:06:00.999999999Z", instant.toString());
+        assertEquals("2022-07-21T20:06:00.999999999", ldt_utc.toString());
+        assertEquals("2022-07-21T20:06:00.999999999", ldt_gmt.toString());
+        assertEquals("2022-07-21T21:06:00.999999999", ldt_London.toString());
+        assertEquals("2022-07-22T01:36:00.999999999", ldt_ist.toString());    }
 
     @Test
     void getBirthdayInDifferentZones() {
