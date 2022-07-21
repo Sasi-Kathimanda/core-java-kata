@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 
 import java.time.Duration;
 import java.time.Instant;
+import java.time.LocalDateTime;
 import java.time.ZoneId;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -40,6 +41,15 @@ class JavaInstantTest {
     }
 
     @Test
+    void instantToLocalDateTime() {
+        //given
+        var instant = Instant.parse("2022-07-21T20:06:00.999999999Z");
+        //when
+        var ldt = sut.instantToLocalDateTime(instant,ZoneId.of("UTC"));
+        assertEquals("",ldt.toString());
+    }
+
+    @Test
     void getBirthdayInDifferentZones() {
         assertEquals("1984-12-02T05:00:18Z", Instant.ofEpochSecond(BIRTH_DAY_IN_EPOCH_SECOND).toString());
 
@@ -56,6 +66,6 @@ class JavaInstantTest {
         //Akka Home
         zonedDateTime = Instant.ofEpochSecond(BIRTH_DAY_IN_EPOCH_SECOND).atZone(ZoneId.of("America/Chicago"));
         assertEquals("1984-12-01T23:00:18-06:00[America/Chicago]", zonedDateTime.toString());
-        assertEquals("1984-12-02T05:00:18Z",zonedDateTime.toInstant().toString());
+        assertEquals("1984-12-02T05:00:18Z", zonedDateTime.toInstant().toString());
     }
 }
