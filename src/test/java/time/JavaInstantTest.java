@@ -7,6 +7,9 @@ import org.junit.jupiter.api.Test;
 import java.time.Duration;
 import java.time.Instant;
 import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DecimalStyle;
+import java.util.Locale;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -54,6 +57,11 @@ class JavaInstantTest {
         assertEquals("2022-07-21T20:06:00.999999999", ldt_gmt.toString());
         assertEquals("2022-07-21T21:06:00.999999999", ldt_London.toString());
         assertEquals("2022-07-22T01:36:00.999999999", ldt_ist.toString());
+    }
+
+    @Test
+    void parsingInstantAtDifferentInputStyle() {
+
     }
 
     @Test
