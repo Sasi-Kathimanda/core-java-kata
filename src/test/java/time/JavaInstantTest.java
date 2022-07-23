@@ -6,7 +6,6 @@ import org.junit.jupiter.api.Test;
 
 import java.time.Duration;
 import java.time.Instant;
-import java.time.LocalDateTime;
 import java.time.ZoneId;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -45,7 +44,6 @@ class JavaInstantTest {
         //given
         var instant = Instant.parse("2022-07-21T20:06:00.999999999Z");
         //when
-        var ldt = sut.instantToLocalDateTime(instant, ZoneId.of("UTC"));
         var ldt_utc = sut.instantToLocalDateTime(instant, ZoneId.of("UTC"));
         var ldt_gmt = sut.instantToLocalDateTime(instant, ZoneId.of("GMT"));
         var ldt_London = sut.instantToLocalDateTime(instant, ZoneId.of("Europe/London"));
