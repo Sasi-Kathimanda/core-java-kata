@@ -64,6 +64,7 @@ class JavaInstantTest {
     void parsingInstantAtDifferentInputStyle() {
         var instantWithZeroMillis = Instant.ofEpochMilli(1658700000000L).toString();
         assertEquals("2022-07-24T22:00:00Z", instantWithZeroMillis);
+        assertEquals("2022-07-24T22:00:00Z", Instant.parse(instantWithZeroMillis).toString());
     }
 
     @Test
