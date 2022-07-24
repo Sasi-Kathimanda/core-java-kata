@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 
 import java.time.Duration;
 import java.time.Instant;
+import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DecimalStyle;
@@ -61,7 +62,8 @@ class JavaInstantTest {
 
     @Test
     void parsingInstantAtDifferentInputStyle() {
-
+        var instantWithZeroMillis = Instant.ofEpochMilli(1658700000000L).toString();
+        assertEquals("2022-07-24T22:00:00Z", instantWithZeroMillis);
     }
 
     @Test
