@@ -16,6 +16,7 @@ class URLFormatterTest {
         URL urlFormatter = new URL(url);
         assertEquals("www.google.co.uk", urlFormatter.getHost());
         assertEquals("https", urlFormatter.getProtocol());
+        assertEquals("q=test", urlFormatter.getQuery());
     }
 
 }
