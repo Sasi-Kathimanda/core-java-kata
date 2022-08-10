@@ -30,9 +30,12 @@ class URLFormatterTest {
     }
 
     @Test
-    void givenPlainUrlEncodeIt() throws URISyntaxException {
+    void givenPlainUrlEncodeIt() throws MalformedURLException {
+        URL urlObj = new URL(url);
         //only encode the query part
-        var encodedUrl = URLEncoder.encode(new URI(url).getQuery(), StandardCharsets.UTF_8);
+        var encodedUrl = URLEncoder.encode(urlObj.getQuery(), StandardCharsets.UTF_8);
         assertEquals("q%3Dtest", encodedUrl);
+        var expectedURL = "https://www.google.co.uk/search?q%3Dtest";
+        assertEquals(expectedURL, String.format("%s://%s/search?%s", urlObj.getProtocol(), urlObj.getHost(), encodedUrl));
     }
 }
