@@ -42,7 +42,7 @@ class URLFormatterTest {
     void givenEncodedURLThenDecodeIt() throws MalformedURLException {
         // given
         URL urlObj = new URL(url);
-        var decodedUrl = URLEncoder.encode(urlObj.getQuery(), StandardCharsets.UTF_8);
+        var decodedUrl = URLDecoder.decode(urlObj.getQuery(), StandardCharsets.UTF_8);
         assertEquals("q=test", decodedUrl);
     }
 }
