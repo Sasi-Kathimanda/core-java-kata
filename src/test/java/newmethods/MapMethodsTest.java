@@ -8,6 +8,7 @@ import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class MapMethodsTest {
 
@@ -33,5 +34,14 @@ class MapMethodsTest {
         var actualValue = new MapMethods<String, Integer>().computeIfAbsent(stringLength, "Sasi", s -> null);
         assertEquals(null, actualValue); // returns null
         assertNull(stringLength.get("Sasi")); // records no mapping
+    }
+
+    @Test
+    void computeIfAbsentRethrowExceptionWhenMappingFunctionThrowsException() {
+        var stringLength = new HashMap<>();
+        var map = new MapMethods<>();
+        assertThrows(RuntimeException.class, () -> map.computeIfAbsent(stringLength, "Sasi", s -> {
+            throw new RuntimeException();
+        }));
     }
 }
