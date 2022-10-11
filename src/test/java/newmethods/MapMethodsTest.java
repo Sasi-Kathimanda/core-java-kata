@@ -43,4 +43,9 @@ class MapMethodsTest {
             throw new RuntimeException();
         }));
     }
+
+    @Test
+    void mergeMap() {
+
+    }
 }
