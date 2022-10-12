@@ -3,7 +3,15 @@ package programming;
 public class FloorFinder {
 
     public int findFloor(String input) {
-
-        return input.length();
+        int counter = 0;
+         char[] chars = input.toCharArray();
+        for (char aChar : chars) {
+            if (aChar == '(') {
+                counter++;
+            } else {
+                counter--;
+            }
+        }
+        return counter;
     }
 }
