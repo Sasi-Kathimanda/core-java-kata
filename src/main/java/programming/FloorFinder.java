@@ -14,4 +14,8 @@ public class FloorFinder {
         }
         return counter;
     }
+
+    public int firstTimeWhichFloor(int firstTimeFloorNumber, String input) {
+        return toString().length();
+    }
 }
