@@ -14,7 +14,6 @@ class FloorFinderTest {
 
         result = finder.findFloor("(((((())))((((((((((()()()()()))()((((((()))))))))))((((()))))))))))))))(((((((((((((()()()()()()()()()()()()()((((((((()");
         assertEquals(17, result);
-
     }
 
     @Test
@@ -23,6 +22,4 @@ class FloorFinderTest {
         var result = finder.firstTimeWhichFloor(10, "(((((((())((((((((((((((((((((");
         assertEquals(14, result);
     }
-
-
 }
