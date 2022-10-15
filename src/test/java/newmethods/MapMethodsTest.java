@@ -51,4 +51,14 @@ class MapMethodsTest {
         var actualValue = new MapMethods<String, Integer>().merge(stringLength, "Sasi", 10, (oldValue, newValue) -> oldValue / newValue);
         assertEquals(2, actualValue);
     }
+
+    @Test
+    void mergeMapWhenKeyIsDuplicated() {
+
+    }
+
+    @Test
+    void mergeMapWhenMappingTwoHashMaps() {
+
+    }
 }
