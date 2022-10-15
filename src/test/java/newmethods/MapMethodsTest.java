@@ -45,7 +45,10 @@ class MapMethodsTest {
     }
 
     @Test
-    void mergeMap() {
-
+    void mergeMapWhenKeyHasNonNullValue() {
+        Map<String, Integer> stringLength = new HashMap<>();
+        stringLength.put("Sasi", 20);
+        var actualValue = new MapMethods<String, Integer>().merge(stringLength, "Sasi", 10, (oldValue, newValue) -> oldValue / newValue);
+        assertEquals(2, actualValue);
     }
 }
