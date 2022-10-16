@@ -50,11 +50,15 @@ class MapMethodsTest {
         stringLength.put("Sasi", 20);
         var actualValue = new MapMethods<String, Integer>().merge(stringLength, "Sasi", 10, (oldValue, newValue) -> oldValue / newValue);
         assertEquals(2, actualValue);
+        assertEquals("{Sasi=2}", stringLength.toString());
     }
 
     @Test
-    void mergeMapWhenKeyIsDuplicated() {
-
+    void mergeMapWhenKeyIsDifferent() {
+        Map<String, Integer> stringLengthMap = new HashMap<>();
+        stringLengthMap.put("Sasi", 20);
+        var actualValue = new MapMethods<String, Integer>().merge(stringLengthMap, "Kiran", 10, (oldValue, newValue) -> oldValue / newValue);
+        assertEquals(10, actualValue);
     }
 
     @Test
