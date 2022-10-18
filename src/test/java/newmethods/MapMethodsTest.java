@@ -50,6 +50,7 @@ class MapMethodsTest {
         stringLength.put("Sasi", 20);
         var actualValue = new MapMethods<String, Integer>().merge(stringLength, "Sasi", 10, (oldValue, newValue) -> oldValue / newValue);
         assertEquals(2, actualValue); // REMAPPING Function executes when the key is associated
+        assertEquals(1, stringLength.entrySet().size());
         assertEquals("{Sasi=2}", stringLength.toString());
     }
 
