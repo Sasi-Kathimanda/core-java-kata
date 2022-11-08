@@ -20,6 +20,7 @@ class OptionalStreamMethodTest {
                 .map(Optional::get)
                 .collect(Collectors.toList());
         assertEquals(3, result.size());
+        assertEquals("[Sasi, Kiran, Kathimanda]", result.toString());
     }
 
     @Test
@@ -30,6 +31,7 @@ class OptionalStreamMethodTest {
                 .flatMap(o -> o.isPresent() ? Stream.of(o.get()) : Stream.empty())
                 .collect(Collectors.toList());
         assertEquals(3, result.size());
+        assertEquals("[Sasi, Kiran, Raja]", result.toString());
     }
 
     @Test
@@ -63,7 +65,7 @@ class OptionalStreamMethodTest {
         assertEquals(Optional.of("SASI"), name.map(String::toUpperCase));
 
         assertEquals(Optional.of(Optional.of("SASI")), name.map(s -> Optional.of(s.toUpperCase())));
-        assertEquals(Optional.of("SASI"),name.flatMap(s -> Optional.of(s.toUpperCase())));
+        assertEquals(Optional.of("SASI"), name.flatMap(s -> Optional.of(s.toUpperCase())));
 
         var names = List.of(Optional.of("Sasi"), Optional.of("Kiran"));
         List<Optional<String>> result = names.stream()
