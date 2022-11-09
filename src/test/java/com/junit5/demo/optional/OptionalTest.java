@@ -25,6 +25,9 @@ class OptionalTest {
     void givenNonNullThenCreatesNonNullableCorrect() {
         Optional<String> opt = Optional.of("Sasi");
         assertTrue(opt.isPresent());
+        assertEquals(Optional.of("SASI"), opt.map(s -> s.toUpperCase()));
+        assertEquals(Optional.of(Optional.of("SASI")), opt.map(s -> Optional.of(s.toUpperCase())));
+        assertEquals(Optional.of("SASI"), opt.flatMap(s -> Optional.of(s.toUpperCase())));
     }
 
     @Test
