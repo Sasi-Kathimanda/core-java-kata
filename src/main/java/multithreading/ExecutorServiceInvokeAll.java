@@ -18,7 +18,9 @@ public class ExecutorServiceInvokeAll {
 
         var futures = service.invokeAll(tasks);
         for (Future<Result> future : futures) {
+            System.out.println("---------------------------------Printing the output -----------------------------------------------");
             System.out.println(String.format("1) Task name = %s , 2) duration =  %s ", future.get().getName(), future.get().getDuration()));
+            System.out.println("Note: task names from the future is the same order passed to the callable task");
         }
         service.shutdown();
     }
