@@ -4,8 +4,8 @@ public class SwitchExpression {
 
     public String convertEnumToString(Months months) {
         return switch (months) {
-            case JAN, FEB, MAR -> "quarter 1";
-            case APR, MAY, JUN -> "quarter 2";
+            case JAN, FEB, MAR -> "Q1";
+            case APR, MAY, JUN -> "Q2";
         };
     }
 
