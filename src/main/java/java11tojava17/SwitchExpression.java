@@ -10,6 +10,6 @@ public class SwitchExpression {
     }
 
     public enum Months {
-        JAN, FEB, MAR, APR, MAY, JUN;
+        JAN, FEB, MAR, APR, MAY, JUN
     }
 }
