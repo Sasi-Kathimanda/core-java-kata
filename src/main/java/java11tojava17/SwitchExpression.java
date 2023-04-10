@@ -2,8 +2,8 @@ package java11tojava17;
 
 public class SwitchExpression {
 
-    public String convertEnumToString(Months months) {
-        return switch (months) {
+    public String getQuarter(Months month) {
+        return switch (month) {
             case JAN, FEB, MAR -> "Q1";
             case APR, MAY, JUN -> "Q2";
         };

@@ -9,8 +9,8 @@ class SwitchExpressionTest {
     @Test
     void convertMonthToQuarter() {
         SwitchExpression expression = new SwitchExpression();
-        assertEquals("Q1", expression.convertEnumToString(SwitchExpression.Months.JAN));
-        assertEquals("Q2", expression.convertEnumToString(SwitchExpression.Months.APR));
+        assertEquals("Q1", expression.getQuarter(SwitchExpression.Months.JAN));
+        assertEquals("Q2", expression.getQuarter(SwitchExpression.Months.APR));
     }
 
 }
