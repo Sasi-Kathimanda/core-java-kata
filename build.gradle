@@ -1,5 +1,7 @@
-apply plugin: 'java'
-
+plugins {
+    id 'java'
+    id 'checkstyle'
+}
 repositories {
     mavenCentral()
 }
@@ -8,6 +10,9 @@ java {
     toolchain {
         languageVersion.set(JavaLanguageVersion.of(17))
     }
+}
+checkstyle {
+    toolVersion '10.9.3'
 }
 dependencies {
     implementation 'org.slf4j:slf4j-api:2.0.7'
