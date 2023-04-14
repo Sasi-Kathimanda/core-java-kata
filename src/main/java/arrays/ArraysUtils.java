@@ -1,7 +1,6 @@
 package arrays;
 
 import domain.Person;
-
 import java.util.Arrays;
 
 public class ArraysUtils {
