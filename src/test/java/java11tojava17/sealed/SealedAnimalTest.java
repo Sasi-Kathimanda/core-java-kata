@@ -3,6 +3,9 @@ package java11tojava17.sealed;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
+import java.lang.constant.ClassDesc;
+import java.util.Arrays;
+import java.util.Objects;
 
 class SealedAnimalTest {
 
@@ -11,12 +14,14 @@ class SealedAnimalTest {
         SealedAnimal sealedCat = new SealedCat();
         assertEquals("meow meow pilli", sealedCat.sound());
         assertEquals("Zzz", sealedCat.sleep());
-        assertTrue(sealedCat.getClass().isSealed());
+        assertFalse(sealedCat.getClass().isSealed());
+        assertTrue(Arrays.stream(sealedCat.getClass().getSuperclass().getPermittedSubclasses())
+                .anyMatch(permittedClass -> Objects.equals(permittedClass.getCanonicalName(), sealedCat.getClass().getCanonicalName())));
 
         SealedAnimal nonSealedDog = new NonSealedDog();
         assertEquals("bow bow kukka", nonSealedDog.sound());
         assertEquals("Zzz", nonSealedDog.sleep());
-        assertFalse(sealedCat.getClass().isSealed());
+        assertFalse(nonSealedDog.getClass().isSealed());
 
     }
 
