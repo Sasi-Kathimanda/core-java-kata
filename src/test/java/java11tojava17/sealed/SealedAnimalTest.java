@@ -11,10 +11,13 @@ class SealedAnimalTest {
         SealedAnimal sealedCat = new SealedCat();
         assertEquals("meow meow pilli", sealedCat.sound());
         assertEquals("Zzz", sealedCat.sleep());
+        assertTrue(sealedCat.getClass().isSealed());
 
         SealedAnimal nonSealedDog = new NonSealedDog();
         assertEquals("bow bow kukka", nonSealedDog.sound());
         assertEquals("Zzz", nonSealedDog.sleep());
+        assertFalse(sealedCat.getClass().isSealed());
+
     }
 
 }
