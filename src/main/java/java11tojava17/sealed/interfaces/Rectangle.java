@@ -1,5 +1,5 @@
 package java11tojava17.sealed.interfaces;
 
-public interface Rectangle extends Shape {
+public sealed interface Rectangle extends Shape permits TransparentRectangle {
     String type();
 }

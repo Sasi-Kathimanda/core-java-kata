@@ -1,6 +1,6 @@
 package java11tojava17.sealed.interfaces;
 
-public class Circle implements Shape {
+public final class Circle implements Shape {
     private String outcome;
     @Override
     public void draw() {
