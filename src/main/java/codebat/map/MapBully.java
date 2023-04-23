@@ -6,9 +6,18 @@ import java.util.Map;
 public class MapBully {
 
     public static void main(String[] args) {
-        Map<String,String>  map1 = new HashMap<String,String>(){{ putIfAbsent("a","candy");putIfAbsent("b","dirt"); }};
-        Map<String,String>  map2 = new HashMap<String,String>(){{ putIfAbsent("a","candy"); }};
-        Map<String,String>  map3 = new HashMap<String,String>(){{ putIfAbsent("a","candy");putIfAbsent("b","carrot");putIfAbsent("c","meh");}};
+        Map<String, String> map1 = new HashMap<String, String>() {{
+            putIfAbsent("a", "candy");
+            putIfAbsent("b", "dirt");
+        }};
+        Map<String, String> map2 = new HashMap<String, String>() {{
+            putIfAbsent("a", "candy");
+        }};
+        Map<String, String> map3 = new HashMap<String, String>() {{
+            putIfAbsent("a", "candy");
+            putIfAbsent("b", "carrot");
+            putIfAbsent("c", "meh");
+        }};
 
         System.out.println(map3.entrySet());
         mapBully(map3);
@@ -17,10 +26,10 @@ public class MapBully {
     }
 
     public static Map<String, String> mapBully(Map<String, String> map) {
-        if(map.containsKey("a")) {
-              map.put("b",map.get("a"));
-              map.put("a","");
-              return map;
+        if (map.containsKey("a")) {
+            map.put("b", map.get("a"));
+            map.put("a", "");
+            return map;
         }
         return map;
     }
