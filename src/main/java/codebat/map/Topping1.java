@@ -5,9 +5,14 @@ import java.util.Map;
 
 public class Topping1 {
     public static void main(String[] args) {
-        Map<String,String> map1 = new HashMap<String,String>(){{ putIfAbsent("icecream","peanuts"); }};
-        Map<String,String> map2 = new HashMap<String,String>(){{  }};
-        Map<String,String> map3 = new HashMap<String,String>(){{ putIfAbsent("pancake","syrup");  }};
+        Map<String, String> map1 = new HashMap<String, String>() {{
+            putIfAbsent("icecream", "peanuts");
+        }};
+        Map<String, String> map2 = new HashMap<String, String>() {{
+        }};
+        Map<String, String> map3 = new HashMap<String, String>() {{
+            putIfAbsent("pancake", "syrup");
+        }};
 
         System.out.println(map1.entrySet());
         topping1(map1);
@@ -25,11 +30,11 @@ public class Topping1 {
     }
 
     public static Map<String, String> topping1(Map<String, String> map) {
-     if(map.containsKey("ice cream")) {
-            map.put("ice cream","cherry");
+        if (map.containsKey("ice cream")) {
+            map.put("ice cream", "cherry");
         }
-     map.put("bread","butter");
-     return map;
+        map.put("bread", "butter");
+        return map;
     }
 
 }
