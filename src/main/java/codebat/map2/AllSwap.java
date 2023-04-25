@@ -17,19 +17,19 @@ public class AllSwap {
     }
 
     public static String[] allSwap(String[] strings) {
-        Map<String, Integer> tempMap =  new HashMap<>();
-            for (int i =0; i < strings.length; i++) {
-                String currentElementFirstCharacter = strings[i].substring(0, 1);
-                if(tempMap.containsKey(currentElementFirstCharacter)) {
-                    String temp = strings[i];
-                    String matched = strings[tempMap.get(currentElementFirstCharacter)];
-                    strings[i] = matched;
-                    strings[tempMap.get(currentElementFirstCharacter)] = temp;
-                    tempMap.remove(currentElementFirstCharacter);
-                } else {
-                    tempMap.put(currentElementFirstCharacter, i);
-                }
+        Map<String, Integer> tempMap = new HashMap<>();
+        for (int i = 0; i < strings.length; i++) {
+            String currentElementFirstCharacter = strings[i].substring(0, 1);
+            if (tempMap.containsKey(currentElementFirstCharacter)) {
+                String temp = strings[i];
+                String matched = strings[tempMap.get(currentElementFirstCharacter)];
+                strings[i] = matched;
+                strings[tempMap.get(currentElementFirstCharacter)] = temp;
+                tempMap.remove(currentElementFirstCharacter);
+            } else {
+                tempMap.put(currentElementFirstCharacter, i);
             }
+        }
         return strings;
     }
 }
