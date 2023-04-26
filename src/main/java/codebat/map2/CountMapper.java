@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.stream.Collectors;
+
 public class CountMapper {
     private static String getCountedValues(List<String> input) {
         AtomicReference<StringBuilder> result = new AtomicReference<>(new StringBuilder());
@@ -26,19 +27,20 @@ public class CountMapper {
         });
 
         final Map<String, Integer> sortedMap = countMap.entrySet().stream()
-            .sorted(Map.Entry.comparingByValue())
-            .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (e1, e2) -> e1, LinkedHashMap::new));
+                .sorted(Map.Entry.comparingByValue())
+                .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (e1, e2) -> e1, LinkedHashMap::new));
 
-        sortedMap.forEach((k,v) -> {
+        sortedMap.forEach((k, v) -> {
             if (v >= 2) {
-                int num = v /2;
-                for (int i=0; i<num; i++){
+                int num = v / 2;
+                for (int i = 0; i < num; i++) {
                     result.get().append(k);
                 }
             }
         });
         return result.toString();
     }
+
     public static void main(String[] args) {
         List<String> input = Arrays.asList("this", "or", "that", "and", "this", "and", "that");
         System.out.println(getCountedValues(input));
