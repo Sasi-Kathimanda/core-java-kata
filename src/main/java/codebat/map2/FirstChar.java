@@ -17,7 +17,7 @@ public class FirstChar {
 
     public static Map<String, String> firstChar(String[] strings) {
 
-        return Stream.of(strings).collect(Collectors.toMap(k -> k.length() == 0? "":k.substring(0, 1), v -> v , (a1, a2) -> a1+a2));
+        return Stream.of(strings).collect(Collectors.toMap(k -> k.length() == 0 ? "" : k.substring(0, 1), v -> v, (a1, a2) -> a1 + a2));
     }
 
 }
