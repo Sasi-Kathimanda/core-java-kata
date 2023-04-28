@@ -20,11 +20,11 @@ public class FirstSwap {
     }
 
     public static String[] firstSwap(String[] strings) {
-        Map<String, Integer> tempMap =  new HashMap<>();
+        Map<String, Integer> tempMap = new HashMap<>();
         Set<String> swapRecorder = new HashSet<>();
-        for (int i =0; i < strings.length; i++) {
+        for (int i = 0; i < strings.length; i++) {
             String currentElementFirstCharacter = strings[i].substring(0, 1);
-            if(tempMap.containsKey(currentElementFirstCharacter) && !swapRecorder.contains(currentElementFirstCharacter) ) {
+            if (tempMap.containsKey(currentElementFirstCharacter) && !swapRecorder.contains(currentElementFirstCharacter)) {
                 String temp = strings[i];
                 String matched = strings[tempMap.get(currentElementFirstCharacter)];
                 strings[i] = matched;
