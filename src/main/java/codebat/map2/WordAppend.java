@@ -18,10 +18,10 @@ public class WordAppend {
     public static String wordAppend(String[] strings) {
         StringBuilder result = new StringBuilder();
         Map<String, Integer> tempMap = new HashMap<>();
-        for (String s: strings) {
-            if(tempMap.containsKey(s)) {
-                tempMap.put(s, tempMap.get(s)+1);
-                if(tempMap.get(s) % 2 == 0) {
+        for (String s : strings) {
+            if (tempMap.containsKey(s)) {
+                tempMap.put(s, tempMap.get(s) + 1);
+                if (tempMap.get(s) % 2 == 0) {
                     result.append(s);
                 }
             } else {
