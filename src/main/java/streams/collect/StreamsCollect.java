@@ -14,35 +14,38 @@ import java.util.stream.Stream;
  * two types of collect:
  * <R,A> R collect(Collector<? super T,A,R> collector)
  * <R> R collect(Supplier<R> supplier,
- *               BiConsumer<R,? super T> accumulator,
- *               BiConsumer<R,R> combiner)
+ * BiConsumer<R,? super T> accumulator,
+ * BiConsumer<R,R> combiner)
  */
 public class StreamsCollect {
     public static void main(String[] args) {
-    // convert to stream to list using custom collector
+        // convert to stream to list using custom collector
 
         List<Integer> list = Stream.of(1, 2, 3, 4, 5)
                 .collect(() -> new ArrayList<>(),
                         (l, i) -> l.add(i),
                         (l1, l2) -> l1.addAll(l2));
 
-    // replace above with method reference
-        list =  Stream.of(1, 2, 3, 4, 5)
+        // replace above with method reference
+        list = Stream.of(1, 2, 3, 4, 5)
                 .collect(ArrayList::new,
                         ArrayList::add,
                         ArrayList::addAll);
 
-     //duplicate key using toMap()
-        System.out.println(Stream.of(1,1,1,2,3,4).collect(Collectors.toMap(k->k , v-> new ArrayList<> (Collections.singletonList(v)),
-                (list1, list2) ->  { list1.addAll(list2); return list1;})));
+        //duplicate key using toMap()
+        System.out.println(Stream.of(1, 1, 1, 2, 3, 4).collect(Collectors.toMap(k -> k, v -> new ArrayList<>(Collections.singletonList(v)),
+                (list1, list2) -> {
+                    list1.addAll(list2);
+                    return list1;
+                })));
     }
 
     //partitionBy
-    protected  Map<Boolean, List<Integer>> getPartitionMap(Integer... ints) {
+    protected Map<Boolean, List<Integer>> getPartitionMap(Integer... ints) {
         return Stream.of(ints).collect(Collectors.partitioningBy(i -> i < 50));
     }
 
-    protected  Map<Boolean, Set<Integer>> getPartitionMapComposedCollector(Integer... ints) {
+    protected Map<Boolean, Set<Integer>> getPartitionMapComposedCollector(Integer... ints) {
         return Stream.of(ints).collect(Collectors.partitioningBy(i -> i < 50, Collectors.toSet()));
     }
 
@@ -73,6 +76,6 @@ public class StreamsCollect {
     }
 
     public Map<Integer, Long> groupByMapResultOrdered(Integer... elements) {
-        return Stream.of(elements).collect(Collectors.groupingBy(i -> i / 10 * 10, TreeMap::new,Collectors.counting()));
+        return Stream.of(elements).collect(Collectors.groupingBy(i -> i / 10 * 10, TreeMap::new, Collectors.counting()));
     }
 }
