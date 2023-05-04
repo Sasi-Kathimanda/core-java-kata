@@ -10,18 +10,18 @@ import java.util.function.Consumer;
 public class IteratorsTransformation {
 
     public static void main(String[] args) {
-        List<Integer> numbers = Arrays.asList(1,2,3,4);
+        List<Integer> numbers = Arrays.asList(1, 2, 3, 4);
 
         System.out.println("***** Version 1 *******");
         //V1: external Iterators
-        for(int i = 0;i < 4;i++) {
+        for (int i = 0; i < 4; i++) {
             System.out.println(numbers.get(i));
         }
 
 
         System.out.println("***** Version 2 *******");
         //V2: still external Iterators
-        for(int e : numbers) {
+        for (int e : numbers) {
             System.out.println(e);
         }
 
