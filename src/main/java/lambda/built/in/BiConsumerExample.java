@@ -3,25 +3,25 @@ package lambda.built.in;
 import java.util.function.BiConsumer;
 
 /**
- *  Definition: BiConsumer represents the consumer that take two arguments and don't return a result.
- *  Method Signature: (T,U) -> void
+ * Definition: BiConsumer represents the consumer that take two arguments and don't return a result.
+ * Method Signature: (T,U) -> void
  */
 public class BiConsumerExample {
 
     public static void main(String[] args) {
 
         //using anonymous clazz
-        BiConsumer<String,String> biConsumerUsingAnonymousClazz = new BiConsumer<String, String>() {
+        BiConsumer<String, String> biConsumerUsingAnonymousClazz = new BiConsumer<String, String>() {
             @Override
             public void accept(String s, String s2) {
-                System.out.println( s +" "+ s2 );
+                System.out.println(s + " " + s2);
             }
         };
 
-        biConsumerUsingAnonymousClazz.accept("Hi" , "There");
+        biConsumerUsingAnonymousClazz.accept("Hi", "There");
 
         //using lambda
-        BiConsumer<String,String> biConsumerUsingLambda = (s1,s2) -> System.out.println(s1+" "+s2);
+        BiConsumer<String, String> biConsumerUsingLambda = (s1, s2) -> System.out.println(s1 + " " + s2);
         biConsumerUsingLambda.accept("Hi", "There");
     }
 }
