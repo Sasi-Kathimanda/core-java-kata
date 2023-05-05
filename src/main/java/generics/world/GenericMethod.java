@@ -7,10 +7,11 @@ import java.util.List;
 
 public class GenericMethod {
     /**
-     *  Finds the min value of any Type T
-     * @param objects list of any objects
+     * Finds the min value of any Type T
+     *
+     * @param objects    list of any objects
      * @param comparator any T that implements comparator interface
-     * @param <T> any type T
+     * @param <T>        any type T
      * @return
      */
     public <T> T min(List<T> objects, Comparator<T> comparator) {
@@ -30,23 +31,22 @@ public class GenericMethod {
 
     public <T> List<T> toList(T[] inputArray) {
         List<T> result = new ArrayList<>();
-        for(T elt: inputArray) result.add(elt);
+        for (T elt : inputArray) result.add(elt);
         return result;
     }
 
     public <T> List<T> toListUsingVarArgs(T... inputArray) {
         List<T> result = new ArrayList<>();
-        for(T elt:inputArray) result.add(elt);
+        for (T elt : inputArray) result.add(elt);
         return result;
     }
 
     public <T> List<T> addAll(List<T> tList, T... ints) {
         List<T> result = new ArrayList<>();
-        for(T elt: tList) result.add(elt);
-        for(T elt: ints) result.add(elt);
+        for (T elt : tList) result.add(elt);
+        for (T elt : ints) result.add(elt);
         return result;
     }
-
 
 
     /************************************************
@@ -56,7 +56,7 @@ public class GenericMethod {
         Collections.copy(dest, source);
     }
 
-   // public <T> void copy(List<T> dest, List<T> src) {
-        //This accepts only dest and src of same type : eg: Integer, Object
+    // public <T> void copy(List<T> dest, List<T> src) {
+    //This accepts only dest and src of same type : eg: Integer, Object
     //}
 }
