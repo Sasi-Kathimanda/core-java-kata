@@ -6,10 +6,11 @@ public class MakeTags {
         System.out.println(makeTags("i", "Hello"));
         System.out.println(makeTags("cite", "Yay"));
     }
+
     public static String makeTags(String tag, String word) {
-        final String preTag = "<"+tag+">";
-        final String postTag = "</"+tag+">";
-        return preTag+word+postTag;
+        final String preTag = "<" + tag + ">";
+        final String postTag = "</" + tag + ">";
+        return preTag + word + postTag;
     }
 
 }
