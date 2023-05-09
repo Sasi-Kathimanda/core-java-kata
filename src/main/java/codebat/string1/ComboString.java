@@ -10,14 +10,14 @@ public class ComboString {
     public static String comboString(String a, String b) {
         String shrty;
         String longy;
-        if(a.length()> b.length()) {
+        if (a.length() > b.length()) {
             longy = a;
             shrty = b;
-            } else {
+        } else {
             longy = b;
             shrty = a;
         }
-         return shrty+longy+shrty;
+        return shrty + longy + shrty;
     }
 
 }
