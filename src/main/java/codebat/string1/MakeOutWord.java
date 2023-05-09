@@ -10,7 +10,7 @@ public class MakeOutWord {
     }
 
     public static String makeOutWord(String out, String word) {
-        return out.subSequence(0,2)+word+out.substring(2,4);
+        return out.subSequence(0, 2) + word + out.substring(2, 4);
     }
 
 }
