@@ -9,21 +9,21 @@ import java.util.function.Function;
 public class FunctionExample {
 
     // 1.using normal Method
-    static void roundItUsingMethod(Double d , Function<Double, Long> f )  {
+    static void roundItUsingMethod(Double d, Function<Double, Long> f) {
         Long result = f.apply(d);
         System.out.println(result);
     }
 
     //2.using Anonymous class
-    static Function<Double,Long> functionUsingAnonymousClazz = new Function<Double, Long>() {
+    static Function<Double, Long> functionUsingAnonymousClazz = new Function<Double, Long>() {
         @Override
         public Long apply(Double aDouble) {
             return Math.round(aDouble);
         }
-    } ;
+    };
 
     //3. using Lambda
-    static Function<Double,Long> functionUsingLambda = aDouble -> Math.round(aDouble);
+    static Function<Double, Long> functionUsingLambda = aDouble -> Math.round(aDouble);
 
 
     public static void main(String[] args) {
