@@ -4,12 +4,11 @@ import java.time.Duration;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.Period;
-import java.time.temporal.ChronoField;
 import java.time.temporal.ChronoUnit;
 import java.time.temporal.Temporal;
 
 /**
- * have two versions to find time difference :
+ * have two versions to find time difference.
  * 1) @TemporalAmount.between()
  * 2) @ChronoUnit.UNIT.between()
  */
