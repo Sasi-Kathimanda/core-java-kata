@@ -16,7 +16,7 @@ public class WordLen {
     }
 
     public static Map<String, Integer> wordLen(String[] strings) {
-        Map<String, Integer> map = Stream.of(strings).collect(Collectors.toMap(Function.identity(),v -> v.length(),(a1, a2) -> a2));
+        Map<String, Integer> map = Stream.of(strings).collect(Collectors.toMap(Function.identity(), v -> v.length(), (a1, a2) -> a2));
         System.out.println(map);
         return map;
     }
