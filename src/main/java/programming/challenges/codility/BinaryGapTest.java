@@ -20,7 +20,7 @@ public class BinaryGapTest {
         }
         List<Integer> differences = new ArrayList<>();
         for (int i = 1; i < indices.size(); i++) {
-            differences.add(indices.get(i)- (indices.get(i-1))-1);
+            differences.add(indices.get(i) - (indices.get(i - 1)) - 1);
         }
 
         return indices.size() != 1 ? Collections.max(differences) : 0;
