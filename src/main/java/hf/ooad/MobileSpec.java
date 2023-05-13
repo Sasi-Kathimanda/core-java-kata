@@ -16,10 +16,12 @@ public class MobileSpec extends DeviceSpec {
 
     @Override
     boolean matches(DeviceSpec otherSpec) {
-        if (!super.matches(otherSpec))
+        if (!super.matches(otherSpec)) {
             return false;
-        if (!(otherSpec instanceof MobileSpec))
+        }
+        if (!(otherSpec instanceof MobileSpec)) {
             return false;
+        }
         return this.getBrand().equals(((MobileSpec) otherSpec).getBrand())
                 && getModelName((MobileSpec) otherSpec)
                 && this.getNetwork().equals(((MobileSpec) otherSpec).getNetwork())
@@ -28,7 +30,9 @@ public class MobileSpec extends DeviceSpec {
     }
 
     private boolean getModelName(MobileSpec otherSpec) {
-        if (otherSpec.getModelName() == null) return true;
+        if (otherSpec.getModelName() == null) {
+            return true;
+        }
         return this.getModelName().equalsIgnoreCase(otherSpec.getModelName());
     }
 
