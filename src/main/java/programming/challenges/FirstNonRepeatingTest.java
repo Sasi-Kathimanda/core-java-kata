@@ -15,8 +15,8 @@ public class FirstNonRepeatingTest {
         Map<Character, Long> map = input.chars()
                 .mapToObj(e -> (char) e)
                 .collect(Collectors.groupingBy(Function.identity(), LinkedHashMap::new, Collectors.counting()));
-       map.forEach((key, value) -> System.out.println(key + "-" + value));
+        map.forEach((key, value) -> System.out.println(key + "-" + value));
         Optional<Character> result = map.entrySet().stream().filter(e -> e.getValue() == 1).map(Map.Entry::getKey).findFirst();
-        return result .orElse((char)1);
+        return result.orElse((char) 1);
     }
 }
