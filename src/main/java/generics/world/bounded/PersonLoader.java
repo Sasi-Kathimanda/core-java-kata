@@ -1,7 +1,6 @@
 package generics.world.bounded;
 
 import domain.Person;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -28,7 +27,8 @@ public class PersonLoader {
             return (Person) constructor.newInstance(personName, age);
         } catch (IOException e) {
             return null;
-        } catch (NoSuchMethodException | InvocationTargetException | InstantiationException | IllegalAccessException e) {
+        } catch (NoSuchMethodException | InvocationTargetException | InstantiationException |
+                 IllegalAccessException e) {
             e.printStackTrace();
             return null;
         }
@@ -36,7 +36,7 @@ public class PersonLoader {
 
     public void loadAll(List<? super Person> people) throws ClassNotFoundException {
         Person person;
-        while ( (person = load()) != null) {
+        while ((person = load()) != null) {
             people.add(person);
         }
     }
