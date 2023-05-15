@@ -14,10 +14,10 @@ public class Pairs {
         pairs(list3);
     }
 
-    public static  Map<String, String> pairs(String[] strings) {
+    public static Map<String, String> pairs(String[] strings) {
         Map<String, String> map = Stream.of(strings).
-                collect(Collectors.toMap(k -> k.substring(0, 1), v -> v.substring(v.length() - 1),(k1,k2) ->k1));
-        System.out.println( map);
+                collect(Collectors.toMap(k -> k.substring(0, 1), v -> v.substring(v.length() - 1), (k1, k2) -> k1));
+        System.out.println(map);
         return map;
     }
 
