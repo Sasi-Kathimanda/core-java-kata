@@ -17,7 +17,7 @@ public class WordZero {
     }
 
     public static Map<String, Integer> word0(String[] strings) {
-        return Stream.of(strings).collect(Collectors.toMap(k->k,v->0,(a,a2)->a2));
+        return Stream.of(strings).collect(Collectors.toMap(k -> k, v -> 0, (a, a2) -> a2));
     }
 
 }
