@@ -1,10 +1,10 @@
 package generics.world;
 
 import domain.Person;
-
 import java.util.Comparator;
-/**
-   Implementing a Generic Type
+
+/** Implementing a Generic Type.
+ * @param <T>  T is a Type
  */
 public class SortedByAgeComparator<T> implements Comparator<Person> {
     @Override
