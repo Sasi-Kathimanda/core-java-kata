@@ -10,11 +10,11 @@ public class FirstTwo {
     }
 
     public static String firstTwo(String str) {
-    if(str.isEmpty() || str.length()<2) {
-        return str;
-    } else {
-        return str.substring(0,2);
-    }
+        if (str.isEmpty() || str.length() < 2) {
+            return str;
+        } else {
+            return str.substring(0, 2);
+        }
 
     }
 
