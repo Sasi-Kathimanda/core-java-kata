@@ -15,14 +15,14 @@ public class UnaryOperatorExample {
         UnaryOperator<String> unaryOperatorUsingAnonymousClazz = new UnaryOperator<String>() {
             @Override
             public String apply(String s) {
-                return s.substring(0,2);
+                return s.substring(0, 2);
             }
         };
 
         System.out.println(unaryOperatorUsingAnonymousClazz.apply("Hi123"));
 
         //using Lambda
-        UnaryOperator<String> unaryOperatorUsingLambda = s -> s.substring(0,2);
+        UnaryOperator<String> unaryOperatorUsingLambda = s -> s.substring(0, 2);
         System.out.println(unaryOperatorUsingLambda.apply("Hi123"));
     }
 }
