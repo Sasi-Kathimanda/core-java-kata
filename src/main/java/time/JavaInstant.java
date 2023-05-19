@@ -5,7 +5,7 @@ import java.time.LocalDateTime;
 import java.time.ZoneId;
 
 public class JavaInstant {
-    protected Instant Of() {
+    protected Instant of() {
         return Instant.EPOCH;
     }
 

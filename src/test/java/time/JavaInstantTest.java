@@ -22,7 +22,7 @@ class JavaInstantTest {
 
     @Test
     void instanceOf() {
-        assertEquals(INSTANCE_EPOCH, sut.Of().toString());
+        assertEquals(INSTANCE_EPOCH, sut.of().toString());
     }
 
     @Test
