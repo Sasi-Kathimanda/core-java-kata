@@ -12,7 +12,8 @@ public class FailFastIterator {
                                    .collect(Collectors.toList());
         Iterator<Integer> listIterator = list.iterator();
         while (listIterator.hasNext()) {
-            Integer currentVal = listIterator.next(); // throws the ConcurrentModificationException after 1st iteration as it checks the initial modCount
+            // throws the ConcurrentModificationException after 1st iteration as it checks the initial modCount
+            Integer currentVal = listIterator.next();
             System.out.println("currentVal = " + currentVal);
             list.add(6);
         }
