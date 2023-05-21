@@ -16,12 +16,12 @@ public class VariantTypes {
         nums[1] = 1.1; //Runtime Exception
     }
 
-    public void InvariantTest(List<Integer> ints) {
+    public void invariantTest(List<Integer> ints) {
       //  List<Number> nums = ints; //WARNING Compiler error you cannot assign as List<Integer> is not a subtype List<Number>
          // List<Integer> ints2 = ints; //This is allows as both types are identical
     }
 
-    public void ContraVariantTest() {
+    public void contraVariantTest() {
 
     }
 
