@@ -1,7 +1,6 @@
 package multithreading;
 
 import lombok.AllArgsConstructor;
-
 import java.time.LocalDateTime;
 import java.util.concurrent.Callable;
 
