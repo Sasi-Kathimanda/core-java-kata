@@ -4,8 +4,8 @@ import java.util.List;
 import java.util.stream.IntStream;
 
 /**
- * elements in stream can be reduced by two methods reduce(), collect()
- */
+ * elements in stream can be reduced by two methods reduce(), collect().
+ **/
 public class StreamReduction {
 
     protected int getSumUsingPeek(List<Integer> ints) {
