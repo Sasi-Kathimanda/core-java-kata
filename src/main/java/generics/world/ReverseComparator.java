@@ -2,7 +2,7 @@ package generics.world;
 
 import java.util.Comparator;
 
-/**
+/**.
  *  Passing a parameter to generic type
  * @param <T>
  */
