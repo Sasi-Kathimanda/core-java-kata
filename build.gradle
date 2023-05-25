@@ -17,8 +17,8 @@ checkstyle {
 dependencies {
     implementation 'org.slf4j:slf4j-api:2.0.7'
     implementation 'org.junit.jupiter:junit-jupiter:5.9.2'
-    compileOnly 'org.projectlombok:lombok:1.18.26'
-    annotationProcessor 'org.projectlombok:lombok:1.18.26'
+    compileOnly 'org.projectlombok:lombok:1.18.28'
+    annotationProcessor 'org.projectlombok:lombok:1.18.28'
     testImplementation 'org.slf4j:slf4j-simple:2.0.7'
 
 }
