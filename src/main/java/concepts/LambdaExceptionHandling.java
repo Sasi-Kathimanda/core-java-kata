@@ -34,7 +34,7 @@ public class LambdaExceptionHandling {
         try {
             Thread.sleep(1);
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            System.out.println("e = " + e);
         }
         return t + 1;
     }
