@@ -9,6 +9,6 @@ public class JavaSubstring {
         int start = in.nextInt();
         int end = in.nextInt();
 
-        System.out.println(inputString.substring(start,end));
+        System.out.println(inputString.substring(start, end));
     }
 }
