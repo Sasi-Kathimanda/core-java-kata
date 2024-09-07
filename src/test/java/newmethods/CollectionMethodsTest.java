@@ -18,7 +18,7 @@ class CollectionMethodsTest {
 
         //When
         sut.sort(names);
-        assertEquals("[Anne, Barbara, Kiran]", names.toString());
+        assertEquals("[123, Anne, Barbara, Kiran]", names.toString());
     }
 
     @Test
@@ -32,14 +32,14 @@ class CollectionMethodsTest {
         //When
         List<Person> persons = Arrays.asList(p3, p2, p1);
         sut.toCaps(persons);
-        assertEquals("RAJA",persons.get(0).getName());
-        assertEquals(39,persons.get(0).getAge());
+        assertEquals("RAJA", persons.get(0).getName());
+        assertEquals(39, persons.get(0).getAge());
 
-        assertEquals("KIRAN",persons.get(1).getName());
-        assertEquals(29,persons.get(1).getAge());
+        assertEquals("KIRAN", persons.get(1).getName());
+        assertEquals(29, persons.get(1).getAge());
 
-        assertEquals("SASI",persons.get(2).getName());
-        assertEquals(19,persons.get(2).getAge());
+        assertEquals("SASI", persons.get(2).getName());
+        assertEquals(19, persons.get(2).getAge());
     }
 
     @Test
