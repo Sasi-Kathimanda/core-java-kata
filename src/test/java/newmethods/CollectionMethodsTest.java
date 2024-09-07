@@ -14,7 +14,7 @@ class CollectionMethodsTest {
     void comparingShouldSortTheListByNaturalOrder() {
         //Given
         CollectionMethods sut = new CollectionMethods();
-        List<String> names = Arrays.asList("Anne", "Kiran", "Barbara");
+        List<String> names = Arrays.asList("Anne", "Kiran", "Barbara", "123");
 
         //When
         sut.sort(names);
