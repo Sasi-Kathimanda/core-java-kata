@@ -3,12 +3,8 @@ package programming.challenges;
 import java.util.stream.IntStream;
 
 public class Palindrome {
-    public static void main(String[] args) {
-        System.out.println(isPalindrome("madam"));
-        System.out.println(isPalindromeUsingLambda("sasi"));
-    }
 
-    private static boolean isPalindrome(String input) {
+    public boolean isPalindrome(String input) {
         char[] charArray = input.toCharArray();
         StringBuilder sb = new StringBuilder(input.length());
         for (int i = charArray.length - 1; i >= 0; i--) {
@@ -17,12 +13,12 @@ public class Palindrome {
         return input.contentEquals(sb);
     }
 
-    private static boolean isPalindromeUsingLambda(String input) {
+    public boolean isPalindromeUsingLambda(String input) {
         return IntStream.range(0, input.length() / 2)
                 .allMatch(i -> input.charAt(i) == input.charAt(input.length() - 1 - i));
     }
 
-    public static String longestPalindrome(String s) {
+    public String longestPalindrome(String s) {
         if (s.isEmpty()) {
             return null;
         }
@@ -46,7 +42,7 @@ public class Palindrome {
     }
     // Given a center, either one letter or two letter,
 // Find longest palindrome
-    public static String helper(String s, int begin, int end) {
+    public  String helper(String s, int begin, int end) {
         while (begin >= 0 && end <= s.length() - 1 && s.charAt(begin) == s.charAt(end)) {
             begin--;
             end++;
