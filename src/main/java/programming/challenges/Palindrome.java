@@ -2,7 +2,7 @@ package programming.challenges;
 
 import java.util.stream.IntStream;
 
-public class PalindromeTest {
+public class Palindrome {
     public static void main(String[] args) {
         System.out.println(isPalindrome("madam"));
         System.out.println(isPalindromeUsingLambda("sasi"));
@@ -14,7 +14,7 @@ public class PalindromeTest {
         for (int i = charArray.length - 1; i >= 0; i--) {
             sb.append(charArray[i]);
         }
-        return input.equals(sb.toString());
+        return input.contentEquals(sb);
     }
 
     private static boolean isPalindromeUsingLambda(String input) {
