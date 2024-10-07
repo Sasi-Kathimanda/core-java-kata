@@ -2,19 +2,19 @@ package streams.collect;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-class CompareTest {
-    private final List<String> list1 = List.of("banana", "ORANGE", "mango");
+class StreamsCompareTest {
+    private final List<String> list1 = Arrays.asList("banana", "ORANGE", "mango");
     private final List<String> list2 = List.of("banana", "orange", "mango");
-    Compare compare = new Compare();
+    StreamsCompare streamsCompare = new StreamsCompare();
 
     @Test
     void givenTwoListOfStringsCheckTheyAreEqual() {
         //when
-        assertTrue(compare.compareList(list1, list2));
-
+        assertTrue(streamsCompare.compareList(list1, list2));
     }
 }
