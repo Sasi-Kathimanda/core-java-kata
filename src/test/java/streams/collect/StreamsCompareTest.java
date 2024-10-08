@@ -22,7 +22,7 @@ class StreamsCompareTest {
     void compareListWithHavingNulls() {
         //given
         var list1 = Arrays.asList("banana", null, "ORANGE", "mango");
-        var list2 = Arrays.asList("banana", "orange", "mango");
+        var list2 = Arrays.asList(null, "banana", "orange", "mango");
         //when
         assertTrue(streamsCompare.compareListWithHavingNulls(list1, list2));
     }
