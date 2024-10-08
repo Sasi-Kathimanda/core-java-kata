@@ -17,4 +17,13 @@ class StreamsCompareTest {
         //when
         assertTrue(streamsCompare.compareList(list1, list2));
     }
+
+    @Test
+    void compareListWithHavingNulls() {
+        //given
+        var list1 = Arrays.asList("banana", null, "ORANGE", "mango");
+        var list2 = Arrays.asList("banana", "orange", "mango");
+        //when
+        assertTrue(streamsCompare.compareListWithHavingNulls(list1, list2));
+    }
 }
