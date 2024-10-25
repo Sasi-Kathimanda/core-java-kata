@@ -1,10 +1,15 @@
 package streams.collect;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import streams.Employee;
+
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -93,5 +98,40 @@ class StreamsCollectTest {
         Map<Boolean, Set<Integer>> partitionMapComposedCollector = sut.getPartitionMapComposedCollector(1, 9, 18, 18, 25, 32, 45, 56, 65, 72);
         assertEquals("[32, 1, 18, 9, 25, 45]", partitionMapComposedCollector.get(true).toString());
         assertEquals("[65, 56, 72]", partitionMapComposedCollector.get(false).toString());
+    }
+
+    @Test
+    void getMaxCommitsByDepartmentId() {
+        //given
+         Employee[] employees = Arrays.asList(
+            new Employee(1, "Sasi", "sas", 2000),
+            new Employee(2, "Kiran", "sas", 1001),
+            new Employee(3, "Raja", "gc", 101),
+            new Employee(4, "Sachin", "ovp", 8),
+            new Employee(5, "Jal", "ovp", 2)
+
+        ).toArray(new Employee[0]);
+
+        //when
+         Map<String, Optional<Employee>> result = sut.groupByMapAndThenMaxBy(employees);
+        
+        //then
+        Assertions.assertAll(
+            () -> {
+            Optional<Employee> sasEmployee = result.get("sas");
+            assertEquals("Sasi", sasEmployee.get().name());
+            assertEquals(2000, sasEmployee.get().noOfCodeCommits());
+            },
+            () -> {
+            Optional<Employee> gcEmployee = result.get("gc");
+            assertEquals("Raja", gcEmployee.get().name());
+            assertEquals(101, gcEmployee.get().noOfCodeCommits());
+            },
+            () -> {
+            Optional<Employee> ovpEmployee = result.get("ovp");
+            assertEquals("Sachin", ovpEmployee.get().name());
+            assertEquals(8, ovpEmployee.get().noOfCodeCommits());
+            }
+        );
     }
 }

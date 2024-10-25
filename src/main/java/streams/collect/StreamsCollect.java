@@ -4,11 +4,14 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.Set;
 import java.util.TreeMap;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+
+import streams.Employee;
 
 /**
  * two types of collect:
@@ -77,5 +80,13 @@ public class StreamsCollect {
 
     public Map<Integer, Long> groupByMapResultOrdered(Integer... elements) {
         return Stream.of(elements).collect(Collectors.groupingBy(i -> i / 10 * 10, TreeMap::new, Collectors.counting()));
+    }
+
+    public Map<String, Optional<Employee>> groupByMapAndThenMaxBy(Employee[] employees) {
+        Map<String, Optional<Employee>> result = Stream.of(employees)
+        .collect(
+            Collectors.groupingBy(Employee::departmentId,
+             Collectors.maxBy((e1, e2) -> e1.noOfCodeCommits() - e2.noOfCodeCommits())));
+             return result;
     }
 }
