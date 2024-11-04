@@ -20,6 +20,4 @@ public class No9 {
                 .filter(e -> e % 10 != 9)
                 .collect(Collectors.toList()));
     }
-
-
 }
