@@ -119,17 +119,17 @@ class StreamsCollectTest {
         Assertions.assertAll(
             () -> {
             Optional<Employee> sasEmployee = result.get("sas");
-            assertEquals("Sasi", sasEmployee.get().name());
+            assertEquals("Sasi", sasEmployee.orElseThrow().name());
             assertEquals(2000, sasEmployee.get().noOfCodeCommits());
             },
             () -> {
             Optional<Employee> gcEmployee = result.get("gc");
-            assertEquals("Raja", gcEmployee.get().name());
+            assertEquals("Raja", gcEmployee.orElseThrow().name());
             assertEquals(101, gcEmployee.get().noOfCodeCommits());
             },
             () -> {
             Optional<Employee> ovpEmployee = result.get("ovp");
-            assertEquals("Sachin", ovpEmployee.get().name());
+            assertEquals("Sachin", ovpEmployee.orElseThrow().name());
             assertEquals(8, ovpEmployee.get().noOfCodeCommits());
             }
         );
