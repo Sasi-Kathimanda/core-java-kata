@@ -2,6 +2,7 @@ package streams.collect;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -86,7 +87,8 @@ public class StreamsCollect {
         Map<String, Optional<Employee>> result = Stream.of(employees)
         .collect(
             Collectors.groupingBy(Employee::departmentId,
-             Collectors.maxBy((e1, e2) -> e1.noOfCodeCommits() - e2.noOfCodeCommits())));
+//                    Collectors.maxBy((e1, e2) -> e1.noOfCodeCommits() - e2.noOfCodeCommits()))); //same effect
+        Collectors.maxBy(Comparator.comparingInt(Employee::noOfCodeCommits))));
              return result;
     }
 }
