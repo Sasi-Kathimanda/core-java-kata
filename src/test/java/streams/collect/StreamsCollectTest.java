@@ -117,21 +117,22 @@ class StreamsCollectTest {
         Map<String, Optional<Employee>> result = sut.groupByMapAndThenMaxBy(employees);
 
         //then
-        assertAll(
-                () -> {
-                    result.get("sas").ifPresent(sasEmployee -> assertEquals("Sasi", sasEmployee.name()));
-                    result.get("sas").ifPresent(sasEmployee -> assertEquals(2000, sasEmployee.noOfCodeCommits()));
-                },
-
-                () -> {
-                    result.get("gc").ifPresent(gcEmployee -> assertEquals("Raja", gcEmployee.name()));
-                    result.get("gc").ifPresent(gcEmployee -> assertEquals(101, gcEmployee.noOfCodeCommits()));
-                },
-
-                () -> {
-                    result.get("ovp").ifPresent(ovpEmployee -> assertEquals("Sachin", ovpEmployee.name()));
-                    result.get("ovp").ifPresent(ovpEmployee -> assertEquals(8, ovpEmployee.noOfCodeCommits()));
-                }
+        Assertions.assertAll(
+            () -> {
+            Optional<Employee> sasEmployee = result.get("sas");
+            assertEquals("Sasi", sasEmployee.orElseThrow().name());
+            assertEquals(2000, sasEmployee.get().noOfCodeCommits());
+            },
+            () -> {
+            Optional<Employee> gcEmployee = result.get("gc");
+            assertEquals("Raja", gcEmployee.orElseThrow().name());
+            assertEquals(101, gcEmployee.get().noOfCodeCommits());
+            },
+            () -> {
+            Optional<Employee> ovpEmployee = result.get("ovp");
+            assertEquals("Sachin", ovpEmployee.orElseThrow().name());
+            assertEquals(8, ovpEmployee.get().noOfCodeCommits());
+            }
         );
     }
 }
