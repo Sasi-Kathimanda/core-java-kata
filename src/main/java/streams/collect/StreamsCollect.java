@@ -84,7 +84,7 @@ public class StreamsCollect {
     }
 
     public Map<String, Optional<Employee>> groupByMapAndThenMaxBy(Employee[] employees) {
-        Map<String, Optional<Employee>> result = Stream.of(employees)
+        return Stream.of(employees)
         .collect(
             Collectors.groupingBy(Employee::departmentId,
 //                    Collectors.maxBy((e1, e2) -> e1.noOfCodeCommits() - e2.noOfCodeCommits()))); //same effect

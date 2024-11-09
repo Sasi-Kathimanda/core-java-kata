@@ -12,6 +12,7 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
 
+import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class StreamsCollectTest {
@@ -27,7 +28,7 @@ class StreamsCollectTest {
         List<Integer> ints = sut.convertFromTypeToList(1, 2, 3, 4, 5);
         List<String> strings = sut.convertFromTypeToList("Sasi", "Kiran", "Aashi", "Aaru");
         assertEquals("[1, 2, 3, 4, 5]", ints.toString());
-        assertEquals("[Sasi, Kiran, Aashi, Aaru]",strings.toString());
+        assertEquals("[Sasi, Kiran, Aashi, Aaru]", strings.toString());
     }
 
     @Test
@@ -103,18 +104,18 @@ class StreamsCollectTest {
     @Test
     void getMaxCommitsByDepartmentId() {
         //given
-         Employee[] employees = Arrays.asList(
-            new Employee(1, "Sasi", "sas", 2000),
-            new Employee(2, "Kiran", "sas", 1001),
-            new Employee(3, "Raja", "gc", 101),
-            new Employee(4, "Sachin", "ovp", 8),
-            new Employee(5, "Jal", "ovp", 2)
+        Employee[] employees = Arrays.asList(
+                new Employee(1, "Sasi", "sas", 2000),
+                new Employee(2, "Kiran", "sas", 1001),
+                new Employee(3, "Raja", "gc", 101),
+                new Employee(4, "Sachin", "ovp", 8),
+                new Employee(5, "Jal", "ovp", 2)
 
         ).toArray(new Employee[0]);
 
         //when
-         Map<String, Optional<Employee>> result = sut.groupByMapAndThenMaxBy(employees);
-        
+        Map<String, Optional<Employee>> result = sut.groupByMapAndThenMaxBy(employees);
+
         //then
         Assertions.assertAll(
             () -> {
