@@ -19,10 +19,20 @@ class MultiThreadUsingStreamTest {
     @Test
     void givenIntegersFindSumUsingStream() {
         //given
-        List<Integer> ints = IntStream.rangeClosed(1, 5)
+        List<Integer> ints = IntStream.rangeClosed(1, 1_000_000)
                 .boxed()
                 .toList();
         int result = sut.calculateSumUsingStream(ints);
-        assertEquals(55, result);
+        assertEquals(1784293664, result);
+    }
+
+    @Test
+    void givenIntegerFindSumUsingParallelStream() {
+        //given
+        List<Integer> ints = IntStream.rangeClosed(1, 1_000_000)
+                .boxed()
+                .toList();
+        int result = sut.calculateSumUsingParallelStream(ints);
+        assertEquals(1784293664, result);
     }
 }
