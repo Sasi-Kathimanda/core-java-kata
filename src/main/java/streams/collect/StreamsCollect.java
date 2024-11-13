@@ -89,6 +89,5 @@ public class StreamsCollect {
             Collectors.groupingBy(Employee::departmentId,
 //                    Collectors.maxBy((e1, e2) -> e1.noOfCodeCommits() - e2.noOfCodeCommits()))); //same effect
         Collectors.maxBy(Comparator.comparingInt(Employee::noOfCodeCommits))));
-             return result;
     }
 }
