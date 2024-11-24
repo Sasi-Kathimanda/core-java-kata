@@ -33,7 +33,7 @@ public class StreamsCreation {
     }
 
     public Stream<String> createStreamFromList(String ... input) {
-        List<String> words = Arrays.asList("namasthey", "anna", "manchiga", "vunnava");
+        List<String> words = Arrays.asList(input);
         return words.stream();
     }
 }
