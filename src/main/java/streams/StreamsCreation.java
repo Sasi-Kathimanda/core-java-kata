@@ -9,9 +9,7 @@ public class StreamsCreation {
     public static void main(String[] args) {
 
         // 1 st way
-        List<String> words = Arrays.asList("namasthey", "anna", "manchiga", "vunnava");
-        Stream<String> stream1 = words.stream();
-        System.out.println(stream1.count());
+        //createStreamFromList();
 
         //2nd way
         Stream<String> stream2 = Stream.of("namasthey", "anna", "manchiga", "vunnava");
@@ -32,5 +30,10 @@ public class StreamsCreation {
         System.out.println(Stream.of(nums2).count()); //
 
 
+    }
+
+    public Stream<String> createStreamFromList(String ... input) {
+        List<String> words = Arrays.asList("namasthey", "anna", "manchiga", "vunnava");
+        return words.stream();
     }
 }
