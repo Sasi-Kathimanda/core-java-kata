@@ -22,4 +22,12 @@ class StreamsCreationTest {
         //then
         assertEquals(4, result.count());
     }
+
+    @Test
+    void createStreamFromStreamOf() {
+        //when
+        Stream<String> result = streamsCreation.createStreamFromStreamOf("namasthey", "anna", "manchiga", "vunnava");
+        //then
+        assertEquals(4, result.count());
+    }
 }

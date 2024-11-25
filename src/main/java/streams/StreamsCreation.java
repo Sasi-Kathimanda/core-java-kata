@@ -12,8 +12,7 @@ public class StreamsCreation {
         //createStreamFromList();
 
         //2nd way
-        Stream<String> stream2 = Stream.of("namasthey", "anna", "manchiga", "vunnava");
-        System.out.println(stream2.count());
+        //createStreamFromStreamOf
 
 
         //3rd way
@@ -35,5 +34,8 @@ public class StreamsCreation {
     public Stream<String> createStreamFromList(String ... input) {
         List<String> words = Arrays.asList(input);
         return words.stream();
+    }
+    public Stream<String> createStreamFromStreamOf(String ... input) {
+        return Stream.of(input);
     }
 }
