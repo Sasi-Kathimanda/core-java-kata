@@ -12,13 +12,11 @@ public class StreamsCreation {
         //createStreamFromList();
 
         //2nd way
-        //createStreamFromStreamOf
+        //createStreamFromStreamOf()
 
 
         //3rd way
-        String[] words2 = {"namasthey", "anna", "manchiga", "vunnava"};
-        Stream<String> stream3 = Stream.of(words2);
-        System.out.println(stream3.count());
+        //createStreamFromStringArray()
 
 
         int[] nums = {1, 2, 3, 4, 5};
@@ -31,11 +29,16 @@ public class StreamsCreation {
 
     }
 
-    public Stream<String> createStreamFromList(String ... input) {
+    public Stream<String> createStreamFromList(String... input) {
         List<String> words = Arrays.asList(input);
         return words.stream();
     }
-    public Stream<String> createStreamFromStreamOf(String ... input) {
+
+    public Stream<String> createStreamFromStreamOf(String... input) {
+        return Stream.of(input);
+    }
+
+    public Stream<String> createStreamFromStringArray(String[] input) {
         return Stream.of(input);
     }
 }

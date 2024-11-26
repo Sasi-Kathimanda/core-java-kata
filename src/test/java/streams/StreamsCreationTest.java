@@ -30,4 +30,12 @@ class StreamsCreationTest {
         //then
         assertEquals(4, result.count());
     }
+
+    @Test
+    void createStreamFromStringArray() {
+        //when
+        Stream<String> result = streamsCreation.createStreamFromStringArray(new String[]{"namasthey", "anna", "manchiga", "vunnava"});
+        //then
+        assertEquals(4, result.count());
+    }
 }
