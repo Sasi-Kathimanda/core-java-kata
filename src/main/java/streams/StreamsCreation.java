@@ -42,3 +42,4 @@ public class StreamsCreation {
         return Stream.of(input);
     }
 }
+
