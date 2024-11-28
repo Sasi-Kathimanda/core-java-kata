@@ -1,21 +1,9 @@
 # core-java-kata
 This repository contains the simple java 8 examples for better understanding of the important concepts such as
-### Lambdas
-showing how it transformed the traditional external/internal iterators to cute lambdas.
 
-### Method references
-A peek at Method references
+[Lamdas](./src/main/java/lambda/README.md#lambdas)
 
-* parameter as an argument.
-* parameter as an argument to a static method.
-* parameter as a target.
-* two parameters as arguments.
-* two parameters,one as target the other as an argument.
+[Method References](./src/main/java/lambda/README.md#method-references)
 
-###### two limitations:
-you cannot use them,
+[Streams](./src/main/java/lambda/README.md#streams)
 
- 1. if there is manipulation of data 
- 2. if there is conflict between instance method nad static method.
-    eg:toString() is both instance and static method
-### Streams
