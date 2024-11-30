@@ -1,9 +1,6 @@
 import java.util.Arrays;
 import java.util.List;
 
-/**
- * Created by sasi-kathimanda on 18/12/16.
- */
 public class FunctionComposition {
 
     public static void main(String[] args) {
