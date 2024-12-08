@@ -17,6 +17,6 @@ public class ConditionalLambda {
 
     @FunctionalInterface
     interface Searchable {
-        boolean test(Person p);
+        boolean test(Person person);
     }
 }
