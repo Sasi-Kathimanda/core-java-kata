@@ -1,6 +1,5 @@
 package enums;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertAll;
@@ -36,5 +35,17 @@ class FlightCrewJobTest {
                 () -> assertEquals("CO_PILOT serves the PILOT", FlightCrewJob.getJobDescription(job2)),
                 () -> assertEquals("PILOT drives the plane", FlightCrewJob.getJobDescription(job3))
         );
+    }
+
+    @Test
+    void givenTwoJobsShouldEvaluateWhoIsTheCharge() {
+        //given
+        FlightCrewJob job1 = FlightCrewJob.FLIGHT_ATTENDANT;
+        FlightCrewJob job2 = FlightCrewJob.CO_PILOT;
+
+        //when
+        FlightCrewJob boss = FlightCrewJob.whoIsInCharge(job1, job2);
+        //then
+        assertEquals(job2, boss);
     }
 }
