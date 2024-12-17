@@ -1,4 +1,4 @@
-package java11tojava17.sealed;
+package javaeleven.to.javaseventeen.sealed;
 
 public abstract sealed class SealedAnimal permits SealedCat, NonSealedDog {
     abstract String sound();

@@ -1,9 +1,9 @@
-package java11tojava17.sealed;
+package javaeleven.to.javaseventeen.sealed;
 
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
-import java.lang.constant.ClassDesc;
+
 import java.util.Arrays;
 import java.util.Objects;
 

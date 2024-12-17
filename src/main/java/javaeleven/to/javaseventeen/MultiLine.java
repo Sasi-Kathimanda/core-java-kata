@@ -1,4 +1,4 @@
-package java11tojava17;
+package javaeleven.to.javaseventeen;
 
 public class MultiLine {
     public String fromMultiLineToNormalisedString(String multiLineString) {

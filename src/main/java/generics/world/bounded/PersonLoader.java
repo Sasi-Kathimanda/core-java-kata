@@ -29,7 +29,7 @@ public class PersonLoader {
             return null;
         } catch (NoSuchMethodException | InvocationTargetException | InstantiationException |
                  IllegalAccessException e) {
-            e.printStackTrace();
+            System.out.println("e = " + e);
             return null;
         }
     }

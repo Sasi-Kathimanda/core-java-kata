@@ -11,7 +11,9 @@ public class PrimeNumberTest {
     }
 
     private static boolean checkPrimeNumber(int input) {
-        if (input == 1) return false;
+        if (input == 1) {
+            return false;
+        }
         return isPrime(input);
     }
 
@@ -22,8 +24,8 @@ public class PrimeNumberTest {
 
     private static List<Integer> findPrimaryNumbersUpTo(int input) {
         return IntStream.rangeClosed(2, input)
-                        .filter(PrimeNumberTest::isPrime)
-                        .boxed()
-                        .collect(Collectors.toList());
+                .filter(PrimeNumberTest::isPrime)
+                .boxed()
+                .collect(Collectors.toList());
     }
 }

@@ -16,7 +16,7 @@ public class TypeUnsafeExample {
     private static String getConcatenated(StringCircularBuffer buffer) {
         StringBuilder sb = new StringBuilder();
         String value;
-        while ((value = (String)buffer.poll()) != null) {   //Fixme: using circularBuffer need external casting
+        while ((value = (String) buffer.poll()) != null) {   //Fixme: using circularBuffer need external casting
             sb.append(value);
         }
         return sb.toString();

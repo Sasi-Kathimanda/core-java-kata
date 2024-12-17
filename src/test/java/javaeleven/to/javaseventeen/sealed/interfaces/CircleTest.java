@@ -1,4 +1,4 @@
-package java11tojava17.sealed.interfaces;
+package javaeleven.to.javaseventeen.sealed.interfaces;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.BeforeEach;

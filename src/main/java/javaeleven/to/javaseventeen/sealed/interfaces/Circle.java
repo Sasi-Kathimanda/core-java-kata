@@ -1,4 +1,4 @@
-package java11tojava17.sealed.interfaces;
+package javaeleven.to.javaseventeen.sealed.interfaces;
 
 public final class Circle implements Shape {
     private String outcome;

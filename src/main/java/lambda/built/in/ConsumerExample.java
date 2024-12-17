@@ -3,7 +3,8 @@ package lambda.built.in;
 import java.util.function.Consumer;
 
 /**
- * Definition: A Consumer is an operation that accepts a single input argument and returns no result; it just execute some operations on the argument.
+ * Definition: A Consumer is an operation that accepts a single input argument and returns no result;
+ * it just execute some operations on the argument.
  * Method Signature: T -> void
  */
 public class ConsumerExample {

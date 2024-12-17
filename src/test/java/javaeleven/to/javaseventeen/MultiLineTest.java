@@ -1,4 +1,4 @@
-package java11tojava17;
+package javaeleven.to.javaseventeen;
 
 import org.junit.jupiter.api.Test;
 

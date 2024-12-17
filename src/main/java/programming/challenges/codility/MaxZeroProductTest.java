@@ -2,8 +2,8 @@ package programming.challenges.codility;
 
 public class MaxZeroProductTest {
     public static void main(String[] args) {
-        int[] A = new int[]{7, 15, 6, 20, 5, 10};
-        findMaxZeroProduct(A);
+        int[] ints = new int[]{7, 15, 6, 20, 5, 10};
+        findMaxZeroProduct(ints);
     }
 
     private static void findMaxZeroProduct(int[] input) {
@@ -11,5 +11,4 @@ public class MaxZeroProductTest {
 
         }
     }
-
 }

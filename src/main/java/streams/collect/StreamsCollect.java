@@ -1,5 +1,5 @@
 package streams.collect;
-
+import streams.Employee;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -12,7 +12,6 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import streams.Employee;
 
 /**
  * two types of collect:
@@ -85,9 +84,9 @@ public class StreamsCollect {
 
     public Map<String, Optional<Employee>> groupByMapAndThenMaxBy(Employee[] employees) {
         return Stream.of(employees)
-        .collect(
-            Collectors.groupingBy(Employee::departmentId,
+                .collect(
+                        Collectors.groupingBy(Employee::departmentId,
 //                    Collectors.maxBy((e1, e2) -> e1.noOfCodeCommits() - e2.noOfCodeCommits()))); //same effect
-        Collectors.maxBy(Comparator.comparingInt(Employee::noOfCodeCommits))));
+                                Collectors.maxBy(Comparator.comparingInt(Employee::noOfCodeCommits))));
     }
 }
