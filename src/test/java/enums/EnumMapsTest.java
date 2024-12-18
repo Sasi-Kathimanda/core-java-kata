@@ -2,7 +2,6 @@ package enums;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
 import java.util.EnumMap;
 import java.util.List;
 import java.util.Map;

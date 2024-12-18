@@ -1,10 +1,8 @@
 package generics;
 
 import org.junit.jupiter.api.Test;
-
 import java.util.ArrayList;
 import java.util.List;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
@@ -68,7 +66,7 @@ class GetAndPutTest {
     }
 
     @Test
-    void GetAndPutTheValuesIntoTheStructure() {
+    void getAndPutTheValuesIntoTheStructure() {
         GetAndPut sut = new GetAndPut();
         List<Number> nums = new ArrayList<>();
         double result = sut.sumCount(nums, 5);
