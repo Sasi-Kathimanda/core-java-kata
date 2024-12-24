@@ -3,11 +3,9 @@ package time;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
 import java.time.Duration;
 import java.time.Instant;
 import java.time.ZoneId;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class JavaInstantTest {
@@ -44,16 +42,16 @@ class JavaInstantTest {
         //given
         var instant = Instant.parse("2022-07-21T20:06:00.999999999Z");
         //when
-        var ldt_utc = sut.instantToLocalDateTime(instant, ZoneId.of("UTC"));
-        var ldt_gmt = sut.instantToLocalDateTime(instant, ZoneId.of("GMT"));
-        var ldt_London = sut.instantToLocalDateTime(instant, ZoneId.of("Europe/London"));
-        var ldt_ist = sut.instantToLocalDateTime(instant, ZoneId.of("Asia/Kolkata"));
+        var ldtUtc = sut.instantToLocalDateTime(instant, ZoneId.of("UTC"));
+        var ldtGmt = sut.instantToLocalDateTime(instant, ZoneId.of("GMT"));
+        var ldtLondon = sut.instantToLocalDateTime(instant, ZoneId.of("Europe/London"));
+        var ldtIst = sut.instantToLocalDateTime(instant, ZoneId.of("Asia/Kolkata"));
         //then
         assertEquals("2022-07-21T20:06:00.999999999Z", instant.toString());
-        assertEquals("2022-07-21T20:06:00.999999999", ldt_utc.toString());
-        assertEquals("2022-07-21T20:06:00.999999999", ldt_gmt.toString());
-        assertEquals("2022-07-21T21:06:00.999999999", ldt_London.toString());
-        assertEquals("2022-07-22T01:36:00.999999999", ldt_ist.toString());
+        assertEquals("2022-07-21T20:06:00.999999999", ldtUtc.toString());
+        assertEquals("2022-07-21T20:06:00.999999999", ldtGmt.toString());
+        assertEquals("2022-07-21T21:06:00.999999999", ldtLondon.toString());
+        assertEquals("2022-07-22T01:36:00.999999999", ldtIst.toString());
     }
 
     @Test
