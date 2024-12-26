@@ -3,16 +3,12 @@ package streams.collect;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
 import streams.Employee;
-
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
-
-import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class StreamsCollectTest {
@@ -96,7 +92,8 @@ class StreamsCollectTest {
 
     @Test
     void getPartitionMapComposedCollector() {
-        Map<Boolean, Set<Integer>> partitionMapComposedCollector = sut.getPartitionMapComposedCollector(1, 9, 18, 18, 25, 32, 45, 56, 65, 72);
+        Map<Boolean, Set<Integer>> partitionMapComposedCollector = sut.getPartitionMapComposedCollector
+                (1, 9, 18, 18, 25, 32, 45, 56, 65, 72);
         assertEquals("[32, 1, 18, 9, 25, 45]", partitionMapComposedCollector.get(true).toString());
         assertEquals("[65, 56, 72]", partitionMapComposedCollector.get(false).toString());
     }
