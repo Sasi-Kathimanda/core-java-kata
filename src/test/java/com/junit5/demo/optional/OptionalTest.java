@@ -2,10 +2,8 @@ package com.junit5.demo.optional;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-
 import java.util.NoSuchElementException;
 import java.util.Optional;
-
 import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
@@ -62,7 +60,7 @@ class OptionalTest {
     }
 
     /**
-     * Exceptions with orElseThrow
+     * Exceptions with orElseThrow.
      */
     @Test
     @DisplayName("givenNull_WhenOrElseThrowCalled_ThenExceptionReturned")
@@ -90,7 +88,7 @@ class OptionalTest {
     }
 
     /**
-     * Optional with Filter
+     * Optional with Filter.
      */
     static class Mobile {
         Double price;
