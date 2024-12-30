@@ -2,12 +2,10 @@ package com.junit5.demo.optional;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class OptionalStreamMethodTest {
@@ -45,7 +43,7 @@ class OptionalStreamMethodTest {
     }
 
     /**
-     * using java 9 optional stream method
+     * using java 9 optional stream method.
      */
 
     @Test
