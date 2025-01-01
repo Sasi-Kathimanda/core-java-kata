@@ -2,7 +2,6 @@ package time;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
@@ -12,7 +11,6 @@ import java.time.ZoneId;
 import java.time.ZoneOffset;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
-
 import static java.time.format.DateTimeFormatter.ISO_OFFSET_DATE;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -59,25 +57,32 @@ class JavaDateTimeFormatterTest {
 
     @Test
     void differentDateFormatterForApplyingOnDateAndTime() {
-        var actual = sut.formatter(DateTimeFormatter.ISO_OFFSET_DATE, OffsetDateTime.of(LOCAL_DATE_TIME, ZoneOffset.ofHoursMinutes(5, 30)));
+        var actual = sut.formatter(DateTimeFormatter.ISO_OFFSET_DATE,
+                OffsetDateTime.of(LOCAL_DATE_TIME, ZoneOffset.ofHoursMinutes(5, 30)));
         assertEquals("1984-12-02+05:30", actual);
 
-        actual = sut.formatter(DateTimeFormatter.ISO_OFFSET_DATE_TIME, OffsetDateTime.of(LOCAL_DATE_TIME, ZoneOffset.ofHoursMinutes(5, 30)));
+        actual = sut.formatter(DateTimeFormatter.ISO_OFFSET_DATE_TIME,
+                OffsetDateTime.of(LOCAL_DATE_TIME, ZoneOffset.ofHoursMinutes(5, 30)));
         assertEquals("1984-12-02T10:15:30+05:30", actual);
 
-        actual = sut.formatter(DateTimeFormatter.ISO_ZONED_DATE_TIME, ZonedDateTime.of(LOCAL_DATE_TIME, ZoneId.of("Asia/Kolkata")));
+        actual = sut.formatter(DateTimeFormatter.ISO_ZONED_DATE_TIME,
+                ZonedDateTime.of(LOCAL_DATE_TIME, ZoneId.of("Asia/Kolkata")));
         assertEquals("1984-12-02T10:15:30+05:30[Asia/Kolkata]", actual);
 
-        actual = sut.formatter(DateTimeFormatter.ISO_DATE_TIME, ZonedDateTime.of(LOCAL_DATE_TIME, ZoneId.of("Asia/Kolkata")));
+        actual = sut.formatter(DateTimeFormatter.ISO_DATE_TIME,
+                ZonedDateTime.of(LOCAL_DATE_TIME, ZoneId.of("Asia/Kolkata")));
         assertEquals("1984-12-02T10:15:30+05:30[Asia/Kolkata]", actual);
 
-        actual = sut.formatter(DateTimeFormatter.ISO_ORDINAL_DATE, ZonedDateTime.of(LOCAL_DATE_TIME, ZoneId.of("Asia/Kolkata")));
+        actual = sut.formatter(DateTimeFormatter.ISO_ORDINAL_DATE,
+                ZonedDateTime.of(LOCAL_DATE_TIME, ZoneId.of("Asia/Kolkata")));
         assertEquals("1984-337+05:30", actual);
 
-        actual = sut.formatter(DateTimeFormatter.ISO_WEEK_DATE, ZonedDateTime.of(LOCAL_DATE_TIME, ZoneId.of("Asia/Kolkata")));
+        actual = sut.formatter(DateTimeFormatter.ISO_WEEK_DATE,
+                ZonedDateTime.of(LOCAL_DATE_TIME, ZoneId.of("Asia/Kolkata")));
         assertEquals("1984-W48-7+05:30", actual);
 
-        actual = sut.formatter(DateTimeFormatter.ISO_INSTANT, ZonedDateTime.of(LOCAL_DATE_TIME, ZoneId.of("Asia/Kolkata")));
+        actual = sut.formatter(DateTimeFormatter.ISO_INSTANT,
+                ZonedDateTime.of(LOCAL_DATE_TIME, ZoneId.of("Asia/Kolkata")));
         assertEquals("1984-12-02T04:45:30Z", actual);
     }
 
