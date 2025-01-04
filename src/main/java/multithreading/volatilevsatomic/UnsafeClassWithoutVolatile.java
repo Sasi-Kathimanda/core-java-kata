@@ -12,13 +12,15 @@ public class UnsafeClassWithoutVolatile {
                 throw new RuntimeException(e);
             }
         }
-        System.out.println("loop finished and setting done to true "+ Thread.currentThread().getName());
+        System.out.println("loop finished and setting done to true " + Thread.currentThread().getName());
         done = true;
     }
 
     public boolean isDone() {
-        while (!done);
-        System.out.println("waiting  finished, exiting isDone "+ Thread.currentThread().getName());
+        while (!done) {
+            //busy wait
+        };
+        System.out.println("waiting  finished, exiting isDone " + Thread.currentThread().getName());
         return done;
     }
 }
