@@ -2,14 +2,12 @@ package time;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
 import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.TextStyle;
 import java.util.Locale;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class JavaTimeParserTest {
@@ -51,7 +49,8 @@ class JavaTimeParserTest {
     @Test
     void parseStringToInstant() {
         JavaTimeParser sut = new JavaTimeParser();
-        Instant actual = sut.parseStringToInstant("1984-12-02T10:15:30.345Z"); //date string valid UTC time with  DateTimeFormatter.ISO_INSTANT
+        //date string valid UTC time with  DateTimeFormatter.ISO_INSTANT
+        Instant actual = sut.parseStringToInstant("1984-12-02T10:15:30.345Z");
         assertEquals(470830530, actual.getEpochSecond());
         assertEquals(470830530345L, actual.toEpochMilli());
         assertEquals(345000000, actual.getNano());

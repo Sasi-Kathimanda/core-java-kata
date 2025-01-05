@@ -5,11 +5,11 @@ import java.util.concurrent.Executors;
 
 public class AtomicProblemExecutor {
     public static void main(String[] args) throws InterruptedException {
-        int no_of_threads = 5;
+        int noOfThreads = 5;
         var iterations = 10;
         UnsafeClassWithoutAtomicInteger unsafeInstance = new UnsafeClassWithoutAtomicInteger();
-        ExecutorService executorsPool = Executors.newFixedThreadPool(no_of_threads);
-        for (int i = 0; i < no_of_threads; i++) {
+        ExecutorService executorsPool = Executors.newFixedThreadPool(noOfThreads);
+        for (int i = 0; i < noOfThreads; i++) {
             executorsPool.submit(() -> {
                 for (int j = 0; j < iterations; j++) {
                     unsafeInstance.increment();
