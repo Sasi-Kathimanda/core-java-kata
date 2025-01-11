@@ -5,7 +5,6 @@ import org.junit.jupiter.api.Test;
 import java.util.EnumMap;
 import java.util.List;
 import java.util.Map;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class EnumMapsTest {
@@ -73,7 +72,8 @@ class EnumMapsTest {
                 DaysOfTheWeek.WEDNESDAY, "Pilates",
                 DaysOfTheWeek.THURSDAY, "Swimming",
                 DaysOfTheWeek.FRIDAY, "Running");
-        assertEquals("[MONDAY=Yoga, TUESDAY=Boxing, WEDNESDAY=Pilates, THURSDAY=Swimming, FRIDAY=Running]", actualEnumMap.entrySet().toString());
+        assertEquals("[MONDAY=Yoga, TUESDAY=Boxing, WEDNESDAY=Pilates, THURSDAY=Swimming, FRIDAY=Running]",
+                actualEnumMap.entrySet().toString());
     }
 
 }
