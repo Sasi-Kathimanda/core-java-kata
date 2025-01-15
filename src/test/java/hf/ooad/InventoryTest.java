@@ -116,7 +116,11 @@ class InventoryTest {
                         .build())
                 .build());
 
-        sut.addDevice(Tv.builder().modelNo(1).tvSpec(TvSpec.builder().resolution(TvSpec.Resolution.FOUR_K).screenSize(TvSpec.ScreenSize.SIXTY_FIVE_INCH).build()).build());
-        sut.addDevice(Tv.builder().modelNo(2).tvSpec(TvSpec.builder().resolution(TvSpec.Resolution.FOUR_K).screenSize(TvSpec.ScreenSize.SIXTY_FIVE_INCH).build()).build());
+        sut.addDevice(Tv.builder().modelNo(1)
+                .tvSpec(TvSpec.builder().resolution(TvSpec.Resolution.FOUR_K).screenSize(TvSpec.ScreenSize.SIXTY_FIVE_INCH).build())
+                .build());
+        sut.addDevice(Tv.builder().modelNo(2)
+                .tvSpec(TvSpec.builder().resolution(TvSpec.Resolution.FOUR_K).screenSize(TvSpec.ScreenSize.SIXTY_FIVE_INCH).build())
+                .build());
     }
 }
