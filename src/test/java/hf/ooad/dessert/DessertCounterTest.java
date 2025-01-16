@@ -25,7 +25,9 @@ class DessertCounterTest {
     @Test
     void givenASundae_IceCreamChoiceWithToppingChoice_WouldGetCone() {
 
-        Dessert dessert = sut.orderDessert(new Sundae().addScooping(new IceCream("Strawberry")).addTopping(new Topping("WhippedCream")).addSyrup(new Syrup("HotFudge")));
+        Dessert dessert = sut.orderDessert(new Sundae().addScooping(new IceCream("Strawberry"))
+                .addTopping(new Topping("WhippedCream"))
+                .addSyrup(new Syrup("HotFudge")));
         assertEquals("Strawberry", dessert.getIceCream().getTaste());
         assertEquals("WhippedCream", dessert.getTopping().getDescription());
         assertEquals("HotFudge", ((Sundae) dessert).getSyrup().getDescription());
