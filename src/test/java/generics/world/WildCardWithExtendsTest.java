@@ -13,7 +13,7 @@ class WildCardWithExtendsTest {
         List<Number> nums = new ArrayList<>();
         nums.add(1);
         nums.add(1.1);
-        assertEquals(nums.toString(), "[1, 1.1]");
+        assertEquals("[1, 1.1]", nums.toString());
     }
 
     @Test
@@ -24,6 +24,6 @@ class WildCardWithExtendsTest {
         //nums.add(ints); //cannot use add List<Integer> is not a subtype of Number
         nums.addAll(ints);
         nums.addAll(doubles);
-        assertEquals(nums.toString(), "[1, 2, 3, 1.1, 2.2, 3.3]");
+        assertEquals("[1, 2, 3, 1.1, 2.2, 3.3]", nums.toString());
     }
 }
