@@ -1,7 +1,7 @@
 package javaeleven.to.javaseventeen.sealed.interfaces;
 
-import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class ShapeTest {
 
