@@ -1,7 +1,7 @@
 package multithreading.volatilevsatomic;
 
 public class UnsafeClassWithoutVolatile {
-     boolean  done = false;
+    boolean  done = false;
 
     public void loop() {
         System.out.println("loop started by " + Thread.currentThread().getName());
