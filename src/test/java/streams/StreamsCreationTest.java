@@ -2,9 +2,7 @@ package streams;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import java.util.stream.Stream;
-
+import java.util.stream.Stream;che
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class StreamsCreationTest {
