@@ -15,10 +15,11 @@ public class Calculator {
             System.out.println("3: Multiplication");
             System.out.println("4: Division");
             System.out.println("5: Square Root");
-            System.out.println("6: Exit");
+            System.out.println("6: Exponent");
+            System.out.println("7: Exit");
             int choice = scanner.nextInt();
 
-            if (choice == 6) {
+            if (choice == 7) {
                 System.out.println("Exiting...");
                 break;
             }
@@ -27,8 +28,10 @@ public class Calculator {
             if (choice != 5) {
                 System.out.print("Enter first number: ");
                 num1 = scanner.nextDouble();
-                System.out.print("Enter second number: ");
-                num2 = scanner.nextDouble();
+                if (choice != 6) {
+                    System.out.print("Enter second number: ");
+                    num2 = scanner.nextDouble();
+                }
             } else {
                 System.out.print("Enter number: ");
                 num1 = scanner.nextDouble();
@@ -50,6 +53,9 @@ public class Calculator {
                 case 5:
                     System.out.println("Result: " + calculator.sqrt(num1));
                     break;
+                case 6:
+                    System.out.println("Result: " + calculator.exponent(num1, num2));
+                    break;
                 default:
                     System.out.println("Invalid choice");
             }
@@ -58,31 +64,35 @@ public class Calculator {
         scanner.close();
     }
 
-    public double add(double a, double b) {
-        return a + b;
-    }
-
-    public double subtract(double a, double b) {
-        return a - b;
-    }
-
-    public double multiply(double a, double b) {
-        return a * b;
-    }
-
-    public double divide(double a, double b) {
-        if (b == 0) {
-            System.out.println("Error: Division by zero");
-            return Double.NaN;
+        public double add ( double a, double b){
+            return a + b;
         }
-        return a / b;
-    }
 
-    public double sqrt(double a) {
-        if (a < 0) {
-            System.out.println("Error: Negative input");
-            return Double.NaN;
+        public double subtract ( double a, double b){
+            return a - b;
         }
-        return Math.sqrt(a);
-    }
+
+        public double multiply ( double a, double b){
+            return a * b;
+        }
+
+        public double divide ( double a, double b){
+            if (b == 0) {
+                System.out.println("Error: Division by zero");
+                return Double.NaN;
+            }
+            return a / b;
+        }
+
+        public double sqrt ( double a){
+            if (a < 0) {
+                System.out.println("Error: Negative input");
+                return Double.NaN;
+            }
+            return Math.sqrt(a);
+        }
+
+        public double exponent ( double base, double exponent){
+            return Math.pow(base, exponent);
+        }
 }
