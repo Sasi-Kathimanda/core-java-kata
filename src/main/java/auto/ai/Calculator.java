@@ -64,35 +64,35 @@ public class Calculator {
         scanner.close();
     }
 
-        public double add ( double a, double b){
-            return a + b;
-        }
+    public double add(double a, double b) {
+        return a + b;
+    }
 
-        public double subtract ( double a, double b){
-            return a - b;
-        }
+    public double subtract(double a, double b) {
+        return a - b;
+    }
 
-        public double multiply ( double a, double b){
-            return a * b;
-        }
+    public double multiply(double a, double b) {
+        return a * b;
+    }
 
-        public double divide ( double a, double b){
-            if (b == 0) {
-                System.out.println("Error: Division by zero");
-                return Double.NaN;
-            }
-            return a / b;
+    public double divide(double a, double b) {
+        if (b == 0) {
+            System.out.println("Error: Division by zero");
+            return Double.NaN;
         }
+        return a / b;
+    }
 
-        public double sqrt ( double a){
-            if (a < 0) {
-                System.out.println("Error: Negative input");
-                return Double.NaN;
-            }
-            return Math.sqrt(a);
+    public double sqrt(double a) {
+        if (a < 0) {
+            System.out.println("Error: Negative input");
+            return Double.NaN;
         }
+        return Math.sqrt(a);
+    }
 
-        public double exponent ( double base, double exponent){
-            return Math.pow(base, exponent);
-        }
+    public double exponent(double base, double exponent) {
+        return Math.pow(base, exponent);
+    }
 }
